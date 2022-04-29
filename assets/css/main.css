@@ -251,6 +251,22 @@ h3 {
   font-size: 1.5em;
 }
 
+.category-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.CVsect {
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.edHead {
+  color: black;
+  margin-bottom: 0px;
+}
+
 header {
   margin: 0 0 2em 0;
 }
@@ -1054,6 +1070,7 @@ br.clear {
   .row {
     margin-top: -40px;
     margin-left: -40px;
+    justify-content: center;
   }
 
   .row > * {
