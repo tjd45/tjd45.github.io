@@ -1,4 +1,4 @@
-var nextDate = new Date(1665743700000);
+var nextDate = new Date(1669289700000);
 
 document.getElementById("countdown-date").innerHTML = nextDate.toLocaleString('en-gb', { dateStyle: "full", timeStyle: "long" });
 
