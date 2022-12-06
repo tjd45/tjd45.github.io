@@ -1,0 +1,1059 @@
+{
+  "rawGraph": {
+    "nodes": [
+      {
+        "id": "e529680057ed5bfdc45a217dd038dd215d450861",
+        "degree": 19,
+        "pagerank": 0.05737364537301286,
+        "paperName": "The Streams of Our Lives: Visualizing Listening Histories in Context",
+        "paperAbstract": "The choices we take when listening to music are expressions of our personal taste and character. Storing and accessing our listening histories is trivial due to services like Last.fm, but learning from them and understanding them is not. Existing solutions operate at a very abstract level and only produce statistics. By applying techniques from information visualization to this problem, we were able to provide average people with a detailed and powerful tool for accessing their own musical past. LastHistory is an interactive visualization for displaying music listening histories, along with contextual information from personal photos and calendar entries. Its two main user tasks are (1) analysis, with an emphasis on temporal patterns and hypotheses related to musical genre and sequences, and (2) reminiscing, where listening histories and context represent part of one's past. In this design study paper we give an overview of the field of music listening histories and explain their unique characteristics as a type of personal data. We then describe the design rationale, data and view transformations of LastHistory and present the results from both a laband a large-scale online study. We also put listening histories in contrast to other lifelogging data. The resonant and enthusiastic feedback that we received from average users shows a need for making their personal data accessible. We hope to stimulate such developments through this research.",
+        "authors": "D. Baur, Frederik Seiffert, M. Sedlmair, S. Boring",
+        "citationCount": 60,
+        "venue": "IEEE Transactions on Visualization and Computer Graphics",
+        "year": 2010,
+        "url": "https://www.semanticscholar.org/paper/e529680057ed5bfdc45a217dd038dd215d450861",
+        "node_id": "e529680057ed5bfdc45a217dd038dd215d450861"
+      },
+      {
+        "id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+        "degree": 19,
+        "pagerank": 0.04431311877758563,
+        "paperName": "Interactive exploration of music listening histories",
+        "paperAbstract": "Over the past years, music listening histories have become easily accessible due to the expansion of online lifelogging services. These histories represent the sequence of songs listen by users over time. Although this data contains intrinsic users' tastes and listening behaviors, it has been mainly used to personalize recommendations. Tools to help users exploring and reasoning about the information contained in the listening history, only recently have started to emerge. In this paper we describe a new visualization and exploration tool that allows users to interactively browse their listening histories, while leading them to identify listening trends and habits. Our solution combines a rich-featured timeline-based visualization, a set of synchronized-views and an interactive filtering mechanism to provide a flexible, effective and easy to use system for the analysis and knowledge exploration of listening histories. This was complemented with brushing and highlighting techniques to uncover listening trends about artists, albums and songs. Experimental evaluation with users revealed that they were able to complete all the requested tasks with a low error rate, and that they found the solution flexible and easy to use. Additionally, users were able to infer about their main life events and listening changes, which indicates that our combination of visualization techniques is effective in conveying relevant information about the listening habits.",
+        "authors": "Ricardo J. Dias, Manuel J. Fonseca, D. Gonçalves",
+        "citationCount": 9,
+        "venue": "AVI",
+        "year": 2012,
+        "url": "https://www.semanticscholar.org/paper/ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+        "node_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf"
+      },
+      {
+        "id": "5e80afd4985901f347e268175383af7861a99b67",
+        "degree": 19,
+        "pagerank": 0.06746506139100712,
+        "paperName": "Pulling strings from a tangle: visualizing a personal music listening history",
+        "paperAbstract": "The history of songs, to which a person has listened, is a very personal piece of information. It is a rich data set that comes as a byproduct of the use of digital music players and can be obtained without interfering with the user. In this paper, we present three visualizations for this data set and a mechanism for generating new playlists from the user's own listening history, based on a navigation metaphor. First, temporal proximity is interpreted as a simple similarity measure to lay out the entire history on a two-dimensional plane. Closed listening sessions are then used to make chronological relations visible. The generated playlists mimic the user's previous listening behavior, and the visualizations make the automatic choices understandable, as they share visual properties with the history. In this sense, our visualizations provide a visual vocabulary for listening behaviors and bring scrutability to automatic playlist generation.",
+        "authors": "D. Baur, A. Butz",
+        "citationCount": 19,
+        "venue": "IUI",
+        "year": 2009,
+        "url": "https://www.semanticscholar.org/paper/5e80afd4985901f347e268175383af7861a99b67",
+        "node_id": "5e80afd4985901f347e268175383af7861a99b67"
+      },
+      {
+        "id": "6f498457e03e5d186330719d6fbdb4486095c7cd",
+        "degree": 6,
+        "pagerank": 0.01457880408427081,
+        "paperName": "Interactive Visualization for Music Rediscovery and Serendipity",
+        "paperAbstract": "Although personal tastes may change over time, overall people still enjoy music they have not listen to for some time or not very often. However, most solutions for browsing music collections do not focus on showing or suggesting these songs to create serendipitous rediscoveries. Instead they promote most recently played songs as an entry point for browsing and playing music. This way, users are constantly listening to the same music, causing the least heard to become forgotten. In this paper, we present BACH, an interactive visualization and exploration tool for personal music collections that uses the listening history of the user to influence the songs suggested and the way they are presented to him/her. Our goal is to help users rediscover their music collection for different periods of the day through the perspective of their listening history. Experimental results revealed that users understood and enjoyed our solution and that they were able to rediscover their collections by listening to songs heard some time ago.",
+        "authors": "Ricardo J. Dias, Joana F. Pinto, Manuel J. Fonseca",
+        "citationCount": 2,
+        "venue": "BCS HCI",
+        "year": 2014,
+        "url": "https://www.semanticscholar.org/paper/6f498457e03e5d186330719d6fbdb4486095c7cd",
+        "node_id": "6f498457e03e5d186330719d6fbdb4486095c7cd"
+      },
+      {
+        "id": "d6b802e48e9996b9f61d5c05b4da39fd0a3e7705",
+        "degree": 4,
+        "pagerank": 0.0178810277793643,
+        "paperName": "The songs of our past: working with listening histories",
+        "paperAbstract": "Music listening histories are portraits of a person's taste in music. In my research I am exploring this type of data and how user interfaces can be enhanced with it. In this Doctoral Consortium paper I describe my approach towards this goal: Statistical analysis and casual information visualizations can help in finding relevant patterns and aspects in listening histories. Making them available to regular users and asking what they learnt about themselves gives us the chance to find out more about their listening on the minute level of songs. Contextual information such as photos or calendar entries can help trigger memories. In this paper I describe the motivation and goals of my research and my current status. In the end, both the HCI community and end users can benefit from more convenient and sophisticated interfaces for this type of data.",
+        "authors": "D. Baur",
+        "citationCount": 2,
+        "venue": "CHI Extended Abstracts",
+        "year": 2011,
+        "url": "https://www.semanticscholar.org/paper/d6b802e48e9996b9f61d5c05b4da39fd0a3e7705",
+        "node_id": "d6b802e48e9996b9f61d5c05b4da39fd0a3e7705"
+      },
+      {
+        "id": "0bfdbd8e12e64e40144cbc87dd97fddf5e3d42b6",
+        "degree": 5,
+        "pagerank": 0.020742954981778656,
+        "paperName": "Music listening history explorer: an alternative approach for browsing music listening history habits",
+        "paperAbstract": "Nowadays, people spend time using services to track their music listening history. Although these services provide statistics and small graphics/charts, they are mainly used to record and to allow direct access to the information, not providing any visualization and exploration functionality. In this paper we describe a new approach for browsing and visualizing music listening histories, which combines a timeline-based visualization, with a set of synchronized-views and an interactive filtering mechanism to provide a flexible and easy to use solution. This was complemented with brushing and highlighting techniques that allow users to observe trends on artists, albums and tracks listening. Experimental evaluation with users revealed that they were able to complete all the proposed tasks with a low error rate, and that they found the solution easy to use. Moreover, users liked our approach for browsing and exploring listening histories, emphasizing its flexibility and effectiveness, and founding the full experience engaging and rewarding.",
+        "authors": "Ricardo J. Dias, Manuel J. Fonseca, D. Gonçalves",
+        "citationCount": 3,
+        "venue": "IUI '12",
+        "year": 2012,
+        "url": "https://www.semanticscholar.org/paper/0bfdbd8e12e64e40144cbc87dd97fddf5e3d42b6",
+        "node_id": "0bfdbd8e12e64e40144cbc87dd97fddf5e3d42b6"
+      },
+      {
+        "id": "11df6dc413b6e884e90fae1a2cdd6244226df883",
+        "degree": 3,
+        "pagerank": 0.01457880408427081,
+        "paperName": "Analyzing Music Instrument Playing History via an Interactive Visual Diary",
+        "paperAbstract": "As live-logging becomes an increasingly habitual practice, Personal Visual Analytics face the inevitable challenge of adapting to all forms of tracked data. Our concept offers the input and visualization of recorded MIDI data to those who use musical instruments, ranging from amateur musicians to professional performers. Users can oversee and reflect on the development of their repertoire throughout the span of months, condensed into two different formats. The Overview maps each recording in regard to the start and end times and places it onto the respective day with a color code corresponding to its title. Interaction with each separate recording provides linkage through arcs to others analogous with respect to either title or note similarity. For the latter, we support the Levenshtein distance and the Gotoh algorithm as similarity measures. The Weekview produces a more concentrated canvas, mapping the tracks with a starker focus on the day of the week at which the user prefers to play. What allows this view to display data in a more concise form, is that the duration and exact save time information are not taken into consideration, making it easier to read. We evaluated our approach and prototypical implementation in a case study. For this, we first used a small set of user data and, due to time constraints, further carried out the examination using artificially generated data, simulating different cases of users with varying recording habits. Our implementation performs well under up to several hundreds of recordings. However, the recordings are harder to spot when the recording time exceeds a year or when there are multiple recordings saved within a small time frame. Our concept provides a novel way of tracking and exploring recorded music for those already intrigued by the idea of visualizing their recording library, while potentially attracting musicians who track less, but wish to discover patterns in their practice regimes.",
+        "authors": "A. Dzamashvili",
+        "citationCount": 0,
+        "venue": "n/a",
+        "year": 2020,
+        "url": "https://www.semanticscholar.org/paper/11df6dc413b6e884e90fae1a2cdd6244226df883",
+        "node_id": "11df6dc413b6e884e90fae1a2cdd6244226df883"
+      },
+      {
+        "id": "8c1889734e6453fe214686859aa13baba553744b",
+        "degree": 6,
+        "pagerank": 0.019935744745200247,
+        "paperName": "arcs.fm - A Backdrop Visualization for Music Talk",
+        "paperAbstract": "Visualizations usually completely capture our attention or disappear into the ambient background. In this paper we explore a middle ground, with visualizations that are not constantly in the center of attention and support a main conversational task without distracting from it. Such backdrop visualizations work for look-up and analytical tasks without getting in the way of the conversation, but can also be used actively. To illustrate this concept we describe arcs.fm, a case study for music talk, as an exemplary backdrop visualization. Music fulfills an important function for identity construction: we define ourselves by what music we listen to and we like to compare our musical taste with friends and family. The shift towards digital music allows us to meticulously keep track of all songs we have listened to and to have access to this data to augment our memories. Here we explore integrating visualizations of automatically collected listening histories with the explanations and discussion that develop in personal music talk. arcs.fm is a visualization system that supports this music talk by comparing two listening histories visually. arcs.fm stays in the background while enabling look-up and enriching peoples’ conversation when needed.",
+        "authors": "D. Baur, A. Butz, M. Carpendale",
+        "citationCount": 6,
+        "venue": "EuroVis",
+        "year": 2012,
+        "url": "https://www.semanticscholar.org/paper/8c1889734e6453fe214686859aa13baba553744b",
+        "node_id": "8c1889734e6453fe214686859aa13baba553744b"
+      },
+      {
+        "id": "fb8d7bb182845bae432344079b5c0b6775ad04be",
+        "degree": 8,
+        "pagerank": 0.016119841808647773,
+        "paperName": "Visualizing Music Listening Histories",
+        "paperAbstract": "In the last years with the advent of digital music players, private music consumption has become seemingly ubiquitous. Services like Last.fm give us the chance to record every track we listen to, resulting in large sets of personal data. However, so far there are no tools for comprehensively analyzing the data at hand. This thesis presents LastHistory, an interactive visualization for displaying music listening histories, along with contextual information from personal photos and calendar entries. It is suitable for two tasks: The Analysis Mode allows to generate insight for arbitrary listening histories in three basic dimensions: time, tracks, and genre. The Personal Mode aims at making one’s own history accessible, and encourages reminiscing through the personal context included in the visualization. The thesis first shows related work on timelines, music listening histories, and media browsing interfaces, before outlining the conceptual design, operation, and implementation of LastHistory. Two user studies were conducted in order to evaluate the work, resulting in very positive results, which are presented at the end of the thesis. VISUALIZING MUSIC LISTENING HISTORIES",
+        "authors": "H. Hussmann, Frederik Seiffert, A. Butz",
+        "citationCount": 2,
+        "venue": "n/a",
+        "year": 2010,
+        "url": "https://www.semanticscholar.org/paper/fb8d7bb182845bae432344079b5c0b6775ad04be",
+        "node_id": "fb8d7bb182845bae432344079b5c0b6775ad04be"
+      },
+      {
+        "id": "b4769b2a5c1dcdba438b5c4ffc1281646015d7a2",
+        "degree": 3,
+        "pagerank": 0.01457880408427081,
+        "paperName": "MusicDigger : A Tool for Music Discovery",
+        "paperAbstract": "Discovering music is a process that can be facilitated by many different approaches, depending on the music style and even personal preferences of the listener/researcher of music. The common ground for all approaches is to explore an artist’s work as discographies and to detect collaborations between musicians. In this paper, we present MusicDigger as a tool that serves for these common discovery forms, based on a publicdomain, detailed music metadata set consisting of millions of records. Digging is, at its core, discovering specific items within a database. With MusicDigger, exploration starts with an initial focus on an artist or record label. Our solution then can extend to two different interfaces. Our timeline based interface allows looking at artists (own or contributed) work with advanced filtering features and easy, intuitive browsing. Our network based interface, guided by the user, allows discovering collaborations between musicians. The nodes are placed in a circular layout and tree-like graphs are created, minimizing the number of edge crossings in music networks which are highly connected. Based on our user studies and interviews, we observe that our features are very helpful for people who regularly use a music database to learn about details and discover artists, and our interface provides a helpful and easy-to-navigate view on music data. We also believe that our interfaces and interaction options are applicable to other domains, such as browsing a database of movies.",
+        "authors": "M. Yalc, P. Bhargava, Sravanthi Bondugula, Varun K. Nagaraja, M. Velloso",
+        "citationCount": 0,
+        "venue": "n/a",
+        "year": 2011,
+        "url": "https://www.semanticscholar.org/paper/b4769b2a5c1dcdba438b5c4ffc1281646015d7a2",
+        "node_id": "b4769b2a5c1dcdba438b5c4ffc1281646015d7a2"
+      },
+      {
+        "id": "447441046ffec61ef659d3062f54eca212032a6e",
+        "degree": 4,
+        "pagerank": 0.01457880408427081,
+        "paperName": "Explorify: A Personalized Interactive Visualization Tool for Spotify Listening History",
+        "paperAbstract": "—There are many music streaming platforms but Spotify has dominated the market over the last few year and currently is the largest one with millions of users. Spotify collects huge amounts of data from its users which presents a great amount of research opportunities in the data science community. However, at the moment there are very limited attempts that have been published on the topic of visualizing Spotify streaming history. The common curiosity of people about there own listening habits is the user story which inspired this project. We implement an interactive dashboard for Spotify users with any level of expertise to perform exploratory, consumption, and analysis tasks on their personal Spotify streaming data. The interactive and playful nature of the dashboard aids Spotify users to explore their own music taste, find listening patterns and engage with their data.",
+        "authors": "Inna Ivanova",
+        "citationCount": 0,
+        "venue": "n/a",
+        "year": 2021,
+        "url": "https://www.semanticscholar.org/paper/447441046ffec61ef659d3062f54eca212032a6e",
+        "node_id": "447441046ffec61ef659d3062f54eca212032a6e"
+      },
+      {
+        "id": "dbf1349b3459c6b580f3aa0e8a3ab847b0e2064c",
+        "degree": 7,
+        "pagerank": 0.023908757185351,
+        "paperName": "Gaining Musical Insights: Visualizing Multiple Listening Histories",
+        "paperAbstract": "Listening histories are rich sources of implicit information. Combining listening histories of multiple users allows comparisons in musical taste and discovery of new music, though few existing work specifically addresses this issue. In this paper we present two interactive visualizations which give users a deeper insight into consent and dissent in their listening behaviors, and help them to compare their musical tastes. HisFlocks shows overlaps in genre and artist in certain time periods and LoomFM illustrates sequential listening patterns. Our first feedback on these systems was very promising and we plan to extend our concepts to broader scenarios with a greater number of listening histories.",
+        "authors": "Ya-Xi Chen, D. Baur, A. Butz",
+        "citationCount": 6,
+        "venue": "n/a",
+        "year": 2010,
+        "url": "https://www.semanticscholar.org/paper/dbf1349b3459c6b580f3aa0e8a3ab847b0e2064c",
+        "node_id": "dbf1349b3459c6b580f3aa0e8a3ab847b0e2064c"
+      },
+      {
+        "id": "9d60c7aad65e538ba0efec93c464121c953f2605",
+        "degree": 3,
+        "pagerank": 0.016339990054987336,
+        "paperName": "Visual Analyses of Music History: A User-Centric Approach",
+        "paperAbstract": "Music history, referring to the records of users' listening or downloading history in online music services, is the primary source for music service providers to analyze users' preferences on music and thus to provide personalized recommendations to users. In order to engage users into the service and to improve user experience, it would be beneficial to provide visual analyses of one user's music history as well as visualized recommendations to that user. In this paper, we take a user-centric approach to the design of such visual analyses. We start by investigating user needs on such visual analyses and recommendations, then propose several different visualization schemes, and perform a pilot study to collect user feedback on the designed schemes. We further conduct user studies to verify the utility of the proposed schemes, and the results not only demonstrate the effectiveness of our proposed visualization, but also provide important insights to guide the visualization design in the future.",
+        "authors": "Jingxian Zhang, Dong Liu",
+        "citationCount": 3,
+        "venue": "ArXiv",
+        "year": 2017,
+        "url": "https://www.semanticscholar.org/paper/9d60c7aad65e538ba0efec93c464121c953f2605",
+        "node_id": "9d60c7aad65e538ba0efec93c464121c953f2605"
+      },
+      {
+        "id": "ada81d2f6431e78a17b7128eeac9441cf2999879",
+        "degree": 7,
+        "pagerank": 0.01457880408427081,
+        "paperName": "Uplifting Interviews in Social Science with Individual Data Visualization: the case of Music Listening",
+        "paperAbstract": "Collecting accurate and fine-grain information about the music people like, dislike and actually listen to has long been a challenge for sociologists. As millions of people now use online music streaming services, research can build upon the individual listening history data that are collected by these platforms. Individual interviews, in particular, can benefit from such data, by allowing the interviewers to immerse themselves in the musical universe of consenting respondents, and thus ask them contextualized questions and get more precise answers. Designing a visual exploration tool allowing such an immersion is however difficult, because of the volume and heterogeneity of the listening data, the unequal “visual literacy” of the prospective users, or the interviewers’ potential lack of knowledge of the music listened to by the respondents. In this case study we discuss the design and evaluation of such a tool. Designed with social scientists, its purpose is to help them in preparing and conducting semi-structured interviews that address various aspects of the listening experience. It was evaluated during thirty interviews with consenting users of a streaming platform in France.",
+        "authors": "Robin Cura, A. Beaumont, Jean-Samuel Beuscart, Samuel Coavoux, Noé Latreille de Fozières, B. Bigot, Yann Renisio, Manuel Moussallam, Thomas Louail",
+        "citationCount": 0,
+        "venue": "CHI Extended Abstracts",
+        "year": 2022,
+        "url": "https://www.semanticscholar.org/paper/ada81d2f6431e78a17b7128eeac9441cf2999879",
+        "node_id": "ada81d2f6431e78a17b7128eeac9441cf2999879"
+      },
+      {
+        "id": "ae5e30b0202d4b5437f9c913e94c49d2636b5d62",
+        "degree": 8,
+        "pagerank": 0.01457880408427081,
+        "paperName": "5Rs Of lifelogging: visualizing metadata of music, photos and health.",
+        "paperAbstract": "n/a",
+        "authors": "Siyuan Sun",
+        "citationCount": 0,
+        "venue": "n/a",
+        "year": 2019,
+        "url": "https://www.semanticscholar.org/paper/ae5e30b0202d4b5437f9c913e94c49d2636b5d62",
+        "node_id": "ae5e30b0202d4b5437f9c913e94c49d2636b5d62"
+      },
+      {
+        "id": "918739eae3746e5887820a15b3af8eed8c07bdc5",
+        "degree": 5,
+        "pagerank": 0.01457880408427081,
+        "paperName": "From manual to assisted playlist creation: a survey",
+        "paperAbstract": "n/a",
+        "authors": "Ricardo J. Dias, D. Gonçalves, Manuel J. Fonseca",
+        "citationCount": 17,
+        "venue": "Multimedia Tools and Applications",
+        "year": 2017,
+        "url": "https://www.semanticscholar.org/paper/918739eae3746e5887820a15b3af8eed8c07bdc5",
+        "node_id": "918739eae3746e5887820a15b3af8eed8c07bdc5"
+      },
+      {
+        "id": "75f9ee5bdf767addde18b14a5ac4fd78433fdf39",
+        "degree": 2,
+        "pagerank": 0.01457880408427081,
+        "paperName": "Pep Up Your Time Machine: Recommendations for the Design of Information Visualizations of Time-Dependent Data",
+        "paperAbstract": "n/a",
+        "authors": "Simone Kriglstein, M. Pohl, M. Smuc",
+        "citationCount": 29,
+        "venue": "Handbook of Human Centric Visualization",
+        "year": 2014,
+        "url": "https://www.semanticscholar.org/paper/75f9ee5bdf767addde18b14a5ac4fd78433fdf39",
+        "node_id": "75f9ee5bdf767addde18b14a5ac4fd78433fdf39"
+      },
+      {
+        "id": "ece4179abefa60bd31c2a66da991585e1b1c59de",
+        "degree": 4,
+        "pagerank": 0.02022927574031967,
+        "paperName": "Personal Visualization and Personal Visual Analytics",
+        "paperAbstract": "Data surrounds each and every one of us in our daily lives, ranging from exercise logs, to archives of our interactions with others on social media, to online resources pertaining to our hobbies. There is enormous potential for us to use these data to understand ourselves better and make positive changes in our lives. Visualization (Vis) and visual analytics (VA) offer substantial opportunities to help individuals gain insights about themselves, their communities and their interests; however, designing tools to support data analysis in non-professional life brings a unique set of research and design challenges. We investigate the requirements and research directions required to take full advantage of Vis and VA in a personal context. We develop a taxonomy of design dimensions to provide a coherent vocabulary for discussing personal visualization and personal visual analytics. By identifying and exploring clusters in the design space, we discuss challenges and share perspectives on future research. This work brings together research that was previously scattered across disciplines. Our goal is to call research attention to this space and engage researchers to explore the enabling techniques and technology that will support people to better understand data relevant to their personal lives, interests, and needs.",
+        "authors": "D. Huang, Melanie K. Tory, Bon Adriel Aseniero, L. Bartram, Scott Bateman, M. Carpendale, Anthony Tang, R. Woodbury",
+        "citationCount": 234,
+        "venue": "IEEE Transactions on Visualization and Computer Graphics",
+        "year": 2015,
+        "url": "https://www.semanticscholar.org/paper/ece4179abefa60bd31c2a66da991585e1b1c59de",
+        "node_id": "ece4179abefa60bd31c2a66da991585e1b1c59de"
+      },
+      {
+        "id": "c1fc4e1bc1075b8a83297276126dbcc53906c033",
+        "degree": 4,
+        "pagerank": 0.057177166539780694,
+        "paperName": "Digital artifacts for remembering and storytelling: posthistory and social network fragments",
+        "paperAbstract": "As part of a long-term investigation into visualizing email, we have created two visualizations of email archives. One highlights social networks while the other depicts the temporal rhythms of interactions with individuals. While interviewing users of these systems, it became clear that the applications triggered recall of many personal events. One of the most striking and not entirely expected outcomes was that the visualizations motivated retelling stories from the users' pasts to others. In this paper, we discuss the motivation and design of these projects and analyze their use as catalysts for personal narrative and recall.",
+        "authors": "F. Viégas, D. Boyd, David H. Nguyen, Jeffrey Potter, J. Donath",
+        "citationCount": 169,
+        "venue": "37th Annual Hawaii International Conference on System Sciences, 2004. Proceedings of the",
+        "year": 2004,
+        "url": "https://www.semanticscholar.org/paper/c1fc4e1bc1075b8a83297276126dbcc53906c033",
+        "node_id": "c1fc4e1bc1075b8a83297276126dbcc53906c033"
+      },
+      {
+        "id": "66a949c25f158e073200d49d59b79b970ee2a942",
+        "degree": 8,
+        "pagerank": 0.04996078202076398,
+        "paperName": "Visualizing and Exploring Personal Music Libraries",
+        "paperAbstract": "Nowadays, music fans are beginning to massively use mobile digital music players and dedicated software to organize and play large collections of music. In this context, users deal with huge music libraries containing thousands of tracks. Such a huge volume of music easily overwhelms users when selecting the music to listen or when organizing their collections. Music player software with visualizations based on textual lists and organizing features such as smart playlists are not really enough for helping users to efficiently manage their libraries. Thus, we propose new graphical visualizations and their associated features to allow users to better organize their personal music libraries and therefore also to ease selection later on.",
+        "authors": "Marc Torrens, Patrick Hertzog, J. Arcos",
+        "citationCount": 106,
+        "venue": "ISMIR",
+        "year": 2004,
+        "url": "https://www.semanticscholar.org/paper/66a949c25f158e073200d49d59b79b970ee2a942",
+        "node_id": "66a949c25f158e073200d49d59b79b970ee2a942"
+      },
+      {
+        "id": "79e1db3efcba1bedc85801c9ad109bc9b2c91d98",
+        "degree": 4,
+        "pagerank": 0.036598879308202964,
+        "paperName": "Personal vs. commercial content: the similarities between consumer use of photos and music",
+        "paperAbstract": "We describe the results of two ethnographic-style studies that investigated consumer use of photos and music respectively. Although the studies were designed, executed, and analyzed separately, in our findings we discovered striking similarities between the ways in which our participants used personally captured photos and commercially purchased music. These findings have implications for the design of future systems with respect to handling and sharing content in photo or music form. We discuss making allowances for satisficing behavior, sharing media as a way to reminisce or to communicate an experience (tell a story), getting sidetracked while browsing, and similarities in organizing behaviors.",
+        "authors": "Frank Bentley, Crysta J. Metcalf, G. Harboe",
+        "citationCount": 102,
+        "venue": "CHI",
+        "year": 2006,
+        "url": "https://www.semanticscholar.org/paper/79e1db3efcba1bedc85801c9ad109bc9b2c91d98",
+        "node_id": "79e1db3efcba1bedc85801c9ad109bc9b2c91d98"
+      },
+      {
+        "id": "328a4088efb09ea823f9fd4ef5790df2201c9fbb",
+        "degree": 3,
+        "pagerank": 0.025367220055634507,
+        "paperName": "Uses of Music in Everyday Life",
+        "paperAbstract": "The value of music in people9s everyday lives depends on the uses they make of it and the degree to which they engage with it, which are in turn dependent on the contexts in which they hear it. Very few studies have investigated people9s experiences of music in naturalistic, everyday circumstances, and this exploratory study provides some initial normative data on who people listen with, what they listen to (and what their emotional responses to this music are), when they listen, where they listen, and why they listen. A total of 346 people who owned a mobile phone were sent one text message per day for 14 days. On receiving this message, participants were required to complete a questionnaire about any music they could hear, or had heard since their previous message. Responses indicated a high compliance rate; a high incidence of exposure to music; that the greatest number of musical episodes occurred while participants were on their own; that pop music was heard most frequently; that liking for the music varied depending on who the participant was with, where they were, and whether they had chosen to be able to hear music; that music was usually experienced during the course of some activity other than deliberate music listening; that exposure to music occurred most frequently in the evening, particularly between 10 pm and 11 pm, and on weekends; that music was heard most frequently at home, with only a small number of incidences occurring in public places; that the importance of several functions of music varied according to temporal factors, the place where the music was heard, and the person or people the participant was with. Further research should include participants from a greater range of sociodemographic backgrounds and should develop context-specific theoretical explanations of the different ways in which people use music as a resource.",
+        "authors": "A. North, D. Hargreaves, Jon Hargreaves",
+        "citationCount": 488,
+        "venue": "n/a",
+        "year": 2004,
+        "url": "https://www.semanticscholar.org/paper/328a4088efb09ea823f9fd4ef5790df2201c9fbb",
+        "node_id": "328a4088efb09ea823f9fd4ef5790df2201c9fbb"
+      },
+      {
+        "id": "6c47a8d6a27c24ad2a5ad73e90eb2c6a54017be3",
+        "degree": 4,
+        "pagerank": 0.04533872954358807,
+        "paperName": "LifeLines: visualizing personal histories",
+        "paperAbstract": "LifeLines provide a general visualization environment for personal histories that can be applied to medical and court records, professional histories and other types of biographical data. A one screen overview shows multiple facets of the records. Aspects, for example medical conditions or legal cases, are displayed as individual time lines, while icons indicate discrete events, such as physician consultations or legal reviews. Line color and thickness illustrate relationships or significance, rescaling tools and filters allow users to focus on part of the information. LifeLines reduce the chances of missing information, facilitate spotting anomalies and trends, streamline access to details, while remaining tailorable and easily transferable between applications. The paper describes the use of LifeLines for youth records of the Maryland Department of Juvenile Justice and also for medical records. User's feedback was collected using a Visual Basic prototype for the youth record. Techniques to deal with complex records are reviewed and issues of a standard personal record format are discussed.",
+        "authors": "C. Plaisant, B. Milash, A. Rose, Seth Widoff, B. Shneiderman",
+        "citationCount": 692,
+        "venue": "CHI",
+        "year": 1996,
+        "url": "https://www.semanticscholar.org/paper/6c47a8d6a27c24ad2a5ad73e90eb2c6a54017be3",
+        "node_id": "6c47a8d6a27c24ad2a5ad73e90eb2c6a54017be3"
+      },
+      {
+        "id": "bb2425287704460ccf3967431cfede561aab745d",
+        "degree": 3,
+        "pagerank": 0.026104182438830635,
+        "paperName": "Automatic playlist generation based on tracking user’s listening habits",
+        "paperAbstract": "n/a",
+        "authors": "A. Andric, G. Haus",
+        "citationCount": 46,
+        "venue": "Multimedia Tools and Applications",
+        "year": 2006,
+        "url": "https://www.semanticscholar.org/paper/bb2425287704460ccf3967431cfede561aab745d",
+        "node_id": "bb2425287704460ccf3967431cfede561aab745d"
+      },
+      {
+        "id": "d3e5e820bae28e06fba8d692f4e302bb09f37b7a",
+        "degree": 3,
+        "pagerank": 0.048088540831580984,
+        "paperName": "Islands of Music Analysis, Organization, and Visualization of Music Archives",
+        "paperAbstract": "Islands of Music are a graphical user interface to music collections based on a metaphor of geographic maps, where islands represent music genres. Similar genres are located close to each other and the pieces of music are located accordingly. Islands of Music are intended to support the exploration of unknown music collections. The user can listen to the music by clicking on its representation on the map and can explore island after island according to his or her musical taste. Islands of Music could be utilized by music stores to assist their customers in finding something new to buy. They could also serve as interfaces to digital music libraries, or they could simply be used to organize one’s personal music collection at home. My thesis explores two main aspects related to music maps. One is how to compute the similarity of two pieces of music, so a whole music collection can be organized accordingly. The second aspect is how to present this information to the user in an intuitive way. The methods are illustrated and evaluated using a music collection consisting of 359 popular pieces from different genres with a total length of about 23 hours. This report briefly reviews related work in Section 2 and then presents the basic architecture of the system in Section 3. The results are briefly demonstrated in Section 4. Finally, in Section 5 some conclusions are drawn.",
+        "authors": "E. Pampalk",
+        "citationCount": 140,
+        "venue": "n/a",
+        "year": 2002,
+        "url": "https://www.semanticscholar.org/paper/d3e5e820bae28e06fba8d692f4e302bb09f37b7a",
+        "node_id": "d3e5e820bae28e06fba8d692f4e302bb09f37b7a"
+      },
+      {
+        "id": "739856f8fb02f1011f58ebd869813f8c41595f71",
+        "degree": 1,
+        "pagerank": 0.024156614455287554,
+        "paperName": "Uncovering collective listening habits and music genres in bipartite networks.",
+        "paperAbstract": "In this paper, we analyze web-downloaded data on people sharing their music library, that we use as their individual musical signatures. The system is represented by a bipartite network, nodes being the music groups and the listeners. Music groups' audience size behaves like a power law, but the individual music library size is an exponential with deviations at small values. In order to extract structures from the network, we focus on correlation matrices, that we filter by removing the least correlated links. This percolation idea-based method reveals the emergence of social communities and music genres, that are visualized by a branching representation. Evidence of collective listening habits that do not fit the neat usual genres defined by the music industry indicates an alternative way of classifying listeners and music groups. The structure of the network is also studied by a more refined method, based upon a random walk exploration of its properties. Finally, a personal identification-community imitation model for growing bipartite networks is outlined, following Potts ingredients. Simulation results do reproduce quite well the empirical data.",
+        "authors": "R. Lambiotte, M. Ausloos",
+        "citationCount": 129,
+        "venue": "Physical review. E, Statistical, nonlinear, and soft matter physics",
+        "year": 2005,
+        "url": "https://www.semanticscholar.org/paper/739856f8fb02f1011f58ebd869813f8c41595f71",
+        "node_id": "739856f8fb02f1011f58ebd869813f8c41595f71"
+      },
+      {
+        "id": "d85eb09c64d53ab6f0843efc368fb7c07aec16b1",
+        "degree": 5,
+        "pagerank": 0.10408160363580507,
+        "paperName": "Realization and User Evaluation of an Automatic Playlist Generator",
+        "paperAbstract": "An automatic music playlist generator called PATS (Personalized Automatic Track Selection) creates playlists that aim at suiting a particular listening situation. It uses dynamic clustering in which songs are grouped based on a weighted attribute-value similarity measure. An inductive learning algorithm is used to reveal the weights for attribute-values using user preference feedback. In a controlled user experiment, the quality of PATS-generated and randomly assembled playlists for jazz music was assessed in two listening situations. The two listening situations were “listening to soft music” and “listening to lively music.” Playlist quality was measured by precision (songs that suit the listening situation), coverage (songs that suit the listening situation but that were not already contained in previous playlists) and a rating score. Results showed that PATS playlists contained increasingly more preferred music (increasingly higher precision), covered more preferred music in the collection (higher coverage), and were rated higher than randomly assembled playlists.",
+        "authors": "S. Pauws, Berry Eggen",
+        "citationCount": 129,
+        "venue": "ISMIR",
+        "year": 2003,
+        "url": "https://www.semanticscholar.org/paper/d85eb09c64d53ab6f0843efc368fb7c07aec16b1",
+        "node_id": "d85eb09c64d53ab6f0843efc368fb7c07aec16b1"
+      },
+      {
+        "id": "c76ffe6bf86b7642e964ab259bc1f6f2d0e8c73a",
+        "degree": 4,
+        "pagerank": 0.029581563658523904,
+        "paperName": "Dynamic Playlist Generation Based on Skipping Behavior",
+        "paperAbstract": "Common approaches to creating playlists are to randomly shuffle a collection (e.g. iPod shuffle) or manually select songs. In this paper we present and evaluate heuristics to adapt playlists automatically given a song to start with (seed song) and immediate user feedback. Instead of rich metadata we use audio-based similarity. The user gives feedback by pressing a skip button if the user dislikes the current song. Songs similar to skipped songs are removed, while songs similar to accepted ones are added to the playlist. We evaluate the heuristics with hypothetical use cases. For each use case we assume a specific user behavior (e.g. the user always skips songs by a particular artist). Our results show that using audio similarity and simple heuristics it is possible to drastically reduce the number of necessary skips.",
+        "authors": "E. Pampalk, Tim Pohle, G. Widmer",
+        "citationCount": 148,
+        "venue": "ISMIR",
+        "year": 2005,
+        "url": "https://www.semanticscholar.org/paper/c76ffe6bf86b7642e964ab259bc1f6f2d0e8c73a",
+        "node_id": "c76ffe6bf86b7642e964ab259bc1f6f2d0e8c73a"
+      },
+      {
+        "id": "848a868f7aacd4711e2b5fc8e580f909ce3b0c51",
+        "degree": 6,
+        "pagerank": 0.02662451412536606,
+        "paperName": "MuVis: an application for interactive exploration of large music collections",
+        "paperAbstract": "In this paper we present MuVis, an interactive visualization and exploration tool for large music collections, based on music content and metadata. We combined a user-centered design with three main components: information visualization techniques (based on semantic ordered treemaps), music information retrieval mechanisms (for semantic and content-based information extraction) and dynamic queries, to offer users a more efficient, flexible and yet, easy to use solution for browsing music collections and to create playlists. Preliminary results reveal that our solution is faster and easier to use than the Windows Media Player, allowing users to perform a more effective and fast navigation, while getting a deeper knowledge of their library. Satisfaction survey revealed that users liked our approach for browsing, filtering and creating playlists, while at the same time they were able to \"re-discover\" forgotten music, due to the similarity mechanisms incorporated in our solution.",
+        "authors": "Ricardo J. Dias, Manuel J. Fonseca",
+        "citationCount": 10,
+        "venue": "ACM Multimedia",
+        "year": 2010,
+        "url": "https://www.semanticscholar.org/paper/848a868f7aacd4711e2b5fc8e580f909ce3b0c51",
+        "node_id": "848a868f7aacd4711e2b5fc8e580f909ce3b0c51"
+      },
+      {
+        "id": "71d103431d6d06427ce3809810816946a773e43a",
+        "degree": 5,
+        "pagerank": 0.030148810933124,
+        "paperName": "Last . fm Explorer : An Interactive Visualization of Hierarchical Time-Series Data",
+        "paperAbstract": "This paper describes an interactive web-based visualization of a large and complex dataset: the record of a single user’s (or pair of users’) music listening history. Last.fm Explorer facilitates sophisticated data exploration with interactive controls to drill-down through hierarchical levels of data, by showing the same dataset in two different visualizations, providing an interactive search tool, and utilizing animation to make transitions between multiple views clear. It can be accessed at http://alex.turnlav.net/last fm explorer/",
+        "authors": "Maxwell A. Pretzlav",
+        "citationCount": 8,
+        "venue": "n/a",
+        "year": 2008,
+        "url": "https://www.semanticscholar.org/paper/71d103431d6d06427ce3809810816946a773e43a",
+        "node_id": "71d103431d6d06427ce3809810816946a773e43a"
+      },
+      {
+        "id": "2592e6a4906637a34ae909ec8a52f0eeb29ee0a8",
+        "degree": 6,
+        "pagerank": 0.03441718700114414,
+        "paperName": "Visualizing email content: portraying relationships from conversational histories",
+        "paperAbstract": "We present Themail, a visualization that portrays relationships using the interaction histories preserved in email archives. Using the content of exchanged messages, it shows the words that characterize one's correspondence with an individual and how they change over the period of the relationship.This paper describes the interface and content-parsing algorithms in Themail. It also presents the results from a user study where two main interaction modes with the visualization emerged: exploration of \"big picture\" trends and themes in email (haystack mode) and more detail-oriented exploration (needle mode). Finally, the paper discusses the limitations of the content parsing approach in Themail and the implications for further research on email content visualization.",
+        "authors": "F. Viégas, Scott A. Golder, J. Donath",
+        "citationCount": 265,
+        "venue": "CHI",
+        "year": 2006,
+        "url": "https://www.semanticscholar.org/paper/2592e6a4906637a34ae909ec8a52f0eeb29ee0a8",
+        "node_id": "2592e6a4906637a34ae909ec8a52f0eeb29ee0a8"
+      },
+      {
+        "id": "2b7d5dfcd11cc0cf35686f8a9279aee5f910b0bb",
+        "degree": 3,
+        "pagerank": 0.02341965207209143,
+        "paperName": "A Visual Interface for Multivariate Temporal Data: Finding Patterns of Events across Multiple Histories",
+        "paperAbstract": "Finding patterns of events over time is important in searching patient histories, Web logs, news stories, and criminal activities. This paper presents PatternFinder, an integrated interface for query and result-set visualization for search and discovery of temporal patterns within multivariate and categorical data sets. We define temporal patterns as sequences of events with inter-event time spans. PatternFinder allows users to specify the attributes of events and time spans to produce powerful pattern queries that are difficult to express with other formalisms. We characterize the range of queries PatternFinder supports as users vary the specificity at which events and time spans are defined. Pattern Finder's query capabilities together with coupled ball-and-chain and tabular visualizations enable users to effectively query, explore and analyze event patterns both within and across data entities (e.g. patient histories, terrorist groups, Web logs, etc.)",
+        "authors": "Jerry Alan Fails, A. Karlson, L. Shahamat, B. Shneiderman",
+        "citationCount": 146,
+        "venue": "2006 IEEE Symposium On Visual Analytics Science And Technology",
+        "year": 2006,
+        "url": "https://www.semanticscholar.org/paper/2b7d5dfcd11cc0cf35686f8a9279aee5f910b0bb",
+        "node_id": "2b7d5dfcd11cc0cf35686f8a9279aee5f910b0bb"
+      },
+      {
+        "id": "06cadeb463f5a13c300539c05ffe81f63451cc2f",
+        "degree": 1,
+        "pagerank": 0.017994702868855076,
+        "paperName": "Newsgroup Crowds and AuthorLines: visualizing the activity of individuals in conversational cyberspaces",
+        "paperAbstract": "We discuss the design, implementation and evaluation of two related visualizations of authors' activities in Usenet newsgroups. Current Usenet news browsers focus on messages and thread structures while disregarding valuable information about the authors of messages and the participants of the various discussions. Newsgroup Crowds graphically represents the population of authors in a particular newsgroup. Authors are displayed according to the number of messages they contribute to each thread and the number of different days they appear in the space, illustrating and contrasting the interaction patterns of participants within the newsgroup. AuthorLines visualizes a particular author's posting activity across all newsgroups over a period of one year. This visualization reveals temporal patterns of thread initiation and reply that can broadly characterize the roles authors play in Usenet. We report the results of a user study that explored the value of these interfaces for developing high-level awareness of the activity and population in these conversational spaces. We suggest that interfaces that convey information about the social histories of populations and individuals may support better selection and evaluation of newsgroup content.",
+        "authors": "F. Viégas, Marc A. Smith",
+        "citationCount": 183,
+        "venue": "37th Annual Hawaii International Conference on System Sciences, 2004. Proceedings of the",
+        "year": 2004,
+        "url": "https://www.semanticscholar.org/paper/06cadeb463f5a13c300539c05ffe81f63451cc2f",
+        "node_id": "06cadeb463f5a13c300539c05ffe81f63451cc2f"
+      }
+    ],
+    "edges": [
+      {
+        "source_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+        "target_id": "e529680057ed5bfdc45a217dd038dd215d450861"
+      },
+      {
+        "source_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+        "target_id": "5e80afd4985901f347e268175383af7861a99b67"
+      },
+      {
+        "source_id": "e529680057ed5bfdc45a217dd038dd215d450861",
+        "target_id": "5e80afd4985901f347e268175383af7861a99b67"
+      },
+      {
+        "source_id": "6f498457e03e5d186330719d6fbdb4486095c7cd",
+        "target_id": "e529680057ed5bfdc45a217dd038dd215d450861"
+      },
+      {
+        "source_id": "6f498457e03e5d186330719d6fbdb4486095c7cd",
+        "target_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf"
+      },
+      {
+        "source_id": "6f498457e03e5d186330719d6fbdb4486095c7cd",
+        "target_id": "5e80afd4985901f347e268175383af7861a99b67"
+      },
+      {
+        "source_id": "d6b802e48e9996b9f61d5c05b4da39fd0a3e7705",
+        "target_id": "e529680057ed5bfdc45a217dd038dd215d450861"
+      },
+      {
+        "source_id": "d6b802e48e9996b9f61d5c05b4da39fd0a3e7705",
+        "target_id": "5e80afd4985901f347e268175383af7861a99b67"
+      },
+      {
+        "source_id": "0bfdbd8e12e64e40144cbc87dd97fddf5e3d42b6",
+        "target_id": "e529680057ed5bfdc45a217dd038dd215d450861"
+      },
+      {
+        "source_id": "0bfdbd8e12e64e40144cbc87dd97fddf5e3d42b6",
+        "target_id": "5e80afd4985901f347e268175383af7861a99b67"
+      },
+      {
+        "source_id": "11df6dc413b6e884e90fae1a2cdd6244226df883",
+        "target_id": "e529680057ed5bfdc45a217dd038dd215d450861"
+      },
+      {
+        "source_id": "11df6dc413b6e884e90fae1a2cdd6244226df883",
+        "target_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf"
+      },
+      {
+        "source_id": "8c1889734e6453fe214686859aa13baba553744b",
+        "target_id": "e529680057ed5bfdc45a217dd038dd215d450861"
+      },
+      {
+        "source_id": "6f498457e03e5d186330719d6fbdb4486095c7cd",
+        "target_id": "8c1889734e6453fe214686859aa13baba553744b"
+      },
+      {
+        "source_id": "8c1889734e6453fe214686859aa13baba553744b",
+        "target_id": "5e80afd4985901f347e268175383af7861a99b67"
+      },
+      {
+        "source_id": "fb8d7bb182845bae432344079b5c0b6775ad04be",
+        "target_id": "5e80afd4985901f347e268175383af7861a99b67"
+      },
+      {
+        "source_id": "b4769b2a5c1dcdba438b5c4ffc1281646015d7a2",
+        "target_id": "5e80afd4985901f347e268175383af7861a99b67"
+      },
+      {
+        "source_id": "447441046ffec61ef659d3062f54eca212032a6e",
+        "target_id": "5e80afd4985901f347e268175383af7861a99b67"
+      },
+      {
+        "source_id": "447441046ffec61ef659d3062f54eca212032a6e",
+        "target_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf"
+      },
+      {
+        "source_id": "447441046ffec61ef659d3062f54eca212032a6e",
+        "target_id": "e529680057ed5bfdc45a217dd038dd215d450861"
+      },
+      {
+        "source_id": "dbf1349b3459c6b580f3aa0e8a3ab847b0e2064c",
+        "target_id": "5e80afd4985901f347e268175383af7861a99b67"
+      },
+      {
+        "source_id": "8c1889734e6453fe214686859aa13baba553744b",
+        "target_id": "dbf1349b3459c6b580f3aa0e8a3ab847b0e2064c"
+      },
+      {
+        "source_id": "fb8d7bb182845bae432344079b5c0b6775ad04be",
+        "target_id": "dbf1349b3459c6b580f3aa0e8a3ab847b0e2064c"
+      },
+      {
+        "source_id": "9d60c7aad65e538ba0efec93c464121c953f2605",
+        "target_id": "5e80afd4985901f347e268175383af7861a99b67"
+      },
+      {
+        "source_id": "ada81d2f6431e78a17b7128eeac9441cf2999879",
+        "target_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf"
+      },
+      {
+        "source_id": "ada81d2f6431e78a17b7128eeac9441cf2999879",
+        "target_id": "9d60c7aad65e538ba0efec93c464121c953f2605"
+      },
+      {
+        "source_id": "ada81d2f6431e78a17b7128eeac9441cf2999879",
+        "target_id": "8c1889734e6453fe214686859aa13baba553744b"
+      },
+      {
+        "source_id": "ada81d2f6431e78a17b7128eeac9441cf2999879",
+        "target_id": "d6b802e48e9996b9f61d5c05b4da39fd0a3e7705"
+      },
+      {
+        "source_id": "ada81d2f6431e78a17b7128eeac9441cf2999879",
+        "target_id": "dbf1349b3459c6b580f3aa0e8a3ab847b0e2064c"
+      },
+      {
+        "source_id": "ada81d2f6431e78a17b7128eeac9441cf2999879",
+        "target_id": "5e80afd4985901f347e268175383af7861a99b67"
+      },
+      {
+        "source_id": "ae5e30b0202d4b5437f9c913e94c49d2636b5d62",
+        "target_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf"
+      },
+      {
+        "source_id": "ae5e30b0202d4b5437f9c913e94c49d2636b5d62",
+        "target_id": "8c1889734e6453fe214686859aa13baba553744b"
+      },
+      {
+        "source_id": "ae5e30b0202d4b5437f9c913e94c49d2636b5d62",
+        "target_id": "d6b802e48e9996b9f61d5c05b4da39fd0a3e7705"
+      },
+      {
+        "source_id": "ae5e30b0202d4b5437f9c913e94c49d2636b5d62",
+        "target_id": "e529680057ed5bfdc45a217dd038dd215d450861"
+      },
+      {
+        "source_id": "ae5e30b0202d4b5437f9c913e94c49d2636b5d62",
+        "target_id": "fb8d7bb182845bae432344079b5c0b6775ad04be"
+      },
+      {
+        "source_id": "ae5e30b0202d4b5437f9c913e94c49d2636b5d62",
+        "target_id": "5e80afd4985901f347e268175383af7861a99b67"
+      },
+      {
+        "source_id": "918739eae3746e5887820a15b3af8eed8c07bdc5",
+        "target_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf"
+      },
+      {
+        "source_id": "918739eae3746e5887820a15b3af8eed8c07bdc5",
+        "target_id": "e529680057ed5bfdc45a217dd038dd215d450861"
+      },
+      {
+        "source_id": "75f9ee5bdf767addde18b14a5ac4fd78433fdf39",
+        "target_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf"
+      },
+      {
+        "source_id": "75f9ee5bdf767addde18b14a5ac4fd78433fdf39",
+        "target_id": "0bfdbd8e12e64e40144cbc87dd97fddf5e3d42b6"
+      },
+      {
+        "source_id": "ece4179abefa60bd31c2a66da991585e1b1c59de",
+        "target_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf"
+      },
+      {
+        "source_id": "11df6dc413b6e884e90fae1a2cdd6244226df883",
+        "target_id": "ece4179abefa60bd31c2a66da991585e1b1c59de"
+      },
+      {
+        "source_id": "ae5e30b0202d4b5437f9c913e94c49d2636b5d62",
+        "target_id": "ece4179abefa60bd31c2a66da991585e1b1c59de"
+      },
+      {
+        "source_id": "ece4179abefa60bd31c2a66da991585e1b1c59de",
+        "target_id": "e529680057ed5bfdc45a217dd038dd215d450861"
+      },
+      {
+        "source_id": "e529680057ed5bfdc45a217dd038dd215d450861",
+        "target_id": "c1fc4e1bc1075b8a83297276126dbcc53906c033"
+      },
+      {
+        "source_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+        "target_id": "c1fc4e1bc1075b8a83297276126dbcc53906c033"
+      },
+      {
+        "source_id": "0bfdbd8e12e64e40144cbc87dd97fddf5e3d42b6",
+        "target_id": "c1fc4e1bc1075b8a83297276126dbcc53906c033"
+      },
+      {
+        "source_id": "e529680057ed5bfdc45a217dd038dd215d450861",
+        "target_id": "66a949c25f158e073200d49d59b79b970ee2a942"
+      },
+      {
+        "source_id": "ada81d2f6431e78a17b7128eeac9441cf2999879",
+        "target_id": "66a949c25f158e073200d49d59b79b970ee2a942"
+      },
+      {
+        "source_id": "9d60c7aad65e538ba0efec93c464121c953f2605",
+        "target_id": "66a949c25f158e073200d49d59b79b970ee2a942"
+      },
+      {
+        "source_id": "918739eae3746e5887820a15b3af8eed8c07bdc5",
+        "target_id": "66a949c25f158e073200d49d59b79b970ee2a942"
+      },
+      {
+        "source_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+        "target_id": "66a949c25f158e073200d49d59b79b970ee2a942"
+      },
+      {
+        "source_id": "b4769b2a5c1dcdba438b5c4ffc1281646015d7a2",
+        "target_id": "66a949c25f158e073200d49d59b79b970ee2a942"
+      },
+      {
+        "source_id": "e529680057ed5bfdc45a217dd038dd215d450861",
+        "target_id": "79e1db3efcba1bedc85801c9ad109bc9b2c91d98"
+      },
+      {
+        "source_id": "fb8d7bb182845bae432344079b5c0b6775ad04be",
+        "target_id": "79e1db3efcba1bedc85801c9ad109bc9b2c91d98"
+      },
+      {
+        "source_id": "dbf1349b3459c6b580f3aa0e8a3ab847b0e2064c",
+        "target_id": "79e1db3efcba1bedc85801c9ad109bc9b2c91d98"
+      },
+      {
+        "source_id": "5e80afd4985901f347e268175383af7861a99b67",
+        "target_id": "79e1db3efcba1bedc85801c9ad109bc9b2c91d98"
+      },
+      {
+        "source_id": "e529680057ed5bfdc45a217dd038dd215d450861",
+        "target_id": "328a4088efb09ea823f9fd4ef5790df2201c9fbb"
+      },
+      {
+        "source_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+        "target_id": "328a4088efb09ea823f9fd4ef5790df2201c9fbb"
+      },
+      {
+        "source_id": "fb8d7bb182845bae432344079b5c0b6775ad04be",
+        "target_id": "328a4088efb09ea823f9fd4ef5790df2201c9fbb"
+      },
+      {
+        "source_id": "e529680057ed5bfdc45a217dd038dd215d450861",
+        "target_id": "6c47a8d6a27c24ad2a5ad73e90eb2c6a54017be3"
+      },
+      {
+        "source_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+        "target_id": "6c47a8d6a27c24ad2a5ad73e90eb2c6a54017be3"
+      },
+      {
+        "source_id": "fb8d7bb182845bae432344079b5c0b6775ad04be",
+        "target_id": "6c47a8d6a27c24ad2a5ad73e90eb2c6a54017be3"
+      },
+      {
+        "source_id": "5e80afd4985901f347e268175383af7861a99b67",
+        "target_id": "bb2425287704460ccf3967431cfede561aab745d"
+      },
+      {
+        "source_id": "fb8d7bb182845bae432344079b5c0b6775ad04be",
+        "target_id": "bb2425287704460ccf3967431cfede561aab745d"
+      },
+      {
+        "source_id": "5e80afd4985901f347e268175383af7861a99b67",
+        "target_id": "d3e5e820bae28e06fba8d692f4e302bb09f37b7a"
+      },
+      {
+        "source_id": "5e80afd4985901f347e268175383af7861a99b67",
+        "target_id": "739856f8fb02f1011f58ebd869813f8c41595f71"
+      },
+      {
+        "source_id": "5e80afd4985901f347e268175383af7861a99b67",
+        "target_id": "d85eb09c64d53ab6f0843efc368fb7c07aec16b1"
+      },
+      {
+        "source_id": "918739eae3746e5887820a15b3af8eed8c07bdc5",
+        "target_id": "d85eb09c64d53ab6f0843efc368fb7c07aec16b1"
+      },
+      {
+        "source_id": "bb2425287704460ccf3967431cfede561aab745d",
+        "target_id": "d85eb09c64d53ab6f0843efc368fb7c07aec16b1"
+      },
+      {
+        "source_id": "66a949c25f158e073200d49d59b79b970ee2a942",
+        "target_id": "d85eb09c64d53ab6f0843efc368fb7c07aec16b1"
+      },
+      {
+        "source_id": "5e80afd4985901f347e268175383af7861a99b67",
+        "target_id": "c76ffe6bf86b7642e964ab259bc1f6f2d0e8c73a"
+      },
+      {
+        "source_id": "e529680057ed5bfdc45a217dd038dd215d450861",
+        "target_id": "c76ffe6bf86b7642e964ab259bc1f6f2d0e8c73a"
+      },
+      {
+        "source_id": "c76ffe6bf86b7642e964ab259bc1f6f2d0e8c73a",
+        "target_id": "d85eb09c64d53ab6f0843efc368fb7c07aec16b1"
+      },
+      {
+        "source_id": "c76ffe6bf86b7642e964ab259bc1f6f2d0e8c73a",
+        "target_id": "d3e5e820bae28e06fba8d692f4e302bb09f37b7a"
+      },
+      {
+        "source_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+        "target_id": "848a868f7aacd4711e2b5fc8e580f909ce3b0c51"
+      },
+      {
+        "source_id": "918739eae3746e5887820a15b3af8eed8c07bdc5",
+        "target_id": "848a868f7aacd4711e2b5fc8e580f909ce3b0c51"
+      },
+      {
+        "source_id": "6f498457e03e5d186330719d6fbdb4486095c7cd",
+        "target_id": "848a868f7aacd4711e2b5fc8e580f909ce3b0c51"
+      },
+      {
+        "source_id": "b4769b2a5c1dcdba438b5c4ffc1281646015d7a2",
+        "target_id": "848a868f7aacd4711e2b5fc8e580f909ce3b0c51"
+      },
+      {
+        "source_id": "848a868f7aacd4711e2b5fc8e580f909ce3b0c51",
+        "target_id": "66a949c25f158e073200d49d59b79b970ee2a942"
+      },
+      {
+        "source_id": "848a868f7aacd4711e2b5fc8e580f909ce3b0c51",
+        "target_id": "d3e5e820bae28e06fba8d692f4e302bb09f37b7a"
+      },
+      {
+        "source_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+        "target_id": "71d103431d6d06427ce3809810816946a773e43a"
+      },
+      {
+        "source_id": "447441046ffec61ef659d3062f54eca212032a6e",
+        "target_id": "71d103431d6d06427ce3809810816946a773e43a"
+      },
+      {
+        "source_id": "6f498457e03e5d186330719d6fbdb4486095c7cd",
+        "target_id": "71d103431d6d06427ce3809810816946a773e43a"
+      },
+      {
+        "source_id": "fb8d7bb182845bae432344079b5c0b6775ad04be",
+        "target_id": "71d103431d6d06427ce3809810816946a773e43a"
+      },
+      {
+        "source_id": "dbf1349b3459c6b580f3aa0e8a3ab847b0e2064c",
+        "target_id": "71d103431d6d06427ce3809810816946a773e43a"
+      },
+      {
+        "source_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+        "target_id": "2592e6a4906637a34ae909ec8a52f0eeb29ee0a8"
+      },
+      {
+        "source_id": "ae5e30b0202d4b5437f9c913e94c49d2636b5d62",
+        "target_id": "2592e6a4906637a34ae909ec8a52f0eeb29ee0a8"
+      },
+      {
+        "source_id": "0bfdbd8e12e64e40144cbc87dd97fddf5e3d42b6",
+        "target_id": "2592e6a4906637a34ae909ec8a52f0eeb29ee0a8"
+      },
+      {
+        "source_id": "e529680057ed5bfdc45a217dd038dd215d450861",
+        "target_id": "2592e6a4906637a34ae909ec8a52f0eeb29ee0a8"
+      },
+      {
+        "source_id": "dbf1349b3459c6b580f3aa0e8a3ab847b0e2064c",
+        "target_id": "2592e6a4906637a34ae909ec8a52f0eeb29ee0a8"
+      },
+      {
+        "source_id": "2592e6a4906637a34ae909ec8a52f0eeb29ee0a8",
+        "target_id": "c1fc4e1bc1075b8a83297276126dbcc53906c033"
+      },
+      {
+        "source_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+        "target_id": "2b7d5dfcd11cc0cf35686f8a9279aee5f910b0bb"
+      },
+      {
+        "source_id": "e529680057ed5bfdc45a217dd038dd215d450861",
+        "target_id": "2b7d5dfcd11cc0cf35686f8a9279aee5f910b0bb"
+      },
+      {
+        "source_id": "2b7d5dfcd11cc0cf35686f8a9279aee5f910b0bb",
+        "target_id": "6c47a8d6a27c24ad2a5ad73e90eb2c6a54017be3"
+      },
+      {
+        "source_id": "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+        "target_id": "06cadeb463f5a13c300539c05ffe81f63451cc2f"
+      }
+    ]
+  },
+  "overrides": {},
+  "nodesShowingLabels": [
+    "e529680057ed5bfdc45a217dd038dd215d450861",
+    "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+    "5e80afd4985901f347e268175383af7861a99b67",
+    "6f498457e03e5d186330719d6fbdb4486095c7cd",
+    "d6b802e48e9996b9f61d5c05b4da39fd0a3e7705",
+    "0bfdbd8e12e64e40144cbc87dd97fddf5e3d42b6",
+    "11df6dc413b6e884e90fae1a2cdd6244226df883",
+    "8c1889734e6453fe214686859aa13baba553744b",
+    "fb8d7bb182845bae432344079b5c0b6775ad04be",
+    "b4769b2a5c1dcdba438b5c4ffc1281646015d7a2",
+    "447441046ffec61ef659d3062f54eca212032a6e",
+    "dbf1349b3459c6b580f3aa0e8a3ab847b0e2064c",
+    "9d60c7aad65e538ba0efec93c464121c953f2605",
+    "ada81d2f6431e78a17b7128eeac9441cf2999879",
+    "ae5e30b0202d4b5437f9c913e94c49d2636b5d62",
+    "918739eae3746e5887820a15b3af8eed8c07bdc5",
+    "75f9ee5bdf767addde18b14a5ac4fd78433fdf39",
+    "ece4179abefa60bd31c2a66da991585e1b1c59de",
+    "c1fc4e1bc1075b8a83297276126dbcc53906c033",
+    "66a949c25f158e073200d49d59b79b970ee2a942",
+    "79e1db3efcba1bedc85801c9ad109bc9b2c91d98",
+    "328a4088efb09ea823f9fd4ef5790df2201c9fbb",
+    "6c47a8d6a27c24ad2a5ad73e90eb2c6a54017be3",
+    "bb2425287704460ccf3967431cfede561aab745d",
+    "d3e5e820bae28e06fba8d692f4e302bb09f37b7a",
+    "739856f8fb02f1011f58ebd869813f8c41595f71",
+    "d85eb09c64d53ab6f0843efc368fb7c07aec16b1",
+    "c76ffe6bf86b7642e964ab259bc1f6f2d0e8c73a"
+  ],
+  "positions": {
+    "e529680057ed5bfdc45a217dd038dd215d450861": [
+      -25.753050981032324,
+      99.2217450895299
+    ],
+    "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf": [
+      60.25242116317001,
+      -49.951576576205795
+    ],
+    "5e80afd4985901f347e268175383af7861a99b67": [
+      -176.3841038889573,
+      -55.29654901374032
+    ],
+    "6f498457e03e5d186330719d6fbdb4486095c7cd": [
+      -0.7530509810323274,
+      89.2217450895299
+    ],
+    "d6b802e48e9996b9f61d5c05b4da39fd0a3e7705": [
+      -0.7530509810323274,
+      79.2217450895299
+    ],
+    "0bfdbd8e12e64e40144cbc87dd97fddf5e3d42b6": [
+      -0.7530509810323274,
+      69.2217450895299
+    ],
+    "11df6dc413b6e884e90fae1a2cdd6244226df883": [
+      -0.7530509810323274,
+      59.221745089529904
+    ],
+    "8c1889734e6453fe214686859aa13baba553744b": [
+      -0.7530509810323274,
+      49.221745089529904
+    ],
+    "fb8d7bb182845bae432344079b5c0b6775ad04be": [
+      -151.3841038889573,
+      -65.29654901374032
+    ],
+    "b4769b2a5c1dcdba438b5c4ffc1281646015d7a2": [
+      -151.3841038889573,
+      -75.2965490137403
+    ],
+    "447441046ffec61ef659d3062f54eca212032a6e": [
+      -151.3841038889573,
+      -85.2965490137403
+    ],
+    "dbf1349b3459c6b580f3aa0e8a3ab847b0e2064c": [
+      -151.3841038889573,
+      -95.2965490137403
+    ],
+    "9d60c7aad65e538ba0efec93c464121c953f2605": [
+      -151.3841038889573,
+      -105.2965490137403
+    ],
+    "ada81d2f6431e78a17b7128eeac9441cf2999879": [
+      176.3841038889573,
+      -67.77446021862453
+    ],
+    "ae5e30b0202d4b5437f9c913e94c49d2636b5d62": [
+      176.3841038889573,
+      -77.77446021862453
+    ],
+    "918739eae3746e5887820a15b3af8eed8c07bdc5": [
+      176.3841038889573,
+      -87.77446021862453
+    ],
+    "75f9ee5bdf767addde18b14a5ac4fd78433fdf39": [
+      176.3841038889573,
+      -97.77446021862453
+    ],
+    "ece4179abefa60bd31c2a66da991585e1b1c59de": [
+      172.9827575329719,
+      -123.80937753122805
+    ],
+    "c1fc4e1bc1075b8a83297276126dbcc53906c033": [
+      -145.77198668508868,
+      82.370674617572
+    ],
+    "66a949c25f158e073200d49d59b79b970ee2a942": [
+      -145.77198668508868,
+      72.370674617572
+    ],
+    "79e1db3efcba1bedc85801c9ad109bc9b2c91d98": [
+      -145.77198668508868,
+      62.370674617572014
+    ],
+    "328a4088efb09ea823f9fd4ef5790df2201c9fbb": [
+      -145.77198668508868,
+      52.370674617572
+    ],
+    "6c47a8d6a27c24ad2a5ad73e90eb2c6a54017be3": [
+      -145.77198668508868,
+      42.370674617572014
+    ],
+    "bb2425287704460ccf3967431cfede561aab745d": [
+      -293.0016932370283,
+      -66.67643876387834
+    ],
+    "d3e5e820bae28e06fba8d692f4e302bb09f37b7a": [
+      -293.0016932370283,
+      -76.67643876387834
+    ],
+    "739856f8fb02f1011f58ebd869813f8c41595f71": [
+      -293.0016932370283,
+      -86.67643876387834
+    ],
+    "d85eb09c64d53ab6f0843efc368fb7c07aec16b1": [
+      -293.0016932370283,
+      -96.67643876387834
+    ],
+    "c76ffe6bf86b7642e964ab259bc1f6f2d0e8c73a": [
+      -293.0016932370283,
+      -106.67643876387834
+    ],
+    "848a868f7aacd4711e2b5fc8e580f909ce3b0c51": [
+      35.25242116317001,
+      -59.951576576205795
+    ],
+    "71d103431d6d06427ce3809810816946a773e43a": [
+      35.25242116317001,
+      -69.9515765762058
+    ],
+    "2592e6a4906637a34ae909ec8a52f0eeb29ee0a8": [
+      35.25242116317001,
+      -79.9515765762058
+    ],
+    "2b7d5dfcd11cc0cf35686f8a9279aee5f910b0bb": [
+      35.25242116317001,
+      -89.9515765762058
+    ],
+    "06cadeb463f5a13c300539c05ffe81f63451cc2f": [
+      35.25242116317001,
+      -99.9515765762058
+    ]
+  },
+  "pinnedNodes": [
+    "e529680057ed5bfdc45a217dd038dd215d450861",
+    "ccd5667787ebf00ac40e85766e0ff7b94a15fbbf",
+    "5e80afd4985901f347e268175383af7861a99b67",
+    "6f498457e03e5d186330719d6fbdb4486095c7cd",
+    "d6b802e48e9996b9f61d5c05b4da39fd0a3e7705",
+    "0bfdbd8e12e64e40144cbc87dd97fddf5e3d42b6",
+    "11df6dc413b6e884e90fae1a2cdd6244226df883",
+    "8c1889734e6453fe214686859aa13baba553744b",
+    "fb8d7bb182845bae432344079b5c0b6775ad04be",
+    "b4769b2a5c1dcdba438b5c4ffc1281646015d7a2",
+    "447441046ffec61ef659d3062f54eca212032a6e",
+    "dbf1349b3459c6b580f3aa0e8a3ab847b0e2064c",
+    "9d60c7aad65e538ba0efec93c464121c953f2605",
+    "ada81d2f6431e78a17b7128eeac9441cf2999879",
+    "ae5e30b0202d4b5437f9c913e94c49d2636b5d62",
+    "918739eae3746e5887820a15b3af8eed8c07bdc5",
+    "75f9ee5bdf767addde18b14a5ac4fd78433fdf39",
+    "ece4179abefa60bd31c2a66da991585e1b1c59de",
+    "c1fc4e1bc1075b8a83297276126dbcc53906c033",
+    "66a949c25f158e073200d49d59b79b970ee2a942",
+    "79e1db3efcba1bedc85801c9ad109bc9b2c91d98",
+    "328a4088efb09ea823f9fd4ef5790df2201c9fbb",
+    "6c47a8d6a27c24ad2a5ad73e90eb2c6a54017be3",
+    "bb2425287704460ccf3967431cfede561aab745d",
+    "d3e5e820bae28e06fba8d692f4e302bb09f37b7a",
+    "739856f8fb02f1011f58ebd869813f8c41595f71",
+    "d85eb09c64d53ab6f0843efc368fb7c07aec16b1",
+    "c76ffe6bf86b7642e964ab259bc1f6f2d0e8c73a",
+    "848a868f7aacd4711e2b5fc8e580f909ce3b0c51",
+    "71d103431d6d06427ce3809810816946a773e43a",
+    "2592e6a4906637a34ae909ec8a52f0eeb29ee0a8",
+    "2b7d5dfcd11cc0cf35686f8a9279aee5f910b0bb",
+    "06cadeb463f5a13c300539c05ffe81f63451cc2f"
+  ],
+  "metadata": {
+    "snapshotName": "Untitled Graph",
+    "fullNodes": 33,
+    "fullEdges": 96,
+    "nodeProperties": [
+      "id",
+      "degree",
+      "pagerank",
+      "paperName",
+      "paperAbstract",
+      "authors",
+      "citationCount",
+      "venue",
+      "year",
+      "url",
+      "node_id"
+    ],
+    "nodeComputed": ["pagerank", "degree"],
+    "edgeProperties": ["source_id", "target_id"],
+    "snapshotId": "f9195314"
+  },
+  "global": {
+    "nodes": {
+      "colorBy": "citationCount",
+      "color": { "scale": "Log Scale", "from": "#448AFF", "to": "#E91E63" },
+      "sizeBy": "citationCount",
+      "size": {
+        "min": 2.100000000000001,
+        "max": 9.400000000000006,
+        "scale": "Linear Scale"
+      },
+      "labelBy": "paperName",
+      "shape": "circle",
+      "labelSize": 0.7999999999999999,
+      "labelLength": 32
+    },
+    "edges": { "color": "#7f7f7f" }
+  }
+}

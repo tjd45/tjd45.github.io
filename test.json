@@ -1,0 +1,628 @@
+{
+  "rawGraph": {
+    "nodes": [
+      {
+        "id": "658e98464189110455d6d340a8fc0c7e6cc44aaa",
+        "degree": 7,
+        "pagerank": 0.03534175625165954,
+        "paperName": "TransVis: Integrated Distant and Close Reading of Othello Translations",
+        "paperAbstract": "Studying variation among time-evolved translations is a valuable research area for cultural heritage. Understanding how and why translations vary reveals cultural, ideological, and even political influences on literature as well as author relations. In this article, we introduce a novel integrated visual application to support distant and close reading of a collection of Othello translations. We present a new interactive application that provides an alignment overview of all the translations and their correspondences in parallel with smooth zooming and panning capability to integrate distant and close reading within the same view. We provide a range of filtering and selection options to customize the alignment overview as well as focus on specific subsets. Selection and filtering are responsive to expert user preferences and update the analytical text metrics interactively. Also, we introduce a customized view for close reading which preserves the history of selections and the alignment overview state and enables backtracing and re-examining them. Finally, we present a new Term-Level Comparisons view (TLC) to compare and convey relative term weighting in the context of an alignment. Our visual design is guided by, used and evaluated by a domain expert specialist in German translations of Shakespeare.",
+        "authors": "Mohammad Alharbi, R. Laramee, Tom Cheesman",
+        "citationCount": 2,
+        "venue": "IEEE Transactions on Visualization and Computer Graphics",
+        "year": 2020,
+        "url": "https://www.semanticscholar.org/paper/658e98464189110455d6d340a8fc0c7e6cc44aaa",
+        "node_id": "658e98464189110455d6d340a8fc0c7e6cc44aaa"
+      },
+      {
+        "id": "1755eeb45cc8532882a88c27d2811aa6f2fa3181",
+        "degree": 5,
+        "pagerank": 0.029140543552919684,
+        "paperName": "VNLP: Visible natural language processing",
+        "paperAbstract": "In general, Natural Language Processing (NLP) algorithms exhibit black-box behavior. Users input text and output are provided with no explanation of how the results are obtained. In order to increase understanding and trust, users value transparent processing which may explain derived results and enable understanding of the underlying routines. Many approaches take an opaque approach by default when designing NLP tools and do not incorporate a means to steer and manipulate the intermediate NLP steps. We present an interactive, customizable, visual framework that enables users to observe and participate in the NLP pipeline processes, explicitly manipulate the parameters of each step, and explore the result visually based on user preferences. The visible NLP (VNLP) pipeline design is then applied to a text similarity application to demonstrate the utility and advantages of a visible and transparent NLP pipeline in supporting users to understand and justify both the process and results. We also report feedback on our framework from a modern languages expert.",
+        "authors": "Mohammad Alharbi, M. Roach, Tom Cheesman, R. Laramee",
+        "citationCount": 2,
+        "venue": "Inf. Vis.",
+        "year": 2021,
+        "url": "https://www.semanticscholar.org/paper/1755eeb45cc8532882a88c27d2811aa6f2fa3181",
+        "node_id": "1755eeb45cc8532882a88c27d2811aa6f2fa3181"
+      },
+      {
+        "id": "a3034c334fbad95f2505e97b0a209dd56177a900",
+        "degree": 5,
+        "pagerank": 0.11935409460643667,
+        "paperName": "Text visualization for construction document information management",
+        "paperAbstract": "n/a",
+        "authors": "Jun Sun, Kun Lei, L. Cao, B. Zhong, Yi Wei, Jintao Li, Zhiling Yang",
+        "citationCount": 22,
+        "venue": "n/a",
+        "year": 2020,
+        "url": "https://www.semanticscholar.org/paper/a3034c334fbad95f2505e97b0a209dd56177a900",
+        "node_id": "a3034c334fbad95f2505e97b0a209dd56177a900",
+        "isHidden": true
+      },
+      {
+        "id": "43542330e3cb7564eaa6016f2bc9baae515e933f",
+        "degree": 1,
+        "pagerank": 0.022696718477668472,
+        "paperName": "Text visualization for geological hazard documents via text mining and natural language processing",
+        "paperAbstract": "n/a",
+        "authors": "Ying Ma, Zhong Xie, Gang Li, K. Ma, Zhen Huang, Qinjun Qiu, Hui Liu",
+        "citationCount": 0,
+        "venue": "Earth Science Informatics",
+        "year": 2022,
+        "url": "https://www.semanticscholar.org/paper/43542330e3cb7564eaa6016f2bc9baae515e933f",
+        "node_id": "43542330e3cb7564eaa6016f2bc9baae515e933f",
+        "isHidden": true
+      },
+      {
+        "id": "b73baab95be479b6adc428d63edaa51af37b0f41",
+        "degree": 1,
+        "pagerank": 0.022696718477668472,
+        "paperName": "Named entity recognition for Chinese construction documents based on conditional random field",
+        "paperAbstract": "n/a",
+        "authors": "Qiqi Zhang, Cong Xue, Xingye Su, Peng Zhou, Xiangyu Wang, Jiansong Zhang",
+        "citationCount": 1,
+        "venue": "Frontiers of Engineering Management",
+        "year": 2022,
+        "url": "https://www.semanticscholar.org/paper/b73baab95be479b6adc428d63edaa51af37b0f41",
+        "node_id": "b73baab95be479b6adc428d63edaa51af37b0f41",
+        "isHidden": true
+      },
+      {
+        "id": "1524c256d62feec2c4df1790911e012fedc33c7d",
+        "degree": 1,
+        "pagerank": 0.022696718477668472,
+        "paperName": "Management of the Documentation Release by the Programmable Electrical Energy Flow-Individually Made Machine Called Documentomat",
+        "paperAbstract": "It is well known that in a turbulent world (full of processed information), information has a particularly high value. Wide access to technology makes the data transformation and transmission processes faster and more vulnerable to leaks and unauthorized access. This publication discusses the concept of information security management based on a development of a machine called documentomat. It is the machine built to automatically release documents with regard to high security standards. The entire flow of the documents in the company has been presented and the formalized process of decision-making to develop and finally build above-mentioned machine was described. The problems and doubts raised during the machine building process were presented along with the solutions adopted. The device has been designed, constructed, and programmed within the resources of one micro-sized limited liability company in Europe. Thus, it is the solution working in a real world that may find application in many similar companies, not the theoretical concept only. The final result exceeded the expectations of the project team, leading to strengthening of the competitive position of the company. This occurred through the following aspects: adding significant advantage to its offer, which is the ability to release the documents at any time with regard to high security standards. Moreover, the long-term level of costs of such a solution seems to be very low. During the one year of operation period, two malfunctions took place, each was repaired in just 3 h (repair and improvement, labor only, no spare parts needed). Any further maintenance, repair, or development can be done at very affordable prices, at non-available on the market labor cost, which will potentially further strengthen the impact of the solution on the competitiveness of the company. Improvement in terms of competitiveness of the company and data safety has been gained. The success of this project proves that, in some cases, it is worth to develop the necessary solution within the resources of the company rather than buying one from an external enterprise.",
+        "authors": "Tomasz Chajduga, M. Ingaldi, D. Klimecka-Tatar",
+        "citationCount": 1,
+        "venue": "n/a",
+        "year": 2021,
+        "url": "https://www.semanticscholar.org/paper/1524c256d62feec2c4df1790911e012fedc33c7d",
+        "node_id": "1524c256d62feec2c4df1790911e012fedc33c7d",
+        "isHidden": true
+      },
+      {
+        "id": "c92ee1db1067fdd9dcbff9c01c9d849857f62909",
+        "degree": 1,
+        "pagerank": 0.022696718477668472,
+        "paperName": "MAGE: An Efficient Deployment of Python Flask Web Application to App Engine Flexible Using Google Cloud Platform",
+        "paperAbstract": "n/a",
+        "authors": "B. Aakash, A. Srilakshmi",
+        "citationCount": 0,
+        "venue": "n/a",
+        "year": 2020,
+        "url": "https://www.semanticscholar.org/paper/c92ee1db1067fdd9dcbff9c01c9d849857f62909",
+        "node_id": "c92ee1db1067fdd9dcbff9c01c9d849857f62909",
+        "isHidden": true
+      },
+      {
+        "id": "0963481c3aa130059fa4bb8cb135ee4e1d99a09d",
+        "degree": 1,
+        "pagerank": 0.022696718477668472,
+        "paperName": "A REVIEW OF NAMED ENTITY RECOGNITION AND CLASSIFICATION ON UNSTRUCTURED MALAY DATA",
+        "paperAbstract": "In recent years, due to the emergence of various social network platforms, a massive amount of data is continuously generated and shared. The majority of the data is unstructured, which contains information that might be crucial and valuable if analyzed. Effective use of these unstructured data is a tedious and laborintensive task. Information extraction is one of the on-going research areas to extract potentially useful information out of voluminous data. Several different techniques and methods for information extraction have been proposed to understand the content and context of any available unstructured data at the low-level structure. However, there are limited studies conducted to investigate the challenges of Named Entity Recognition and Classification (NERC) on unstructured Malay data, which is known as one of the main subtasks in information extraction. Therefore, this paper addresses a comprehensive review of the existing NERC techniques for processing unstructured Malay data along with its limitations and challenges. The contributions of this paper are twofold. The primary contribution is it presents the overview of prior studies on NERC techniques of unstructured Malay data. Second, it scrutinizes the limitations and challenges of theses existing techniques due to the voluminous, dimensionality, and heterogeneity of unstructured Malay data. The findings show that most of the previous studies using a machine learning-based approach produce a satisfactory result rather than a rule-based approach. Furthermore, the challenges in terms of the different morphological of Malay language compared to resource-rich languages such as English, limitation of Malay corpus and annotated Malay text, and Malay text ambiguities could influence the performance of Malay NERC system efficiency, which should be carefully considered during the design of the systems.",
+        "authors": "R. Mohemad, Nazratul Naziah Mohd Muhait, Noor Maizura, Mohamad Noor, Z. Othman",
+        "citationCount": 4,
+        "venue": "n/a",
+        "year": 2020,
+        "url": "https://www.semanticscholar.org/paper/0963481c3aa130059fa4bb8cb135ee4e1d99a09d",
+        "node_id": "0963481c3aa130059fa4bb8cb135ee4e1d99a09d",
+        "isHidden": true
+      },
+      {
+        "id": "a4dbcbd02853c431002260f7618b14a0314281e2",
+        "degree": 3,
+        "pagerank": 0.022696718477668472,
+        "paperName": "Cooperative Digital Humanities: A Methodology",
+        "paperAbstract": "n/a",
+        "authors": "Mohammad Alharbi, Tom Cheesman, R. Laramee",
+        "citationCount": 0,
+        "venue": "CDVE",
+        "year": 2021,
+        "url": "https://www.semanticscholar.org/paper/a4dbcbd02853c431002260f7618b14a0314281e2",
+        "node_id": "a4dbcbd02853c431002260f7618b14a0314281e2",
+        "isHidden": true
+      },
+      {
+        "id": "b17195fa5e4d38f056affd451c0af022424419a4",
+        "degree": 7,
+        "pagerank": 0.04135335106479149,
+        "paperName": "Visual Text Analysis in Digital Humanities",
+        "paperAbstract": "In 2005, Franco Moretti introduced Distant Reading to analyse entire literary text collections. This was a rather revolutionary idea compared to the traditional Close Reading, which focuses on the thorough interpretation of an individual work. Both reading techniques are the prior means of Visual Text Analysis. We present an overview of the research conducted since 2005 on supporting text analysis tasks with close and distant reading visualizations in the digital humanities. Therefore, we classify the observed papers according to a taxonomy of text analysis tasks, categorize applied close and distant reading techniques to support the investigation of these tasks and illustrate approaches that combine both reading techniques in order to provide a multi‐faceted view of the textual data. In addition, we take a look at the used text sources and at the typical data transformation steps required for the proposed visualizations. Finally, we summarize collaboration experiences when developing visualizations for close and distant reading, and we give an outlook on future challenges in that research area.",
+        "authors": "S. Jänicke, G. Franzini, M. F. Cheema, G. Scheuermann",
+        "citationCount": 100,
+        "venue": "Comput. Graph. Forum",
+        "year": 2017,
+        "url": "https://www.semanticscholar.org/paper/b17195fa5e4d38f056affd451c0af022424419a4",
+        "node_id": "b17195fa5e4d38f056affd451c0af022424419a4"
+      },
+      {
+        "id": "8a9376675d960ea76d5f8449f2871c4adf8854c9",
+        "degree": 4,
+        "pagerank": 0.04369795301354284,
+        "paperName": "Visualizations for Text Re-use",
+        "paperAbstract": "In this paper, we present various visualizations for the Text Re-use found between texts of a collection to support humanists in answering a broad palette of research questions. When juxtaposing all texts of a corpus in the form of tuples, we propose the Text Re-use Grid as a distant reading method that emphasizes text tuples with systematic or repetitive Text Re-use. In contrast, the Text Re-use Browser allows for close reading of the Text Re-use between the two texts of a tuple. Additionally, we present Sentence Alignment Flows to improve the readability for Text Variant Graphs on sentence level that are used to compare various text editions to each other. Finally, we portray findings of the humanists of our project using the proposed visualizations.",
+        "authors": "S. Jänicke, Anne L. Gessner, Marco Büchler, G. Scheuermann",
+        "citationCount": 37,
+        "venue": "2014 International Conference on Information Visualization Theory and Applications (IVAPP)",
+        "year": 2015,
+        "url": "https://www.semanticscholar.org/paper/8a9376675d960ea76d5f8449f2871c4adf8854c9",
+        "node_id": "8a9376675d960ea76d5f8449f2871c4adf8854c9"
+      },
+      {
+        "id": "1b3814c05801e885c9b6b05adb220e4f131effb4",
+        "degree": 2,
+        "pagerank": 0.037496740314802976,
+        "paperName": "Interactive Exploration of Versions across Multiple Documents",
+        "paperAbstract": "Researchers in literature need to compare several versions of one or more poems or articles for investigating their historical and literary significance. Current tools do not adequately support their requirements. We address some of these issues by developing MultiVersioner, a tool designed to interactively analyze multiple documents, each consisting of several versions. Additionally, MultiVersioner enables users to search for entities such as words, phrases and lines, and facilitates the analysis of their frequency patterns. We have extensively used visualization principles such as color-coded highlighting and overview with details on demand. Promising feedback has been received from a domain expert. MultiVersioner also has potential applications in several other domains.",
+        "authors": "C. Jong, P. Rajkumar, Tanya E. Clement",
+        "citationCount": 6,
+        "venue": "n/a",
+        "year": 2008,
+        "url": "https://www.semanticscholar.org/paper/1b3814c05801e885c9b6b05adb220e4f131effb4",
+        "node_id": "1b3814c05801e885c9b6b05adb220e4f131effb4"
+      },
+      {
+        "id": "3297be61b40c0603799bd19ecf422a372a7761fd",
+        "degree": 2,
+        "pagerank": 0.037496740314802976,
+        "paperName": "Closing in on Close Reading.",
+        "paperAbstract": "When I read this statement in the content frameworks of one of the consortia now creating assessments for the Common Core State Standards, I was frankly a little insulted. Of course I teach students to read closely—both my university students and younger students, through my literacy consultant work. But on closer examination, I realized I may not be encouraging students to read closely enough to meet the expectations set by these standards. Exactly what do the Common Core standards mean by close reading? And what principles and practices should guide us as we implement close reading in the classroom—particularly in elementary classrooms?",
+        "authors": "Nancy Boyles",
+        "citationCount": 76,
+        "venue": "n/a",
+        "year": 2013,
+        "url": "https://www.semanticscholar.org/paper/3297be61b40c0603799bd19ecf422a372a7761fd",
+        "node_id": "3297be61b40c0603799bd19ecf422a372a7761fd"
+      },
+      {
+        "id": "6f6f1ececab4588bd894179bb9d94c8fbe18b12a",
+        "degree": 1,
+        "pagerank": 0.028708313290800418,
+        "paperName": "Finite-state canonicalization techniques for historical German",
+        "paperAbstract": "Icherklarehiermit,dassichankeineranderenHochschuleeinPromotionsver-fahreneroﬀnethabe. Zudemerklareichhiermit,dassdieDissertationselb-standigundohneunzulassigeHilfeDritterverfasstwurdeundbeiderAb-fassungnurdieinderDissertationangegebenenHilfsmittelbenutztsowieallewortlichoderinhaltlichubernommenenStellenalssolchegekennzeichnetwurden.Des Weiteren erklare ich, dass die Dissertation in der gegenwartigen odereineranderenFassungbeikeineranderenFakultateinerwissenschaftlichenHochschulezurBegutachtungimRahmeneinesPromotionsverfahrensvorgele-genhat.BryanJurishBerlin,Januar2011",
+        "authors": "Bryan Jurish",
+        "citationCount": 27,
+        "venue": "n/a",
+        "year": 2011,
+        "url": "https://www.semanticscholar.org/paper/6f6f1ececab4588bd894179bb9d94c8fbe18b12a",
+        "node_id": "6f6f1ececab4588bd894179bb9d94c8fbe18b12a"
+      },
+      {
+        "id": "ca1963413e40e7564e37b80928b33c2824695c7d",
+        "degree": 10,
+        "pagerank": 0.09953739462766031,
+        "paperName": "Visualizing the text of Philip Pullman's trilogy \"His Dark Materials\"",
+        "paperAbstract": "Digital technologies have repeatedly redefined the paper world of books. Digital printing has overhauled the publishing processes, and the internet has revolutionized the way audiences and authors connect to share their enthusiasm and criticism. Now the digitization of books themselves, either for searching, browsing, and reading on a computer screen through services like Google Books, or for reading on dedicated devices like Amazon's Kindle, the Sony Reader, or Apple's iPad are threatening the established order. For this project we side-step these issues and concentrate instead on how the analytical power and display capabilities of computers may be used to enhance our understanding of book texts. We use the term \"book texts\" rather than the word \"books\" as we are not trying to build computer systems that might understand books, but rather we use the computer's ability to treat books as an abstract sequence of words as the starting point for new analytical tools.",
+        "authors": "Tim Regan, Linda Becker",
+        "citationCount": 10,
+        "venue": "NordiCHI",
+        "year": 2010,
+        "url": "https://www.semanticscholar.org/paper/ca1963413e40e7564e37b80928b33c2824695c7d",
+        "node_id": "ca1963413e40e7564e37b80928b33c2824695c7d"
+      },
+      {
+        "id": "6b4b71a7043498be9898ec4ba64fd5e7a2209906",
+        "degree": 4,
+        "pagerank": 0.03236245609054529,
+        "paperName": "Tools for whom: readers, fans, or authors?",
+        "paperAbstract": "Digitization, digital books, the web, social media, etc. all have the potential to change the way we read and write and indeed styles of reading and writing have changed. But we can also look at the ways in which such tools and possibilities have changed the way we write, produce, and read paper books. This position paper looks at the author's experiences developing a book text visualization tool for analyzing the works in Philip Pullman's children's literature trilogy, His Dark Materials, and how the prototype has prompted thinking about the way tools for different reader audiences should differ.",
+        "authors": "Tim Regan",
+        "citationCount": 3,
+        "venue": "BooksOnline '11",
+        "year": 2011,
+        "url": "https://www.semanticscholar.org/paper/6b4b71a7043498be9898ec4ba64fd5e7a2209906",
+        "node_id": "6b4b71a7043498be9898ec4ba64fd5e7a2209906"
+      },
+      {
+        "id": "78203c774a27b3ba98a5d7bd8b9722f531839b45",
+        "degree": 1,
+        "pagerank": 0.022696718477668472,
+        "paperName": "Content-based Analysis and Visualization of Story Complexity",
+        "paperAbstract": "Obtaining insights into the style and content characteristics of a novel can provide a benefit to a large number of users. Parents and teachers may be interested in finding appropriate books for children. Booksellers may want to assess the fit of a candidate’s artwork into their portfolio or determine the target audience for their promotion activities. Literature scholars might discover particular stylistic similarities in writing patterns of different authors. For all of the above, manually reviewing the textual content of the books is a tedious and time-consuming task which can be achieved only to a limited level of detail. The combination of automated data analysis of literature and computer-based visualization techniques proves to be powerful in giving a quick overview as well as providing details of the visualized data. In this chapter we define the umbrella term Story Complexity, and outline the text data analysis required to describe properties of literature contributing to the numerous aspects of this term. We introduce a multi-faceted model of story complexity by addressing numerous aspects of writing, which can pose difficulties to human readers attempting to follow a storyline in fictional literature. Approximations of these aspects are computed automatically with state of the art Natural Language Processing methods. We present the corresponding text data analysis methods, as well as giving examples of how the extracted data can be presented visually, so that the results of the data analysis can be perceived more effectively than by examining the extracted properties of text in a numeric way.",
+        "authors": "Lucie Flekova, F. Stoffel, Iryna Gurevych, D. Keim",
+        "citationCount": 2,
+        "venue": "n/a",
+        "year": 2018,
+        "url": "https://www.semanticscholar.org/paper/78203c774a27b3ba98a5d7bd8b9722f531839b45",
+        "node_id": "78203c774a27b3ba98a5d7bd8b9722f531839b45"
+      },
+      {
+        "id": "551b052030a686aa34dbc3bb057e26660e4743e1",
+        "degree": 1,
+        "pagerank": 0.022696718477668472,
+        "paperName": "Genre Visualization Based on Words Used in Text",
+        "paperAbstract": "n/a",
+        "authors": "Hyoyoung Kim, Jin Wan Park",
+        "citationCount": 2,
+        "venue": "HCI",
+        "year": 2013,
+        "url": "https://www.semanticscholar.org/paper/551b052030a686aa34dbc3bb057e26660e4743e1",
+        "node_id": "551b052030a686aa34dbc3bb057e26660e4743e1"
+      },
+      {
+        "id": "53559522c5d783cd2f263a1c80e07931d86fe2f4",
+        "degree": 1,
+        "pagerank": 0.022696718477668472,
+        "paperName": "Text Visualization: Expressive Materials and Diverse Approaches",
+        "paperAbstract": "Researches on text visualization have been extensively carried out with the development of the computer, the rise of open data based on Open API, and the commodification of visualization tools. Also, text visualization has led to the convergence of different fields, such as science, art, liberal arts, and sociology. Text visualization has a wide range of materials from the form and structure of text to contents text has created, not to mention independent meaning of each text. These materials are deliberately selected in accordance with the object of text visualization: what to express. A diversity of options could be used to achieve this goal. This paper is aimed to examine text data as materials for text visualization, an important part of data visualization, and discuss its types, nature and traits. This paper also explores different text visualization cases to provide a diversified analysis of expressive approaches to text visualization.",
+        "authors": "Hyoyoung Kim, Jin Wan Park",
+        "citationCount": 1,
+        "venue": "2013 17th International Conference on Information Visualisation",
+        "year": 2013,
+        "url": "https://www.semanticscholar.org/paper/53559522c5d783cd2f263a1c80e07931d86fe2f4",
+        "node_id": "53559522c5d783cd2f263a1c80e07931d86fe2f4"
+      },
+      {
+        "id": "84a60e0da333d9aca8b08811f505655e5515795e",
+        "degree": 2,
+        "pagerank": 0.022696718477668472,
+        "paperName": "Investigating the Effect of Priming on Reading Performance on Electronic Devices",
+        "paperAbstract": "Reading is an activity needed almost everywhere in daily life. Through reading we are not only able to extract meaning from a text, but also to extend our knowledge of the world and to foster other cognitive abilities. In the age of information technology, reading behav-iour has been subject to change. With more information made accessible through the inter-net and e-reading devices, the time spent reading increases. Further, it is reported that read-ing on computers and other electronic devices tends to be shallower and abilities like browsing over a document to get the gist of its content become more important. In this thesis we want to investigate the usage of text visualizations to facilitate the reading activities on electronic devices, with special focus on reading comprehension. We want to make use of the memory psychological \"priming effect\" by presenting the reader with a visualization of the text's content before the actual reading activity, and thus giving the opportunity to get familiar with the information contained in the text prior to reading. To create those visualizations we developed a first prototype, which is capable of extracting keywords of a text and visualizing them. Additionally, we present certain important design aspects of text visualizations, which were discovered through a preliminary study. The presented concepts were evaluated in a user study and are considered as a starting point for future research. With the contributions of this work we aim to support readers with reading activities. Facilitated reading could help to lower the hurdle to read more and therefore foster the gain of knowledge. \nDie Fahigkeit des Lesens wird fast uberall in unserem Alltag benotigt. Durch Lesen erfas-sen wir nicht nur die Bedeutung eines Texts, sondern erweitern unser Wissen und andere geistige Fahigkeiten. Im IT-Zeitalter andert sich auch unser Leseverhalten. Uber das Inter-net und e-Reader sind mehr Informationen zuganglich und so nimmt auch die Zeit zu, die wir mit Lesen verbringen. Lesen auf elektronischen Geraten neigt Studien zufolge auserdem dazu oberflachlicher zu sein und es wird immer wichtiger, den groben Inhalt eines Texts durch Uberfliegen zu erfassen. \nIn dieser Arbeit soll untersucht werden ob Textvisualisierungen in der Lage sind, das Le-sen auf elektronischen Geraten zu erleichtern, insbesondere in Bezug auf das Textverstandnis. Hierzu mochten wir den gedachtnispsychologischen \"Priming Effekt\" ausnutzen, indem wir dem Leser schon vor dem eigentlichen Lesen eine visuelle Zusammenfassung des Inhalts prasentieren. Diese soll dem Leser ermoglichen, sich schon vor dem Lesen mit den Inhalten des Texts vertraut zu machen. Um solche Visualisierungen zu erstellen, wurde ein Prototyp entwickelt, der automatisch die Schlusselworte eines Texts extrahiert und diese visuell darstellt. Wichtige Design Eigenschaften von Textvisualisierungen werden eben-falls erlautert. Die vorgestellten Konzepte wurden durch eine Nutzerstudie evaluiert und konnen Ausgangspunkt fur spatere Forschung in diesem Bereich bilden. \nMit den Erkenntnissen dieser Arbeit mochten wir dazu beitragen das Lesen auf elektronischen Geraten zu erleichtern. Unterstutztes und einfacheres Lesen konnte Lesern helfen, mehr zu Lesen und damit schlieslich auch den Gewinn neuen Wissens fordern.",
+        "authors": "Katrin Angerbauer",
+        "citationCount": 0,
+        "venue": "n/a",
+        "year": 2015,
+        "url": "https://www.semanticscholar.org/paper/84a60e0da333d9aca8b08811f505655e5515795e",
+        "node_id": "84a60e0da333d9aca8b08811f505655e5515795e"
+      },
+      {
+        "id": "59435a833fc241446291e367edb967ae88206cce",
+        "degree": 2,
+        "pagerank": 0.048791526829364995,
+        "paperName": "Gospel Spectrum",
+        "paperAbstract": "\"God is in the details.\"In the world of design, Ludwig Mies van der Rohe's famous dictum regarding the importance of details in one's work has been the mantra for designers in various professions from architecture to new media.But what if God is literally the detail?The Gospel Spectrum is an interactive application exploring the story of Jesus Christ, who many believe is the Son of God, based on the dissection of the Gospels, the four books in the Bible-- Matthew, Mark, Luke, and John--that recount the story of Jesus' life from four different viewpoints. The Gospel Spectrum creates new insights on the narrative by employing principles of computational media and data visualization to deconstruct and then visually reconstruct the story.",
+        "authors": "Anh Dang",
+        "citationCount": 5,
+        "venue": "DUX '05",
+        "year": 2005,
+        "url": "https://www.semanticscholar.org/paper/59435a833fc241446291e367edb967ae88206cce",
+        "node_id": "59435a833fc241446291e367edb967ae88206cce"
+      },
+      {
+        "id": "c2b14016190d8aefe223160bc435d7e022936c8f",
+        "degree": 1,
+        "pagerank": 0.03961101396951089,
+        "paperName": "Reassessing authorship of the Book of Mormon using delta and nearest shrunken centroid classification",
+        "paperAbstract": "Mormon prophet Joseph Smith (1805-44) claimed that more than two-dozen ancient individuals (Nephi, Mormon, Alma, etc.) living from around 2200 BC to 421 AD authored the Book of Mormon (1830), and that he translated their inscriptions into English. Later researchers who analyzed selections from the Book of Mormon concluded that differences between selections supported Smith's claim of multiple authorship and ancient origins. We offer a new approach that employs two classification techniques: 'delta' commonly used to determine probable authorship and 'nearest shrunken centroid' (NSC), a more generally applicable classifier. We use both methods to determine, on a chapter-by-chapter basis, the probability that each of seven potential authors wrote or contributed to the Book of Mormon. Five of the seven have known or alleged connections to the Book of Mormon, two do not, and were added as controls based on their thematic, linguistic, and historical similarity to the Book of Mormon. Our results indicate that likely nineteenth century contributors were Solomon Spalding, a writer of historical fantasies; Sidney Rigdon, an eloquent but perhaps unstable preacher; and Oliver Cowdery, a schoolteacher with editing experience. Our findings support the hypothesis that Rigdon was the main architect of the Book of Mormon and are consistent with historical evidence suggesting that he fabricated the book by adding theology to the unpublished writings of Spalding (then deceased).",
+        "authors": "Matthew L. Jockers, D. Witten, C. Criddle",
+        "citationCount": 70,
+        "venue": "Lit. Linguistic Comput.",
+        "year": 2008,
+        "url": "https://www.semanticscholar.org/paper/c2b14016190d8aefe223160bc435d7e022936c8f",
+        "node_id": "c2b14016190d8aefe223160bc435d7e022936c8f"
+      },
+      {
+        "id": "1a4e90d3084f8d9562712425d308519a42aba59f",
+        "degree": 1,
+        "pagerank": 0.03961101396951089,
+        "paperName": "Exploring erotics in Emily Dickinson's correspondence with text mining and visual interfaces",
+        "paperAbstract": "This paper describes a system to support humanities scholars in their interpretation of literary work. It presents a user interface and Web architecture that integrates text mining, a graphical user interface and visualization, while attempting to remain easy to use by non specialists. Users can interactively read and rate documents found in a digital libraries collection, prepare training sets, review results of classification algorithms and explore possible indicators and explanations. Initial evaluation steps suggest that there is a rationale for \"provocational\" text mining in literary interpretation",
+        "authors": "C. Plaisant, James Rose, Bei Yu, L. Auvil, M. Kirschenbaum, M. Smith, Tanya E. Clement, Gregory Lord",
+        "citationCount": 72,
+        "venue": "Proceedings of the 6th ACM/IEEE-CS Joint Conference on Digital Libraries (JCDL '06)",
+        "year": 2006,
+        "url": "https://www.semanticscholar.org/paper/1a4e90d3084f8d9562712425d308519a42aba59f",
+        "node_id": "1a4e90d3084f8d9562712425d308519a42aba59f"
+      },
+      {
+        "id": "50cde188086fce75acc0f0521d3cf219448959cc",
+        "degree": 2,
+        "pagerank": 0.048791526829364995,
+        "paperName": "Writing Without Words: Alternative Literacies in Mesoamerica and the Andes",
+        "paperAbstract": "The history of writing, or so the standard story goes, is an ascending process, evolving toward the alphabet and finally culminating in the \"full writing\" of recorded speech. Writing without Words challenges this orthodoxy, and with it widespread notions of literacy and dominant views of art and literature, history and geography. Asking how knowledge was encoded and preserved in Pre-Columbian and early colonial Mesoamerican cultures, the authors focus on systems of writing that did not strive to represent speech. Their work reveals the complicity of ideology in the history of literacy, and offers new insight into the history of writing.\n\nThe contributors--who include art historians, anthropologists, and literary theorists--examine the ways in which ancient Mesoamerican and Andean peoples conveyed meaning through hieroglyphic, pictorial, and coded systems, systems inseparable from the ideologies they were developed to serve. We see, then, how these systems changed with the European invasion, and how uniquely colonial writing systems came to embody the post-conquest American ideologies. The authors also explore the role of these early systems in religious discourse and their relation to later colonial writing.\n\nBringing the insights from Mesoamerica and the Andes to bear on a fundamental exchange among art history, literary theory, semiotics, and anthropology, the volume reveals the power contained in the medium of writing.\n\nContributors. Elizabeth Hill Boone, Tom Cummins, Stephen Houston, Mark B. King, Dana Leibsohn, Walter D. Mignolo, John Monaghan, John M. D. Pohl, Joanne Rappaport, Peter van der Loo",
+        "authors": "E. Boone, Walter D. Mignolo",
+        "citationCount": 280,
+        "venue": "n/a",
+        "year": 1995,
+        "url": "https://www.semanticscholar.org/paper/50cde188086fce75acc0f0521d3cf219448959cc",
+        "node_id": "50cde188086fce75acc0f0521d3cf219448959cc"
+      },
+      {
+        "id": "5d1ab9b87dda77718c06c41d226133d4bc4d90ed",
+        "degree": 4,
+        "pagerank": 0.09173839049760127,
+        "paperName": "The Word Tree, an Interactive Visual Concordance",
+        "paperAbstract": "We introduce the Word Tree, a new visualization and information-retrieval technique aimed at text documents. A Word Tree is a graphical version of the traditional \"keyword-in-context\" method, and enables rapid querying and exploration of bodies of text. In this paper we describe the design of the technique, along with some of the technical issues that arise in its implementation. In addition, we discuss the results of several months of public deployment of word trees on Many Eyes, which provides a window onto the ways in which users obtain value from the visualization.",
+        "authors": "M. Wattenberg, F. Viégas",
+        "citationCount": 331,
+        "venue": "IEEE Transactions on Visualization and Computer Graphics",
+        "year": 2008,
+        "url": "https://www.semanticscholar.org/paper/5d1ab9b87dda77718c06c41d226133d4bc4d90ed",
+        "node_id": "5d1ab9b87dda77718c06c41d226133d4bc4d90ed"
+      }
+    ],
+    "edges": [
+      {
+        "source_id": "1755eeb45cc8532882a88c27d2811aa6f2fa3181",
+        "target_id": "658e98464189110455d6d340a8fc0c7e6cc44aaa"
+      },
+      {
+        "source_id": "43542330e3cb7564eaa6016f2bc9baae515e933f",
+        "target_id": "a3034c334fbad95f2505e97b0a209dd56177a900"
+      },
+      {
+        "source_id": "b73baab95be479b6adc428d63edaa51af37b0f41",
+        "target_id": "a3034c334fbad95f2505e97b0a209dd56177a900"
+      },
+      {
+        "source_id": "1524c256d62feec2c4df1790911e012fedc33c7d",
+        "target_id": "a3034c334fbad95f2505e97b0a209dd56177a900"
+      },
+      {
+        "source_id": "c92ee1db1067fdd9dcbff9c01c9d849857f62909",
+        "target_id": "a3034c334fbad95f2505e97b0a209dd56177a900"
+      },
+      {
+        "source_id": "0963481c3aa130059fa4bb8cb135ee4e1d99a09d",
+        "target_id": "a3034c334fbad95f2505e97b0a209dd56177a900"
+      },
+      {
+        "source_id": "a4dbcbd02853c431002260f7618b14a0314281e2",
+        "target_id": "658e98464189110455d6d340a8fc0c7e6cc44aaa"
+      },
+      {
+        "source_id": "a4dbcbd02853c431002260f7618b14a0314281e2",
+        "target_id": "1755eeb45cc8532882a88c27d2811aa6f2fa3181"
+      },
+      {
+        "source_id": "658e98464189110455d6d340a8fc0c7e6cc44aaa",
+        "target_id": "b17195fa5e4d38f056affd451c0af022424419a4"
+      },
+      {
+        "source_id": "1755eeb45cc8532882a88c27d2811aa6f2fa3181",
+        "target_id": "b17195fa5e4d38f056affd451c0af022424419a4"
+      },
+      {
+        "source_id": "a4dbcbd02853c431002260f7618b14a0314281e2",
+        "target_id": "b17195fa5e4d38f056affd451c0af022424419a4"
+      },
+      {
+        "source_id": "658e98464189110455d6d340a8fc0c7e6cc44aaa",
+        "target_id": "8a9376675d960ea76d5f8449f2871c4adf8854c9"
+      },
+      {
+        "source_id": "1755eeb45cc8532882a88c27d2811aa6f2fa3181",
+        "target_id": "8a9376675d960ea76d5f8449f2871c4adf8854c9"
+      },
+      {
+        "source_id": "b17195fa5e4d38f056affd451c0af022424419a4",
+        "target_id": "8a9376675d960ea76d5f8449f2871c4adf8854c9"
+      },
+      {
+        "source_id": "658e98464189110455d6d340a8fc0c7e6cc44aaa",
+        "target_id": "1b3814c05801e885c9b6b05adb220e4f131effb4"
+      },
+      {
+        "source_id": "b17195fa5e4d38f056affd451c0af022424419a4",
+        "target_id": "1b3814c05801e885c9b6b05adb220e4f131effb4"
+      },
+      {
+        "source_id": "658e98464189110455d6d340a8fc0c7e6cc44aaa",
+        "target_id": "3297be61b40c0603799bd19ecf422a372a7761fd"
+      },
+      {
+        "source_id": "b17195fa5e4d38f056affd451c0af022424419a4",
+        "target_id": "3297be61b40c0603799bd19ecf422a372a7761fd"
+      },
+      {
+        "source_id": "658e98464189110455d6d340a8fc0c7e6cc44aaa",
+        "target_id": "6f6f1ececab4588bd894179bb9d94c8fbe18b12a"
+      },
+      {
+        "source_id": "6b4b71a7043498be9898ec4ba64fd5e7a2209906",
+        "target_id": "ca1963413e40e7564e37b80928b33c2824695c7d"
+      },
+      {
+        "source_id": "78203c774a27b3ba98a5d7bd8b9722f531839b45",
+        "target_id": "ca1963413e40e7564e37b80928b33c2824695c7d"
+      },
+      {
+        "source_id": "551b052030a686aa34dbc3bb057e26660e4743e1",
+        "target_id": "ca1963413e40e7564e37b80928b33c2824695c7d"
+      },
+      {
+        "source_id": "53559522c5d783cd2f263a1c80e07931d86fe2f4",
+        "target_id": "ca1963413e40e7564e37b80928b33c2824695c7d"
+      },
+      {
+        "source_id": "84a60e0da333d9aca8b08811f505655e5515795e",
+        "target_id": "ca1963413e40e7564e37b80928b33c2824695c7d"
+      },
+      {
+        "source_id": "84a60e0da333d9aca8b08811f505655e5515795e",
+        "target_id": "6b4b71a7043498be9898ec4ba64fd5e7a2209906"
+      },
+      {
+        "source_id": "ca1963413e40e7564e37b80928b33c2824695c7d",
+        "target_id": "59435a833fc241446291e367edb967ae88206cce"
+      },
+      {
+        "source_id": "6b4b71a7043498be9898ec4ba64fd5e7a2209906",
+        "target_id": "59435a833fc241446291e367edb967ae88206cce"
+      },
+      {
+        "source_id": "ca1963413e40e7564e37b80928b33c2824695c7d",
+        "target_id": "c2b14016190d8aefe223160bc435d7e022936c8f"
+      },
+      {
+        "source_id": "ca1963413e40e7564e37b80928b33c2824695c7d",
+        "target_id": "1a4e90d3084f8d9562712425d308519a42aba59f"
+      },
+      {
+        "source_id": "ca1963413e40e7564e37b80928b33c2824695c7d",
+        "target_id": "50cde188086fce75acc0f0521d3cf219448959cc"
+      },
+      {
+        "source_id": "6b4b71a7043498be9898ec4ba64fd5e7a2209906",
+        "target_id": "50cde188086fce75acc0f0521d3cf219448959cc"
+      },
+      {
+        "source_id": "ca1963413e40e7564e37b80928b33c2824695c7d",
+        "target_id": "5d1ab9b87dda77718c06c41d226133d4bc4d90ed"
+      },
+      {
+        "source_id": "1755eeb45cc8532882a88c27d2811aa6f2fa3181",
+        "target_id": "5d1ab9b87dda77718c06c41d226133d4bc4d90ed"
+      },
+      {
+        "source_id": "b17195fa5e4d38f056affd451c0af022424419a4",
+        "target_id": "5d1ab9b87dda77718c06c41d226133d4bc4d90ed"
+      },
+      {
+        "source_id": "8a9376675d960ea76d5f8449f2871c4adf8854c9",
+        "target_id": "5d1ab9b87dda77718c06c41d226133d4bc4d90ed"
+      }
+    ]
+  },
+  "overrides": {},
+  "nodesShowingLabels": [
+    "658e98464189110455d6d340a8fc0c7e6cc44aaa",
+    "1755eeb45cc8532882a88c27d2811aa6f2fa3181",
+    "b17195fa5e4d38f056affd451c0af022424419a4",
+    "8a9376675d960ea76d5f8449f2871c4adf8854c9",
+    "1b3814c05801e885c9b6b05adb220e4f131effb4",
+    "3297be61b40c0603799bd19ecf422a372a7761fd",
+    "6f6f1ececab4588bd894179bb9d94c8fbe18b12a",
+    "ca1963413e40e7564e37b80928b33c2824695c7d",
+    "6b4b71a7043498be9898ec4ba64fd5e7a2209906",
+    "78203c774a27b3ba98a5d7bd8b9722f531839b45",
+    "551b052030a686aa34dbc3bb057e26660e4743e1",
+    "53559522c5d783cd2f263a1c80e07931d86fe2f4",
+    "84a60e0da333d9aca8b08811f505655e5515795e"
+  ],
+  "positions": {
+    "658e98464189110455d6d340a8fc0c7e6cc44aaa": [
+      52.28833610733419,
+      -25.25655822469585
+    ],
+    "1755eeb45cc8532882a88c27d2811aa6f2fa3181": [
+      -40.02317084758913,
+      -35.262351259399615
+    ],
+    "b17195fa5e4d38f056affd451c0af022424419a4": [
+      -119.42397752909656,
+      84.48439763979727
+    ],
+    "8a9376675d960ea76d5f8449f2871c4adf8854c9": [
+      -166.8708010338998,
+      9.602333638143145
+    ],
+    "1b3814c05801e885c9b6b05adb220e4f131effb4": [
+      -40.99147336809531,
+      9.925101155391664
+    ],
+    "3297be61b40c0603799bd19ecf422a372a7761fd": [
+      -59.38922125771287,
+      60.276833846159086
+    ],
+    "6f6f1ececab4588bd894179bb9d94c8fbe18b12a": [
+      25.17586553316091,
+      39.619712742254485
+    ],
+    "ca1963413e40e7564e37b80928b33c2824695c7d": [
+      -16.78382632232407,
+      -104.25338609631619
+    ],
+    "6b4b71a7043498be9898ec4ba64fd5e7a2209906": [
+      6.710375643760846,
+      -108.7393445873699
+    ],
+    "78203c774a27b3ba98a5d7bd8b9722f531839b45": [
+      6.710375643760846,
+      -118.7393445873699
+    ],
+    "551b052030a686aa34dbc3bb057e26660e4743e1": [
+      6.710375643760846,
+      -128.73934458736989
+    ],
+    "53559522c5d783cd2f263a1c80e07931d86fe2f4": [
+      6.710375643760846,
+      -138.73934458736994
+    ],
+    "84a60e0da333d9aca8b08811f505655e5515795e": [
+      6.710375643760846,
+      -148.73934458736989
+    ],
+    "59435a833fc241446291e367edb967ae88206cce": [
+      -59.049867109867066,
+      -113.23179768180765
+    ],
+    "c2b14016190d8aefe223160bc435d7e022936c8f": [
+      -59.049867109867066,
+      -123.23179768180765
+    ],
+    "1a4e90d3084f8d9562712425d308519a42aba59f": [
+      -59.049867109867066,
+      -133.23179768180765
+    ],
+    "50cde188086fce75acc0f0521d3cf219448959cc": [
+      -46.492344833816524,
+      -159.51055902239753
+    ],
+    "5d1ab9b87dda77718c06c41d226133d4bc4d90ed": [
+      -81.83944457381085,
+      -172.06808170357834
+    ]
+  },
+  "pinnedNodes": [
+    "658e98464189110455d6d340a8fc0c7e6cc44aaa",
+    "1755eeb45cc8532882a88c27d2811aa6f2fa3181",
+    "b17195fa5e4d38f056affd451c0af022424419a4",
+    "8a9376675d960ea76d5f8449f2871c4adf8854c9",
+    "1b3814c05801e885c9b6b05adb220e4f131effb4",
+    "3297be61b40c0603799bd19ecf422a372a7761fd",
+    "6f6f1ececab4588bd894179bb9d94c8fbe18b12a",
+    "ca1963413e40e7564e37b80928b33c2824695c7d",
+    "6b4b71a7043498be9898ec4ba64fd5e7a2209906",
+    "78203c774a27b3ba98a5d7bd8b9722f531839b45",
+    "551b052030a686aa34dbc3bb057e26660e4743e1",
+    "53559522c5d783cd2f263a1c80e07931d86fe2f4",
+    "84a60e0da333d9aca8b08811f505655e5515795e",
+    "59435a833fc241446291e367edb967ae88206cce",
+    "c2b14016190d8aefe223160bc435d7e022936c8f",
+    "1a4e90d3084f8d9562712425d308519a42aba59f",
+    "50cde188086fce75acc0f0521d3cf219448959cc",
+    "5d1ab9b87dda77718c06c41d226133d4bc4d90ed"
+  ],
+  "metadata": {
+    "snapshotName": "Untitled Graph",
+    "fullNodes": 25,
+    "fullEdges": 35,
+    "nodeProperties": [
+      "id",
+      "degree",
+      "pagerank",
+      "paperName",
+      "paperAbstract",
+      "authors",
+      "citationCount",
+      "venue",
+      "year",
+      "url",
+      "node_id"
+    ],
+    "nodeComputed": ["pagerank", "degree"],
+    "edgeProperties": ["source_id", "target_id"],
+    "snapshotId": "f7150504"
+  },
+  "global": {
+    "nodes": {
+      "colorBy": "citationCount",
+      "color": { "scale": "Log Scale", "from": "#448AFF", "to": "#E91E63" },
+      "sizeBy": "citationCount",
+      "size": {
+        "min": 2.100000000000001,
+        "max": 9.400000000000006,
+        "scale": "Linear Scale"
+      },
+      "labelBy": "paperName",
+      "shape": "circle",
+      "labelSize": 0.5,
+      "labelLength": 18.300000000000015
+    },
+    "edges": { "color": "#7f7f7f" }
+  }
+}
