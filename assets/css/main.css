@@ -2793,3 +2793,22 @@ button:active,
     margin-top: 0;
   }
 }
+
+.button-footer {
+  text-align: center;
+}
+
+.pill-button {
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 50px;
+  background-color: #ffd4ea; /* Lighter shade of pink */
+  color: #ffffff; /* White */
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.pill-button:hover {
+  background-color: #ff76bd; /* Lighter shade of pink */
+}
