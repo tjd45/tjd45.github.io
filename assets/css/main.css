@@ -2799,6 +2799,8 @@ button:active,
 }
 
 .pill-button {
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: inline-block;
   padding: 10px 30px;
   border-radius: 50px;
