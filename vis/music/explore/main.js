@@ -94,6 +94,8 @@ function genDay(fullDate){
 }
 
 function drawDay(day) {
+
+    const dayMS = calcDayMS(day)
     // Clear the existing content in the SVG (if any)
     const svg = d3.select("svg"); // Assuming you have an SVG element in your HTML
     svg.selectAll("*").remove(); // Remove previous rectangles if they exist
@@ -101,6 +103,11 @@ function drawDay(day) {
     // const width = +svg.attr("width"); // Get the width of the SVG
     const width = parseInt(svg.style("width"), 10);; // Get the width of the SVG
     const height = parseInt(svg.style("height"), 10) || 100; // Default height if not set
+
+    const yScale = d3.scaleLinear()
+    .domain([0, 100])  // Input range (0 to 100)
+    .range([0, height]); // Output range (0 to SVG height)
+
 
 
     const playHeight = 350; // Set a fixed height for the rectangles (adjust as needed)
@@ -111,9 +118,9 @@ function drawDay(day) {
     // Calculate the width for each rectangle
     const rectWidth = width / maxSongplays; // Width of each rectangle
 
-    const midHeight = height/2 - playHeight/2
-
-    const scaleFactor = width / day_data.overview.max_ms_one_day;
+    const midHeight = height/2 
+    console.log(day.length)
+    const scaleFactor = width / dayMS;
 
 
     // // Draw rectangles based on constant width per song
@@ -139,9 +146,15 @@ function drawDay(day) {
         }, 0);
         return cumulativeWidth; // Position each rectangle based on cumulative width
     })
-    .attr("y", midHeight) // Set the y position (top of SVG)
+    .attr("y", (d) => {
+        pops = getPopularities(d)
+        return midHeight - (yScale(pops.song)/2)
+}) // Set the y position (top of SVG)
     .attr("width", (d) => Math.max(songplay_lib[d].ms_played * scaleFactor, 2) - 1) // Width of each rectangle based on ms_played
-    .attr("height", playHeight) // Set height
+    .attr("height", (d) => {
+        pops = getPopularities(d)
+        return yScale(pops.artist/2 + pops.song/2)
+}) // Set height
     .attr("fill", "lightgrey") // Color of rectangles
     .on("mouseover", function(event, d) {
         d3.select(this) // Select the hovered rectangle
@@ -170,6 +183,27 @@ function drawDay(day) {
     });
 }
 
+function getPopularities(sid){
+    song = song_lib[songplay_lib[sid].song_id]
+    song_pop = song.song_personal_popularity
+
+    artist=artist_lib[song.artist_ids[0]]
+    artist_pop = artist.artist_personal_popularity
+
+    if (!song.title) {
+        // If it's the null song, return 0 for both song and artist popularity
+        return {
+            song: 1,
+            artist: 1
+        };
+    }
+
+    return {
+        song: song_pop,
+        artist: artist_pop
+    };
+}
+
 function genDisplayString(sid){
     
     song = song_lib[songplay_lib[sid].song_id]
@@ -187,6 +221,18 @@ function convertMS(ms){
 
         return duration
 }
+
+function calcDayMS(day){
+    totalMS = 0
+
+    day.forEach(sp => {
+        totalMS += songplay_lib[sp].ms_played;
+    });
+
+    return totalMS
+}
+
+
 async function main(){
     await loadFiles()
 
@@ -194,6 +240,7 @@ async function main(){
 
 
 }
+
 
 main()
 
