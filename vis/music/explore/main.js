@@ -134,54 +134,144 @@ function drawDay(day) {
     //     .attr("height", playHeight) // Set height
     //     .attr("fill", "lightgrey"); // Color of rectangles
 
+
+
     // Draw rectangles based on ms played
+//     svg.selectAll("rect")
+//     .data(day)
+//     .enter()
+//     .append("rect")
+//     .attr("x", (d, i) => {
+//         // Calculate the cumulative width for positioning
+//         const cumulativeWidth = day.slice(0, i).reduce((total, songplayId) => {
+//             return total + (songplay_lib[songplayId].ms_played * scaleFactor);
+//         }, 0);
+//         return cumulativeWidth; // Position each rectangle based on cumulative width
+//     })
+//     .attr("y", (d) => {
+//         pops = getPopularities(d)
+//         return midHeight - (yScale(pops.song)/2)
+// }) // Set the y position (top of SVG)
+//     .attr("width", (d) => Math.max(songplay_lib[d].ms_played * scaleFactor, 2) - 1) // Width of each rectangle based on ms_played
+//     .attr("height", (d) => {
+//         pops = getPopularities(d)
+//         return yScale(pops.artist/2 + pops.song/2)
+// }) // Set height
+//     .attr("fill", "lightgrey") // Color of rectangles
+//     .on("mouseover", function(event, d) {
+//         d3.select(this) // Select the hovered rectangle
+//             .attr("fill", "darkgrey"); // Change color on hover
+        
+//         const duration = convertMS(songplay_lib[d].ms_played)
+        
+//         const displayString = genDisplayString(d)
+//         // Update tooltip content
+
+//         tooltip.html(`${displayString}<br>Played for: ${duration}`)
+//             .style("visibility", "visible") // Show the tooltip
+//             .style("top", (event.pageY - 10) + "px") // Position it
+//             .style("left", (event.pageX + 10) + "px");
+//     })
+//     .on("mousemove", function(event) {
+//         // Update tooltip position on mouse move
+//         tooltip.style("top", (event.pageY - 10) + "px")
+//                .style("left", (event.pageX + 10) + "px");
+//     })
+//     .on("mouseout", function() {
+//         d3.select(this) // Select the hovered rectangle
+//             .attr("fill", "lightgrey"); // Reset color
+
+//         tooltip.style("visibility", "hidden"); // Hide the tooltip
+//     });
+
     svg.selectAll("rect")
     .data(day)
     .enter()
-    .append("rect")
-    .attr("x", (d, i) => {
-        // Calculate the cumulative width for positioning
-        const cumulativeWidth = day.slice(0, i).reduce((total, songplayId) => {
+    .each(function(d) {
+        // Get popularities for the current data point
+        const pops = getPopularities(d);
+        
+        // Calculate rectangle widths and heights
+        const width = Math.max(songplay_lib[d].ms_played * scaleFactor, 2) - 1;
+        const songHeight = yScale(pops.song);
+        const artistHeight = yScale(pops.artist);
+
+        var firstHeight = artistHeight
+        var secondHeight = songHeight
+        var firstColour = "darkgrey"
+        var secondColour = "lightgrey"
+
+        const maxHeight = Math.max(songHeight,artistHeight)
+
+        if(songHeight > artistHeight){
+            firstHeight = songHeight
+            secondHeight = artistHeight
+            firstColour = "lightgrey"
+            secondColour = "darkgrey"
+        }
+        
+
+        // Calculate cumulative width for positioning
+        const cumulativeWidth = day.slice(0, day.indexOf(d)).reduce((total, songplayId) => {
             return total + (songplay_lib[songplayId].ms_played * scaleFactor);
         }, 0);
-        return cumulativeWidth; // Position each rectangle based on cumulative width
-    })
-    .attr("y", (d) => {
-        pops = getPopularities(d)
-        return midHeight - (yScale(pops.song)/2)
-}) // Set the y position (top of SVG)
-    .attr("width", (d) => Math.max(songplay_lib[d].ms_played * scaleFactor, 2) - 1) // Width of each rectangle based on ms_played
-    .attr("height", (d) => {
-        pops = getPopularities(d)
-        return yScale(pops.artist/2 + pops.song/2)
-}) // Set height
-    .attr("fill", "lightgrey") // Color of rectangles
-    .on("mouseover", function(event, d) {
-        d3.select(this) // Select the hovered rectangle
-            .attr("fill", "darkgrey"); // Change color on hover
         
-        const duration = convertMS(songplay_lib[d].ms_played)
+        // Draw the song popularity rectangle
+        d3.select(this)
+            .append("rect")
+            .attr("x", cumulativeWidth) // Position based on cumulative width
+            .attr("y", midHeight - (firstHeight / 2)) // Center vertically
+            .attr("width", width) // Width of the rectangle
+            .attr("height", firstHeight) // Height based on song popularity
+            .attr("fill", firstColour) // Color for song popularity
+
         
-        const displayString = genDisplayString(d)
-        // Update tooltip content
+        // Draw the artist popularity rectangle
+        d3.select(this)
+            .append("rect")
+            .attr("x", cumulativeWidth) // Position based on cumulative width
+            .attr("y", midHeight - (secondHeight / 2)) // Center vertically
+            .attr("width", width) // Width of the rectangle
+            .attr("height", secondHeight) // Height based on artist popularity
+            .attr("fill", secondColour) // Color for artist popularity
 
-        tooltip.html(`${displayString}<br>Played for: ${duration}`)
-            .style("visibility", "visible") // Show the tooltip
-            .style("top", (event.pageY - 10) + "px") // Position it
-            .style("left", (event.pageX + 10) + "px");
-    })
-    .on("mousemove", function(event) {
-        // Update tooltip position on mouse move
-        tooltip.style("top", (event.pageY - 10) + "px")
-               .style("left", (event.pageX + 10) + "px");
-    })
-    .on("mouseout", function() {
-        d3.select(this) // Select the hovered rectangle
-            .attr("fill", "lightgrey"); // Reset color
+        // Draw a holder to have as the hover rectangle
+        d3.select(this)
+            .append("rect")
+            .attr("x", cumulativeWidth) // Position based on cumulative width
+            .attr("y", midHeight - (maxHeight / 2)) // Center vertically
+            .attr("width", width) // Width of the rectangle
+            .attr("height", maxHeight) // Height based on max popularity
+            .attr("fill", "lightgrey") // Color for max popularity
+            .attr("fill-opacity",0.0)
+            .on("mouseover", function(event) {
+                d3.select(this)
+                    .attr("fill-opacity", 0.5)
 
-        tooltip.style("visibility", "hidden"); // Hide the tooltip
+                    const duration = convertMS(songplay_lib[d].ms_played)
+                const displayString = genDisplayString(d)
+//         // Update tooltip content
+
+         tooltip.html(`${displayString}<br>Played for: ${duration}`)
+                    .style("visibility", "visible")
+                    .style("top", (event.pageY - 10) + "px")
+                    .style("left", (event.pageX + 10) + "px");
+            })
+            .on("mousemove", function(event) {
+                tooltip.style("top", (event.pageY - 10) + "px")
+                    .style("left", (event.pageX + 10) + "px");
+            })
+            .on("mouseout", function() {
+                d3.select(this)
+                    .attr("fill-opacity", 0.0)
+                tooltip.style("visibility", "hidden");
+            });
+
+
     });
 }
+
+
 
 function getPopularities(sid){
     song = song_lib[songplay_lib[sid].song_id]
