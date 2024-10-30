@@ -10,7 +10,11 @@ var songplay_lib, day_data
 var thisDay
 var snake = []
 
+var minYear, maxYear
+
 var firstTimeLoad = true
+
+var colours = ["#eaf0ce", "#89aae6", "#DA9644", "#15a0a2", "#f4998d"]
 
 function genDateFromDate(datetime){
 
@@ -514,12 +518,15 @@ function drawYear(year){
     .range([height - padding * height, padding * height]);  // SVG y is top to bottom, so invert the range
 
     filteredSnake.forEach(segment => {
+        colourIndex = (segment.year - minYear) % colours.length
+   
+
         svg.append("line")
             .attr("x1", xScale(segment.x1))
             .attr("y1", yScale(segment.y1))
             .attr("x2", xScale(segment.x2))
             .attr("y2", yScale(segment.y2))
-            .attr("stroke", "white")  // Line color
+            .attr("stroke", colours[colourIndex])  // Line color
             .attr("stroke-width", 2);  // Line width
     });
 
@@ -599,7 +606,9 @@ async function main(){
     await loadFiles()
 
     thisDay = genDay(date)
-    populateYearDropdown(2011,2024)
+    minYear = 2011
+    maxYear = 2024
+    populateYearDropdown(minYear,maxYear)
 
     genSnake(true,true)
 
