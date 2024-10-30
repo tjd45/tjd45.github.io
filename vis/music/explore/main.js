@@ -318,71 +318,10 @@ function drawDay(day) {
     const scaleFactor = width / dayMS;
 
 
-    // // Draw rectangles based on constant width per song
-    // svg.selectAll("rect")
-    //     .data(day)
-    //     .enter()
-    //     .append("rect")
-    //     .attr("x", (d, i) => i * rectWidth) // Position each rectangle
-    //     .attr("y", midHeight) // Set the y position (top of SVG)
-    //     .attr("width", rectWidth - 1) // Width of each rectangle (subtracting 1 for spacing)
-    //     .attr("height", playHeight) // Set height
-    //     .attr("fill", "lightgrey"); // Color of rectangles
-
-
-
-    // Draw rectangles based on ms played
-//     svg.selectAll("rect")
-//     .data(day)
-//     .enter()
-//     .append("rect")
-//     .attr("x", (d, i) => {
-//         // Calculate the cumulative width for positioning
-//         const cumulativeWidth = day.slice(0, i).reduce((total, songplayId) => {
-//             return total + (songplay_lib[songplayId].ms_played * scaleFactor);
-//         }, 0);
-//         return cumulativeWidth; // Position each rectangle based on cumulative width
-//     })
-//     .attr("y", (d) => {
-//         pops = getPopularities(d)
-//         return midHeight - (yScale(pops.song)/2)
-// }) // Set the y position (top of SVG)
-//     .attr("width", (d) => Math.max(songplay_lib[d].ms_played * scaleFactor, 2) - 1) // Width of each rectangle based on ms_played
-//     .attr("height", (d) => {
-//         pops = getPopularities(d)
-//         return yScale(pops.artist/2 + pops.song/2)
-// }) // Set height
-//     .attr("fill", "lightgrey") // Color of rectangles
-//     .on("mouseover", function(event, d) {
-//         d3.select(this) // Select the hovered rectangle
-//             .attr("fill", "darkgrey"); // Change color on hover
-        
-//         const duration = convertMS(songplay_lib[d].ms_played)
-        
-//         const displayString = genDisplayString(d)
-//         // Update tooltip content
-
-//         tooltip.html(`${displayString}<br>Played for: ${duration}`)
-//             .style("visibility", "visible") // Show the tooltip
-//             .style("top", (event.pageY - 10) + "px") // Position it
-//             .style("left", (event.pageX + 10) + "px");
-//     })
-//     .on("mousemove", function(event) {
-//         // Update tooltip position on mouse move
-//         tooltip.style("top", (event.pageY - 10) + "px")
-//                .style("left", (event.pageX + 10) + "px");
-//     })
-//     .on("mouseout", function() {
-//         d3.select(this) // Select the hovered rectangle
-//             .attr("fill", "lightgrey"); // Reset color
-
-//         tooltip.style("visibility", "hidden"); // Hide the tooltip
-//     });
-
     svg.selectAll("rect")
     .data(day)
     .enter()
-    .each(function(d) {
+    .each(function(d, i) {
         // Get popularities for the current data point
         const pops = getPopularities(d);
         
@@ -410,25 +349,35 @@ function drawDay(day) {
         const cumulativeWidth = day.slice(0, day.indexOf(d)).reduce((total, songplayId) => {
             return total + (songplay_lib[songplayId].ms_played * scaleFactor);
         }, 0);
+
+        const bounceTransition = d3.transition()
+        .duration(1000)  // Duration of each rectangle animation
+        .delay(i * 10)  // Sequential delay to create ripple effect
+        .ease(d3.easeElasticOut);  // Bounce effect
         
         // Draw the song popularity rectangle
         d3.select(this)
             .append("rect")
             .attr("x", cumulativeWidth) // Position based on cumulative width
-            .attr("y", midHeight - (firstHeight / 2)) // Center vertically
+            .attr("y", midHeight) // Center vertically
             .attr("width", width) // Width of the rectangle
-            .attr("height", firstHeight) // Height based on song popularity
+            .attr("height", 0)
             .attr("fill", firstColour) // Color for song popularity
-
+            .transition(bounceTransition)
+            .attr("height", firstHeight) // Height based on song popularity
+            .attr("y", midHeight - (firstHeight / 2))
         
         // Draw the artist popularity rectangle
         d3.select(this)
             .append("rect")
             .attr("x", cumulativeWidth) // Position based on cumulative width
-            .attr("y", midHeight - (secondHeight / 2)) // Center vertically
+            .attr("y", midHeight) // Center vertically
             .attr("width", width) // Width of the rectangle
-            .attr("height", secondHeight) // Height based on artist popularity
+            .attr("height", 0) // Height based on artist popularity
             .attr("fill", secondColour) // Color for artist popularity
+            .transition(bounceTransition)
+            .attr("y", midHeight - (secondHeight / 2))
+            .attr("height", secondHeight)
 
         // Draw a holder to have as the hover rectangle
         d3.select(this)
@@ -529,6 +478,24 @@ function drawYear(year){
             .attr("stroke", colours[colourIndex])  // Line color
             .attr("stroke-width", 2);  // Line width
     });
+
+    // Animation approach
+    // filteredSnake.forEach((segment, index) => {
+    //     const colourIndex = (segment.year - minYear) % colours.length;
+
+    //     svg.append("line")
+    //         .attr("x1", xScale(segment.x1))
+    //         .attr("y1", yScale(segment.y1))
+    //         .attr("x2", xScale(segment.x1))  // Start the line at x1 to animate
+    //         .attr("y2", yScale(segment.y1))  // Start the line at y1 to animate
+    //         .attr("stroke", colours[colourIndex])  // Line color
+    //         .attr("stroke-width", 2)  // Line width
+    //         .transition()  // Start the transition
+    //         .duration(0.1)  // Duration of each segment drawing (300ms)
+    //         .delay(index * 0.1)  // Delay each segment by 100ms times its index
+    //         .attr("x2", xScale(segment.x2))  // Draw to the final x2 position
+    //         .attr("y2", yScale(segment.y2));  // Draw to the final y2 position
+    // });
 
     // Draw the pale green dot at the start of the snake
     if (filteredSnake.length > 0) {
