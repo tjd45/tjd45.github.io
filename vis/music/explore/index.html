@@ -10,14 +10,25 @@
 
   <h1>Explore My Music Listening History</h1>
 
-  <div class="controls">
+  <div class="toggle-buttons">
+    <button id="dayButton" class="active">Sound of a Day</button>
+    <button id="yearButton">Sound of a Year</button>
+  </div>
+
+  <div class="controls" id="dayControls">
     <input type="date" id="datePicker">
-    <button id="randomButton">Random Day</button>
+    <button id="randomDayButton">Random Day</button>
+  </div>
+
+  <div class="controls" id="yearControls">
+    <select id="yearDropdown"></select>
+    <button id="randomYearButton">Random Year</button>
   </div>
 
   <div id="svgContainer">
     <div id="svgTitle"></div>
-    <svg></svg>
+    <svg id="svgDay"></svg>
+    <svg id="svgYear"></svg>
   </div>
   
   <script src="https://d3js.org/d3.v6.min.js"></script>

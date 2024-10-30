@@ -1,5 +1,6 @@
 // Get today's date one year ago
-const date = genDateFromDate(new Date());
+var date = genDateFromDate(new Date());
+var year = 2024
 
 date.setFullYear(date.getFullYear() - 1);
 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -7,6 +8,9 @@ const formattedDate = date.toLocaleDateString('en-GB', options);
 
 var songplay_lib, day_data
 var thisDay
+var snake = []
+
+var firstTimeLoad = true
 
 function genDateFromDate(datetime){
 
@@ -41,6 +45,126 @@ const tooltip = d3.select("body")
 // document.getElementById('svgTitle').textContent = `${formattedDate}`;
 updateTitle(date)
 
+document.getElementById('dayButton').addEventListener('click', function () {
+    toggleView('day');
+});
+
+document.getElementById('yearButton').addEventListener('click', function () {
+    toggleView('year');
+});
+
+function toggleView(view) {
+    const dayButton = document.getElementById('dayButton');
+    const yearButton = document.getElementById('yearButton');
+    const dayControls = document.getElementById('dayControls');
+    const yearControls = document.getElementById('yearControls');
+    const svgDay = document.getElementById('svgDay');
+    const svgYear = document.getElementById('svgYear');
+
+    if (view === 'day') {
+        // Show day-specific elements
+        dayButton.classList.add('active');
+        yearButton.classList.remove('active');
+        dayControls.style.display = 'inline-block';
+        yearControls.style.display = 'none';
+        svgDay.style.display = 'block';
+        svgYear.style.display = 'none';
+
+        updateTitle(date); // Reset title to current date format
+
+    } else if (view === 'year') {
+        // Show year-specific elements
+        dayButton.classList.remove('active');
+        yearButton.classList.add('active');
+        
+        dayControls.style.display = 'none';
+        yearControls.style.display = 'inline-block';
+        svgDay.style.display = 'none';
+        svgYear.style.display = 'block';
+
+        if(firstTimeLoad){
+            year = 2024
+
+
+            drawYear(year)
+            
+            firstTimeLoad = false
+
+        }
+
+        if(year == "all"){
+            document.getElementById('svgTitle').textContent = "All Years";
+        }else{
+            document.getElementById('svgTitle').textContent = year;
+        }
+        
+
+    
+    }
+}
+
+function populateYearDropdown(minYear, maxYear) {
+    const yearDropdown = document.getElementById('yearDropdown');
+    yearDropdown.innerHTML = '';  // Clear any existing options
+
+    // Add "All" option
+    const allOption = document.createElement('option');
+    allOption.value = "all";
+    allOption.textContent = "All";
+    yearDropdown.appendChild(allOption);
+
+    // Add options for each year from minYear to maxYear
+    for (let year = maxYear; year >= minYear; year--) {
+        const option = document.createElement('option');
+        option.value = year;
+        option.textContent = year;
+        yearDropdown.appendChild(option);
+    }
+
+    // Set default selection to max year
+    yearDropdown.value = maxYear;
+    year = maxYear;
+}
+
+document.getElementById('yearDropdown').addEventListener('change', function (event) {
+    // console.log(event.target.value)
+    selYear = event.target.value
+
+    if(selYear!="all"){
+        year = selYear
+        document.getElementById('svgTitle').textContent = selYear;
+
+    }else{
+        console.log("All Years Selected")
+        year = selYear
+        document.getElementById('svgTitle').textContent = "All Years";
+
+    }
+
+    
+
+    drawYear(year)
+
+});
+
+document.getElementById('randomYearButton').addEventListener('click', function () {
+    const yearDropdown = document.getElementById('yearDropdown');
+
+    const yearOptions = Array.from(yearDropdown.options).filter(option => option.value !== "all");
+
+    const randomYear = yearOptions[Math.floor(Math.random() * yearOptions.length)].value;
+
+    // Set the dropdown to the randomly selected year
+    yearDropdown.value = randomYear;
+    // Update the title
+    document.getElementById('svgTitle').textContent = randomYear;
+
+    year = randomYear
+
+    drawYear(year)
+});
+
+
 // Optional: Set date picker default to today's date
 document.getElementById('datePicker').value = date.toISOString().split('T')[0];
 
@@ -48,6 +172,7 @@ document.getElementById('datePicker').addEventListener('change', function (event
     console.log(event.target)
 
     const selectedDate = genDate(event.target.value)
+    date = selectedDate
 
     // Now, this will give you the start of the selected day in UTC
     thisDay = genDay(selectedDate);
@@ -58,10 +183,11 @@ document.getElementById('datePicker').addEventListener('change', function (event
 
 });
 
-document.getElementById('randomButton').addEventListener('click', function () {
+document.getElementById('randomDayButton').addEventListener('click', function () {
     const allDates = Object.keys(day_data.days);  // Get all available dates
     const randomIndex = Math.floor(Math.random() * allDates.length);  // Choose a random index
     const randomDate = genDate(allDates[randomIndex]) 
+    date = randomDate
     thisDay = genDay(randomDate);  // Generate songplays for the random day
     document.getElementById('datePicker').value = randomDate.toISOString().split('T')[0];  // Update the date picker value
     drawDay(thisDay);  // Optionally draw or update the day view
@@ -82,6 +208,71 @@ async function loadFiles(){
     day_data = await d3.json("data/days_overview.json")
 }
 
+function genSnake(artist, plays){
+    console.log("Generating the snake data")
+
+    let direction = 0;  // 0 = right, 1 = down, 2 = left, 3 = up
+    let x1 = 0, y1 = 0, x2 = 0, y2 = 0;  // Initialize starting coordinates
+    let lastNewID = null;
+
+    let cnt = 0
+
+    for (const sp of Object.values(songplay_lib)) {
+
+        const spid = sp.id;  
+        const ms_played = sp.ms_played;
+        const timestamp = sp.ts_start;
+
+        // Set start coordinates for the current segment
+        x1 = x2;
+        y1 = y2;
+
+        if (sp.firstArtistPlay && cnt>0) { // Add caveat so the direction stays to the right for the first item even if it satisfies the new value
+            direction = (direction + 1) % 4;  // Rotate direction 90 degrees to the right
+        }
+
+        // Determine end coordinates based on current direction
+        if (direction === 0) {  // Right
+            x2 = x1 + ms_played;
+            y2 = y1;
+        } else if (direction === 1) {  // Down
+            x2 = x1;
+            y2 = y1 + ms_played;
+        } else if (direction === 2) {  // Left
+            x2 = x1 - ms_played;
+            y2 = y1;
+        } else if (direction === 3) {  // Up
+            x2 = x1;
+            y2 = y1 - ms_played;
+        }
+
+        // Create the snake segment object
+        const snakeSegment = {
+            x1: x1,
+            y1: y1,
+            x2: x2,
+            y2: y2,
+            spid: spid,
+            last_new: lastNewID,
+            year: timestamp.slice(0,4)
+        };
+
+        // Add the segment to the snake array
+        snake.push(snakeSegment);
+        // console.log(snakeSegment)
+        // Check if this songplay is a new "first artist play"
+        if (sp.firstArtistPlay) {
+            lastNewID = spid;  // Update last_new with the current songplay ID
+        }
+        cnt++
+
+    }
+
+
+    // console.log("Generated snake data:", snake);
+
+}
+
 function genDay(fullDate){
     updateTitle(fullDate)
     const justDate = fullDate.toISOString().split('T')[0];
@@ -97,7 +288,7 @@ function drawDay(day) {
 
     const dayMS = calcDayMS(day)
     // Clear the existing content in the SVG (if any)
-    const svg = d3.select("svg"); // Assuming you have an SVG element in your HTML
+    const svg = d3.select("#svgDay"); // Assuming you have an SVG element in your HTML
     svg.selectAll("*").remove(); // Remove previous rectangles if they exist
 
     // const width = +svg.attr("width"); // Get the width of the SVG
@@ -271,14 +462,95 @@ function drawDay(day) {
     });
 }
 
+function drawYear(year){
+
+
+    let filteredSnake = snake
+
+    if (year == "all"){
+        console.log("Drawing All Years")
+
+    }else{
+        console.log("Drawing year: " + year);
+
+        // Find start and end indices for the specified year
+        const startIdx = snake.findIndex((segment) => segment.year == year);
+        const endIdx = snake.findIndex((segment, index) => 
+            segment.year > year && index > startIdx
+        ) - 1;
+
+        // If startIdx is -1, the year is not in the data
+        if (startIdx !== -1) {
+            filteredSnake = snake.slice(startIdx, endIdx + 1);
+        } else {
+            console.log("Year not found in data");
+            filteredSnake = [];  // Clear filteredSnake if year is not found
+        }
+
+    }
+
+
+    const svg = d3.select("#svgYear");
+    svg.selectAll("*").remove();  // Clear previous drawings
+
+    const width = parseInt(svg.style("width"), 10);
+    const height = parseInt(svg.style("height"), 10);
+    const padding = 0.05;  // 5% padding
+
+
+    // Calculate inner drawing area dimensions
+    const innerWidth = width * (1 - 2 * padding);
+    const innerHeight = height * (1 - 2 * padding);
+
+    const xExtent = d3.extent(filteredSnake.flatMap(d => [d.x1, d.x2]));
+    const yExtent = d3.extent(filteredSnake.flatMap(d => [d.y1, d.y2]));
+
+    const xScale = d3.scaleLinear()
+    .domain([xExtent[0], xExtent[1]])
+    .range([padding * width, width - padding * width]);
+
+    const yScale = d3.scaleLinear()
+    .domain([yExtent[0], yExtent[1]])
+    .range([height - padding * height, padding * height]);  // SVG y is top to bottom, so invert the range
+
+    filteredSnake.forEach(segment => {
+        svg.append("line")
+            .attr("x1", xScale(segment.x1))
+            .attr("y1", yScale(segment.y1))
+            .attr("x2", xScale(segment.x2))
+            .attr("y2", yScale(segment.y2))
+            .attr("stroke", "white")  // Line color
+            .attr("stroke-width", 2);  // Line width
+    });
+
+    // Draw the pale green dot at the start of the snake
+    if (filteredSnake.length > 0) {
+        const firstSegment = filteredSnake[0];
+        svg.append("circle")
+            .attr("cx", xScale(firstSegment.x1))
+            .attr("cy", yScale(firstSegment.y1))
+            .attr("r", 5)  // Radius of the dot
+            .attr("fill", "lightgreen");  // Pale green color
+    }
+
+    // Draw the pale red dot at the end of the snake
+    const lastSegment = filteredSnake[filteredSnake.length - 1];
+    svg.append("circle")
+        .attr("cx", xScale(lastSegment.x2))
+        .attr("cy", yScale(lastSegment.y2))
+        .attr("r", 5)  // Radius of the dot
+        .attr("fill", "lightcoral");  // Pale red color
+}
+
+
 
 
 function getPopularities(sid){
     song = song_lib[songplay_lib[sid].song_id]
-    song_pop = song.song_personal_popularity
+    song_pop = song.personal_pop
 
     artist=artist_lib[song.artist_ids[0]]
-    artist_pop = artist.artist_personal_popularity
+    artist_pop = artist.personal_pop
 
     if (!song.title) {
         // If it's the null song, return 0 for both song and artist popularity
@@ -327,6 +599,9 @@ async function main(){
     await loadFiles()
 
     thisDay = genDay(date)
+    populateYearDropdown(2011,2024)
+
+    genSnake(true,true)
 
 
 }

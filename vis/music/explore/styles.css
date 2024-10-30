@@ -30,6 +30,14 @@ body {
     height: 400px;
     border: 1px solid #555;
   }
+
+  #svgYear{
+    display: none;
+  }
+
+  #yearControls{
+    display: none;
+  }
   
   .controls {
     margin-bottom: 20px;
@@ -61,4 +69,54 @@ body {
     border-radius: 5px;
     pointer-events: none; /* Prevents the tooltip from interfering with mouse events */
     visibility: hidden; /* Hide it by default */
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.toggle-buttons button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 20px; /* Pill shape */
+  cursor: pointer;
+}
+
+.toggle-buttons .active {
+  background-color: #878787; /* Visually show active button */
+}
+
+.toggle-buttons button:hover {
+  background-color: #666;
+}
+
+/* Style for the date picker, dropdown, and button for uniform height */
+select, input[type="date"], button {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #555;
+  background-color: #444;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 40px; /* Ensures consistent height */
+}
+
+/* Center items in .controls and align them vertically */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* Centers content within controls if needed */
+  gap: 10px;  /* Spacing between elements */
+  margin-bottom: 20px;
+}
+
+/* Hover effects for all interactive elements */
+button:hover, select:hover, input[type="date"]:hover {
+  background-color: #555;
 }
