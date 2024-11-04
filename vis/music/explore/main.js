@@ -674,12 +674,12 @@ function calcDayMS(day){
 }
 
 function showSpinner() {
-    document.getElementById("spinner").style.display = "block";
+    // document.getElementById("spinner").style.display = "block";
     document.getElementById("spinner-2").style.display = "block";
   }
   
   function hideSpinner() {
-    document.getElementById("spinner").style.display = "none";
+    // document.getElementById("spinner").style.display = "none";
     document.getElementById("spinner-2").style.display = "none";
   }
 
@@ -697,6 +697,32 @@ async function main(){
     hideSpinner()
 
 }
+
+let timeoutId;
+
+function redrawSVG() {
+  // Your logic to redraw the SVG goes here
+  if(currentView == "year"){
+    let temp = yearAnimation 
+    yearAnimation = false
+    drawYear(year)
+    yearAnimation = temp
+  }else{
+    drawDay(thisDay)
+  }
+  console.log('Redrawing SVG...');
+}
+
+function debounce(func, delay) {
+  return function() {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(func, delay);
+  };
+}
+
+// Attach the resize event listener with debouncing
+window.addEventListener('resize', debounce(redrawSVG, 200)); // Adjust the delay as needed
+
 
 
 main()
