@@ -221,7 +221,10 @@ document.getElementById('randomYearButton').addEventListener('click', function (
 
     year = randomYear
 
-    drawYear(year)
+    setTimeout(function () {
+        drawYear(year);
+        hideSpinner();
+    }, 0); // Short delay to allow the spinner to render
 });
 
 document.getElementById('backYearButton').addEventListener('click', function () {
@@ -229,8 +232,10 @@ document.getElementById('backYearButton').addEventListener('click', function () 
     const yearDropdown = document.getElementById('yearDropdown');
 
     yearDropdown.value = year
-    drawYear(year)
-   
+    setTimeout(function () {
+        drawYear(year);
+        hideSpinner();
+    }, 0); // Short delay to allow the spinner to render   
 });
 
 document.getElementById('forwardYearButton').addEventListener('click', function () {
@@ -238,7 +243,11 @@ document.getElementById('forwardYearButton').addEventListener('click', function 
     const yearDropdown = document.getElementById('yearDropdown');
 
     yearDropdown.value = year
-    drawYear(year)
+
+     setTimeout(function () {
+        drawYear(year);
+        hideSpinner();
+    }, 0); // Short delay to allow the spinner to render
 });
 
 
@@ -705,7 +714,10 @@ function redrawSVG() {
   if(currentView == "year"){
     let temp = yearAnimation 
     yearAnimation = false
-    drawYear(year)
+    setTimeout(function () {
+        drawYear(year);
+        hideSpinner();
+    }, 0); // Short delay to allow the spinner to render
     yearAnimation = temp
   }else{
     drawDay(thisDay)
