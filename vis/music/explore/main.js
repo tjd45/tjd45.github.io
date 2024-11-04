@@ -10,11 +10,48 @@ var songplay_lib, day_data
 var thisDay
 var snake = []
 
+var currentView = "day"
+
 var minYear, maxYear
 
 var firstTimeLoad = true
 
 var colours = ["#eaf0ce", "#89aae6", "#DA9644", "#15a0a2", "#f4998d"]
+
+var yearAnimation = false;
+
+// Select the elements
+const infoButton = document.getElementById("infoButton");
+const infoModal = document.getElementById("infoModal");
+const closeButton = document.getElementById("closeButton");
+const infoParaDay = document.getElementById("day-info");
+const infoParaYear = document.getElementById("year-info");
+
+// Show the modal when the info button is clicked
+infoButton.addEventListener("click", () => {
+
+  infoModal.style.display = "flex";  // Use flex to center modal content
+  if(currentView=="day"){
+    infoParaDay.style.display = "block"
+    infoParaYear.style.display = "none"
+  }else{
+    infoParaDay.style.display = "none"
+    infoParaYear.style.display = "block"
+  }
+  
+});
+
+// Close the modal when the close button (X) is clicked
+closeButton.addEventListener("click", () => {
+  infoModal.style.display = "none";
+});
+
+// Close the modal when clicking outside the modal content
+window.addEventListener("click", (event) => {
+  if (event.target === infoModal) {
+    infoModal.style.display = "none";
+  }
+});
 
 function genDateFromDate(datetime){
 
@@ -58,6 +95,7 @@ document.getElementById('yearButton').addEventListener('click', function () {
 });
 
 function toggleView(view) {
+    currentView = view
     const dayButton = document.getElementById('dayButton');
     const yearButton = document.getElementById('yearButton');
     const dayControls = document.getElementById('dayControls');
@@ -89,8 +127,9 @@ function toggleView(view) {
         if(firstTimeLoad){
             year = 2024
 
-
+            showSpinner()
             drawYear(year)
+            hideSpinner()
             
             firstTimeLoad = false
 
@@ -106,6 +145,18 @@ function toggleView(view) {
     
     }
 }
+
+
+document.getElementById("toggleAnimationSwitch").addEventListener("change", function () {
+    yearAnimation = this.checked; // Update based on the switch state
+    showSpinner();
+
+    setTimeout(function () {
+        drawYear(year);
+        hideSpinner();
+    }, 0); // Short delay to allow the spinner to render
+
+});
 
 function populateYearDropdown(minYear, maxYear) {
     const yearDropdown = document.getElementById('yearDropdown');
@@ -146,8 +197,13 @@ document.getElementById('yearDropdown').addEventListener('change', function (eve
     }
 
     
+    showSpinner();
 
-    drawYear(year)
+    setTimeout(function () {
+        drawYear(year);
+        hideSpinner();
+    }, 0); // Short delay to allow the spinner to render
+
 
 });
 
@@ -165,6 +221,23 @@ document.getElementById('randomYearButton').addEventListener('click', function (
 
     year = randomYear
 
+    drawYear(year)
+});
+
+document.getElementById('backYearButton').addEventListener('click', function () {
+    year = Math.max(year-1,minYear)
+    const yearDropdown = document.getElementById('yearDropdown');
+
+    yearDropdown.value = year
+    drawYear(year)
+   
+});
+
+document.getElementById('forwardYearButton').addEventListener('click', function () {
+    year = Math.min(year+1,maxYear)
+    const yearDropdown = document.getElementById('yearDropdown');
+
+    yearDropdown.value = year
     drawYear(year)
 });
 
@@ -195,6 +268,22 @@ document.getElementById('randomDayButton').addEventListener('click', function ()
     thisDay = genDay(randomDate);  // Generate songplays for the random day
     document.getElementById('datePicker').value = randomDate.toISOString().split('T')[0];  // Update the date picker value
     drawDay(thisDay);  // Optionally draw or update the day view
+});
+
+document.getElementById('backDayButton').addEventListener('click', function () {
+    console.log(date)
+    date.setDate(date.getDate() - 1);
+    thisDay = genDay(date);  
+    document.getElementById('datePicker').value = date.toISOString().split('T')[0];  // Update the date picker value
+    drawDay(thisDay); 
+});
+
+document.getElementById('forwardDayButton').addEventListener('click', function () {
+    console.log(date)
+    date.setDate(date.getDate() + 1);
+    thisDay = genDay(date);  
+    document.getElementById('datePicker').value = date.toISOString().split('T')[0];  // Update the date picker value
+    drawDay(thisDay); 
 });
 
 function updateTitle(date) {
@@ -466,36 +555,52 @@ function drawYear(year){
     .domain([yExtent[0], yExtent[1]])
     .range([height - padding * height, padding * height]);  // SVG y is top to bottom, so invert the range
 
-    filteredSnake.forEach(segment => {
-        colourIndex = (segment.year - minYear) % colours.length
+    if(yearAnimation){
+
+        let totalDuration = 5000
+
+        if(year == 2011){
+            totalDuration = 1000
+        }else if (year == "all"){
+            totalDuration = 10000
+        }
+
+        let thisDelay = totalDuration/filteredSnake.length
+        console.log(thisDelay)
+
+        filteredSnake.forEach((segment, index) => {
+            const colourIndex = (segment.year - minYear) % colours.length;
+
+            svg.append("line")
+                .attr("x1", xScale(segment.x1))
+                .attr("y1", yScale(segment.y1))
+                .attr("x2", xScale(segment.x1))  // Start the line at x1 to animate
+                .attr("y2", yScale(segment.y1))  // Start the line at y1 to animate
+                .attr("stroke", colours[colourIndex])  // Line color
+                .attr("stroke-width", 2)  // Line width
+                .transition()  // Start the transition
+                .duration(0.1)  // Duration of each segment drawing (Basically instant)
+                .delay(index * thisDelay)  // Delay each segment by 100ms times its index
+                .attr("x2", xScale(segment.x2))  // Draw to the final x2 position
+                .attr("y2", yScale(segment.y2));  // Draw to the final y2 position
+        });
+    }else{
+        filteredSnake.forEach(segment => {
+            colourIndex = (segment.year - minYear) % colours.length
+       
+    
+            svg.append("line")
+                .attr("x1", xScale(segment.x1))
+                .attr("y1", yScale(segment.y1))
+                .attr("x2", xScale(segment.x2))
+                .attr("y2", yScale(segment.y2))
+                .attr("stroke", colours[colourIndex])  // Line color
+                .attr("stroke-width", 2);  // Line width
+        });
+    }
+
+    
    
-
-        svg.append("line")
-            .attr("x1", xScale(segment.x1))
-            .attr("y1", yScale(segment.y1))
-            .attr("x2", xScale(segment.x2))
-            .attr("y2", yScale(segment.y2))
-            .attr("stroke", colours[colourIndex])  // Line color
-            .attr("stroke-width", 2);  // Line width
-    });
-
-    // Animation approach
-    // filteredSnake.forEach((segment, index) => {
-    //     const colourIndex = (segment.year - minYear) % colours.length;
-
-    //     svg.append("line")
-    //         .attr("x1", xScale(segment.x1))
-    //         .attr("y1", yScale(segment.y1))
-    //         .attr("x2", xScale(segment.x1))  // Start the line at x1 to animate
-    //         .attr("y2", yScale(segment.y1))  // Start the line at y1 to animate
-    //         .attr("stroke", colours[colourIndex])  // Line color
-    //         .attr("stroke-width", 2)  // Line width
-    //         .transition()  // Start the transition
-    //         .duration(0.1)  // Duration of each segment drawing (300ms)
-    //         .delay(index * 0.1)  // Delay each segment by 100ms times its index
-    //         .attr("x2", xScale(segment.x2))  // Draw to the final x2 position
-    //         .attr("y2", yScale(segment.y2));  // Draw to the final y2 position
-    // });
 
     // Draw the pale green dot at the start of the snake
     if (filteredSnake.length > 0) {
@@ -568,8 +673,19 @@ function calcDayMS(day){
     return totalMS
 }
 
+function showSpinner() {
+    document.getElementById("spinner").style.display = "block";
+    document.getElementById("spinner-2").style.display = "block";
+  }
+  
+  function hideSpinner() {
+    document.getElementById("spinner").style.display = "none";
+    document.getElementById("spinner-2").style.display = "none";
+  }
+
 
 async function main(){
+    showSpinner()
     await loadFiles()
 
     thisDay = genDay(date)
@@ -578,7 +694,7 @@ async function main(){
     populateYearDropdown(minYear,maxYear)
 
     genSnake(true,true)
-
+    hideSpinner()
 
 }
 

@@ -12,6 +12,7 @@ body {
   }
 
   #svgContainer{
+    position: relative;
     width: 80%;
     margin: 0 auto;
   }
@@ -45,7 +46,7 @@ body {
   
   input[type="date"] {
     padding: 5px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
   }
   
   button {
@@ -107,6 +108,7 @@ select, input[type="date"], button {
   height: 40px; /* Ensures consistent height */
 }
 
+
 /* Center items in .controls and align them vertically */
 .controls {
   display: flex;
@@ -119,4 +121,127 @@ select, input[type="date"], button {
 /* Hover effects for all interactive elements */
 button:hover, select:hover, input[type="date"]:hover {
   background-color: #555;
+}
+
+.loader {
+  position: absolute;
+  top: 40%;
+  left: 43%;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #666666; /* Blue */
+  border-radius: 100%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  z-index: 10;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.toggle-switch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  -webkit-appearance: none;
+  background-color: #ccc;
+  outline: none;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: background-color 0.2s;
+  vertical-align: middle;
+}
+
+.toggle-switch:checked {
+  background-color: #4caf50; /* Color when checked */
+}
+
+.toggle-switch::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #fff;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.2s;
+}
+
+.toggle-switch:checked::before {
+  transform: translateX(20px); /* Move the toggle knob when checked */
+}
+
+label{
+  margin-left: 10px;
+}
+
+.info-button {
+  position: absolute;
+  bottom: -40px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(200, 200, 200, 0.5);
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.info-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Black overlay */
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background-color: #444;
+  color: white;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+/* Close button (X) */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Close button hover effect */
+.close-button:hover {
+  color: #ccc;
+}
+
+#year-info{
+  display:none;
+}
+
+#infoModal a {
+  color: rgb(184, 195, 255); /* Faint blue color */
+  text-decoration: underline; /* Underline the text */
+}
+
+#infoModal a:visited {
+  color: rgb(184, 195, 255); /* Faint blue color */
 }

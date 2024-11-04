@@ -16,20 +16,70 @@
   </div>
 
   <div class="controls" id="dayControls">
+    <button id="backDayButton"><</button>
     <input type="date" id="datePicker">
+    <button id="forwardDayButton">></button>
     <button id="randomDayButton">Random Day</button>
   </div>
 
   <div class="controls" id="yearControls">
     <select id="yearDropdown"></select>
+    <button id="forwardYearButton">&uarr;</button>
+    <button id="backYearButton">&darr;</button>
     <button id="randomYearButton">Random Year</button>
+    <label for="toggleAnimationSwitch">Animation:</label>
+    <input type="checkbox" id="toggleAnimationSwitch" class="toggle-switch">
+
   </div>
 
   <div id="svgContainer">
     <div id="svgTitle"></div>
     <svg id="svgDay"></svg>
     <svg id="svgYear"></svg>
+    <div class="info-button" id="infoButton">i</div>
+    <div class="loader" id="spinner-2" style="display: none"></div>
   </div>
+
+  <div id="spinner" style="display: none;">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div class="info-modal" id="infoModal">
+    <div class="modal-content">
+      <span class="close-button" id="closeButton">&times;</span>
+      <h2>Information</h2>
+      <p id="day-info">This screen displays a single day of my listening history. </br></br>
+        Each bar in the visualisation represents an individual 'song play'. Hovering over the song play 
+        will show you the name of the song and the artist.</br></br> 
+        The width of the bars represents how long the song was played for. The visualisation is 
+        designed to fill the horizontal space. Therefore, the positioning on the x axis does not encode 
+        any information - the next song immediately follows, even if there was a gap in reality, and a 
+        day with fewer songs played on it will have wider bars.</br></br>
+        The height of the bars indicates how popular a song and the artist are in my library. The 
+        dark grey <span style="color: darkgrey;"> ■</span> bars show how popular the artist is and the 
+        light grey <span style="color: lightgrey;"> ■</span> bars bars how popular the song is.</br></br>
+        The visual representation is supposed to be evocative of a sound wave.
+      </p>
+      <p id="year-info">This screen displays a whole year of my listening history. </br></br>
+        Each long line you see is actually a combination of hundreds or thousands of individual song plays.
+        These lines continue in a single direction until an artist appears in my library for the first time.
+        At this point the direction of the line turns 90° to the left.</br></br>
+        Through this visualisation you can see the episodic nature at which I discover and listen to new music,
+        often spending long periods of time listening to artists I have already encountered and then 
+        testing out the water by listening to multiple new artists in close proximity. </br></br>
+        Feel free to explore the animation option and see the path of my music be painted for each year.</br></br> 
+        The colours selected for each year are purely an aesthetic decision and the design of this visualisation
+        was heavily influenced by Stefanie Posavec's <a href="https://www.stefanieposavec.com/writing-without-words" target="_blank">
+          Writing Without Words</a> project and intended to mimic the meandering paths my music listening
+          can take.
+
+      </p>
+    </div>
+  </div>
+
+ 
   
   <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="main.js"></script>
