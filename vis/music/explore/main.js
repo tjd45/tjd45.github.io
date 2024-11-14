@@ -186,7 +186,7 @@ document.getElementById('yearDropdown').addEventListener('change', function (eve
     selYear = event.target.value
 
     if(selYear!="all"){
-        year = selYear
+        year = parseInt(selYear)
         document.getElementById('svgTitle').textContent = selYear;
 
     }else{
@@ -232,6 +232,9 @@ document.getElementById('backYearButton').addEventListener('click', function () 
     const yearDropdown = document.getElementById('yearDropdown');
 
     yearDropdown.value = year
+
+    document.getElementById('svgTitle').textContent = year;
+    showSpinner()
     setTimeout(function () {
         drawYear(year);
         hideSpinner();
@@ -244,6 +247,9 @@ document.getElementById('forwardYearButton').addEventListener('click', function 
 
     yearDropdown.value = year
 
+    document.getElementById('svgTitle').textContent = year;
+
+    showSpinner()
      setTimeout(function () {
         drawYear(year);
         hideSpinner();
@@ -276,7 +282,12 @@ document.getElementById('randomDayButton').addEventListener('click', function ()
     date = randomDate
     thisDay = genDay(randomDate);  // Generate songplays for the random day
     document.getElementById('datePicker').value = randomDate.toISOString().split('T')[0];  // Update the date picker value
-    drawDay(thisDay);  // Optionally draw or update the day view
+    showSpinner()
+    setTimeout(function () {
+        drawDay(thisDay);
+        hideSpinner();
+    }, 0)
+    // drawDay(thisDay);  // Optionally draw or update the day view
 });
 
 document.getElementById('backDayButton').addEventListener('click', function () {
@@ -284,7 +295,11 @@ document.getElementById('backDayButton').addEventListener('click', function () {
     date.setDate(date.getDate() - 1);
     thisDay = genDay(date);  
     document.getElementById('datePicker').value = date.toISOString().split('T')[0];  // Update the date picker value
-    drawDay(thisDay); 
+    showSpinner()
+    setTimeout(function () {
+        drawDay(thisDay);
+        hideSpinner();
+    }, 0)
 });
 
 document.getElementById('forwardDayButton').addEventListener('click', function () {
@@ -292,7 +307,11 @@ document.getElementById('forwardDayButton').addEventListener('click', function (
     date.setDate(date.getDate() + 1);
     thisDay = genDay(date);  
     document.getElementById('datePicker').value = date.toISOString().split('T')[0];  // Update the date picker value
-    drawDay(thisDay); 
+    showSpinner()
+    setTimeout(function () {
+        drawDay(thisDay);
+        hideSpinner();
+    }, 0) 
 });
 
 function updateTitle(date) {
@@ -381,7 +400,11 @@ function genDay(fullDate){
 
     const dayPlays = day_data.days[justDate];
 
-    drawDay(dayPlays)
+    showSpinner()
+    setTimeout(function () {
+        drawDay(dayPlays);
+        hideSpinner();
+    }, 0)
 
     return dayPlays
 }
@@ -683,9 +706,35 @@ function calcDayMS(day){
 }
 
 function showSpinner() {
-    // document.getElementById("spinner").style.display = "block";
-    document.getElementById("spinner-2").style.display = "block";
-  }
+    const spinner = document.getElementById("spinner-2");
+
+    console.log(currentView)
+    if(currentView == "day"){
+        currentSvg = document.getElementById("svgDay");
+    }else{
+        currentSvg = document.getElementById("svgYear");
+    }
+    
+
+    // Ensure the SVG is displayed and calculate its position
+    if (currentSvg.style.display !== "none") {
+        const rect = currentSvg.getBoundingClientRect();
+
+
+        spinner.style.display = "block";
+        const spinnerbb = spinner.getBoundingClientRect();
+
+        console.log(rect)
+        console.log(spinnerbb)
+
+        // Position the spinner in the center of the SVG
+        spinner.style.top = `${rect.top + window.scrollY + rect.height/2 - spinnerbb.height/2}px`;
+        spinner.style.left = `${rect.left + window.scrollX + rect.width/2 - spinnerbb.width/2 }px`;
+
+        // Display the spinner
+
+    }
+}
   
   function hideSpinner() {
     // document.getElementById("spinner").style.display = "none";
@@ -714,13 +763,18 @@ function redrawSVG() {
   if(currentView == "year"){
     let temp = yearAnimation 
     yearAnimation = false
+    showSpinner()
     setTimeout(function () {
         drawYear(year);
         hideSpinner();
     }, 0); // Short delay to allow the spinner to render
     yearAnimation = temp
   }else{
-    drawDay(thisDay)
+    showSpinner()
+    setTimeout(function () {
+        drawDay(thisDay);
+        hideSpinner();
+    }, 0); // Short delay to allow the spinner to render
   }
   console.log('Redrawing SVG...');
 }
