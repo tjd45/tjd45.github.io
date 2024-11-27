@@ -9,6 +9,7 @@ const formattedDate = date.toLocaleDateString('en-GB', options);
 var songplay_lib, day_data
 var thisDay
 var snake = []
+let newArtistDots = []
 
 var currentView = "day"
 
@@ -20,12 +21,15 @@ var colours = ["#eaf0ce", "#89aae6", "#DA9644", "#15a0a2", "#f4998d"]
 
 var yearAnimation = false;
 
+var defaultThreshold = 3600000;
+
 // Select the elements
 const infoButton = document.getElementById("infoButton");
 const infoModal = document.getElementById("infoModal");
 const closeButton = document.getElementById("closeButton");
 const infoParaDay = document.getElementById("day-info");
 const infoParaYear = document.getElementById("year-info");
+const infoParaExperiment = document.getElementById("experimental-info");
 
 // Show the modal when the info button is clicked
 infoButton.addEventListener("click", () => {
@@ -34,9 +38,15 @@ infoButton.addEventListener("click", () => {
   if(currentView=="day"){
     infoParaDay.style.display = "block"
     infoParaYear.style.display = "none"
-  }else{
+    infoParaExperiment.style.display = "none"
+  }else if(currentView=="year"){
     infoParaDay.style.display = "none"
     infoParaYear.style.display = "block"
+    infoParaExperiment.style.display = "none"
+  }else{
+    infoParaDay.style.display = "none"
+    infoParaYear.style.display = "none"
+    infoParaExperiment.style.display = "block"
   }
   
 });
@@ -52,6 +62,42 @@ window.addEventListener("click", (event) => {
     infoModal.style.display = "none";
   }
 });
+
+const slider = document.getElementById("thresholdSlider");
+  const label = document.getElementById("thresholdLabel");
+
+  const formatThreshold = (value) => {
+    const totalMinutes = Math.floor(value / 60000);
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    return `${hours}h ${minutes}m`;
+  };
+
+  // Update label when the slider value changes
+  slider.addEventListener("input", () => {
+    label.textContent = formatThreshold(slider.value);
+  });
+
+  slider.value = defaultThreshold
+  label.textContent = formatThreshold(slider.value);
+
+  // Log the value when the slider is released
+  slider.addEventListener("change", () => {
+    console.log(`Threshold value: ${slider.value} ms`);
+
+
+    showSpinner();
+
+    setTimeout(function () {
+        genSnake(true,true,slider.value)
+        drawYear(year);
+        hideSpinner();
+    }, 0); 
+
+
+    
+
+  });
 
 function genDateFromDate(datetime){
 
@@ -94,6 +140,10 @@ document.getElementById('yearButton').addEventListener('click', function () {
     toggleView('year');
 });
 
+document.getElementById('experimentButton').addEventListener('click', function () {
+    toggleView('experiment');
+});
+
 function toggleView(view) {
     currentView = view
     const dayButton = document.getElementById('dayButton');
@@ -103,6 +153,10 @@ function toggleView(view) {
     const svgDay = document.getElementById('svgDay');
     const svgYear = document.getElementById('svgYear');
 
+    const experimentButton = document.getElementById('experimentButton');
+    const experimentalControls = document.getElementById('experimentalControls');
+    const svgExperiment = document.getElementById('svgExperiment');
+     
     if (view === 'day') {
         // Show day-specific elements
         dayButton.classList.add('active');
@@ -111,6 +165,10 @@ function toggleView(view) {
         yearControls.style.display = 'none';
         svgDay.style.display = 'block';
         svgYear.style.display = 'none';
+
+        experimentButton.classList.remove('active');
+        experimentalControls.display="none";
+        svgExperiment.style.display = 'none';
 
         updateTitle(date); // Reset title to current date format
 
@@ -123,6 +181,10 @@ function toggleView(view) {
         yearControls.style.display = 'inline-block';
         svgDay.style.display = 'none';
         svgYear.style.display = 'block';
+
+        experimentButton.classList.remove('active');
+        experimentalControls.display="none";
+        svgExperiment.style.display = 'none';
 
         if(firstTimeLoad){
             year = 2024
@@ -143,6 +205,20 @@ function toggleView(view) {
         
 
     
+    } else if (view=='experiment'){
+        // Show day-specific elements
+        experimentButton.classList.add('active');
+        dayButton.classList.remove('active');
+        yearButton.classList.remove('active');
+        experimentalControls.display="inline-block";
+        dayControls.style.display = 'none';
+        yearControls.style.display = 'none';
+        svgDay.style.display = 'none';
+        svgYear.style.display = 'none';
+        svgExperiment.style.display = 'block';
+
+        drawExperiment(thisDay);
+        updateTitle(date); // Reset title to current date format
     }
 }
 
@@ -320,6 +396,14 @@ function updateTitle(date) {
     document.getElementById('svgTitle').textContent = formattedDate; 
 }
 
+function formatDate(date) {
+    const dateObj = new Date(date)
+
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = dateObj.toLocaleDateString('en-GB', options);
+    return formattedDate;
+}
+
 
 async function loadFiles(){
     songplay_lib = await d3.json("data/songplay_library.json")
@@ -329,8 +413,10 @@ async function loadFiles(){
     day_data = await d3.json("data/days_overview.json")
 }
 
-function genSnake(artist, plays){
-    console.log("Generating the snake data")
+function genSnake(artist, plays, threshold = defaultThreshold){
+    console.log("Generating the snake data with threshold of "+threshold)
+    snake = []
+    newArtistDots = []
 
     let direction = 0;  // 0 = right, 1 = down, 2 = left, 3 = up
     let x1 = 0, y1 = 0, x2 = 0, y2 = 0;  // Initialize starting coordinates
@@ -348,8 +434,34 @@ function genSnake(artist, plays){
         x1 = x2;
         y1 = y2;
 
-        if (sp.firstArtistPlay && cnt>0) { // Add caveat so the direction stays to the right for the first item even if it satisfies the new value
-            direction = (direction + 1) % 4;  // Rotate direction 90 degrees to the right
+        if (sp.firstArtistPlay ) { // Add caveat so the direction stays to the right for the first item even if it satisfies the new value
+            song = song_lib[sp.song_id]
+            artist = artist_lib[song.artist_ids[0]]
+
+            if(artist.total_ms > threshold){
+                if(cnt > 0){
+                    direction = (direction + 1) % 4;  // Rotate direction 90 degrees to the right
+                }
+                
+
+                const newArtist = {
+                    name: artist.name,
+                    first_song: song.title,
+                    first_play: sp.ts_start,
+                    year: sp.ts_start.slice(0,4),
+                    total_ms: artist.total_ms,
+                    x: x1,
+                    y: y1
+                }
+    
+                newArtistDots.push(newArtist);
+            
+            }
+
+            
+
+            
+           
         }
 
         // Determine end coordinates based on current direction
@@ -651,9 +763,228 @@ function drawYear(year){
         .attr("cy", yScale(lastSegment.y2))
         .attr("r", 5)  // Radius of the dot
         .attr("fill", "lightcoral");  // Pale red color
+
+        let filteredNewArtistDots = newArtistDots;
+
+        if (year !== "all") {
+            filteredNewArtistDots = newArtistDots.filter(dot => dot.year == year);
+        }
+    
+
+        // Add the newArtistDots to the SVG
+        const dotGroup = svg.selectAll(".new-artist-dot")
+            .data(filteredNewArtistDots)
+            .enter()
+            .append("circle")
+            .attr("class", "new-artist-dot")
+            .attr("cx", d => xScale(d.x))
+            .attr("cy", d => yScale(d.y))
+            .attr("r", 4)  // Dot size
+            .attr("fill", "transparent")  // Initial color
+            .on("mouseover", function (event, d) {
+                d3.select(this).attr("fill", "gray");  // Change color on hover
+                
+
+
+    
+                        const duration = 20
+                    const displayString = genNewArtistDisplayString(d)
+    //         // Update tooltip content
+    
+             tooltip.html(`${displayString}`)
+                        .style("visibility", "visible")
+                        .style("top", (event.pageY - 10) + "px")
+                        .style("left", (event.pageX + 10) + "px");
+        
+
+
+
+
+            })
+            .on("mousemove", function(event) {
+                tooltip.style("top", (event.pageY - 10) + "px")
+                    .style("left", (event.pageX + 10) + "px");
+            })
+            .on("mouseout", function() {
+                d3.select(this)
+                    .attr("fill", "transparent")
+                tooltip.style("visibility", "hidden");
+            })
+            .on("click", function (event, d) {
+                console.log(`Artist: ${d.name}`);
+                console.log(`First Song: ${d.first_song}`);
+                console.log(`First Play: ${d.first_play}`);
+                console.log(`Total Play Time: ${formatThreshold(d.total_ms)}`);
+            });
+    
+        // Ensure dots are drawn on top of the snake lines
+        dotGroup.raise();
 }
 
+function drawExperiment(day) {
 
+    const dayMS = calcDayMS(day)
+    // Clear the existing content in the SVG (if any)
+    const svg = d3.select("#svgExperiment"); // Assuming you have an SVG element in your HTML
+    svg.selectAll("*").remove(); // Remove previous rectangles if they exist
+
+    // const width = +svg.attr("width"); // Get the width of the SVG
+    const width = parseInt(svg.style("width"), 10);; // Get the width of the SVG
+    const height = parseInt(svg.style("height"), 10) || 100; // Default height if not set
+
+    const waveHeight = 0.1*height
+    
+
+    const yScale = d3.scaleLinear()
+    .domain([0, 100])  // Input range (0 to 100)
+    .range([0, waveHeight]); // Output range (0 to SVG height)
+
+
+
+    const playHeight = 350; // Set a fixed height for the rectangles (adjust as needed)
+    
+    // Get the max_sp_one_day from the overview
+    const maxSongplays = day_data.overview.max_sp_one_day;
+    
+    // Calculate the width for each rectangle
+    const rectWidth = width / maxSongplays; // Width of each rectangle
+
+    const midHeight = waveHeight/2 
+    console.log(day.length)
+    const scaleFactor = width / dayMS;
+
+
+    svg.selectAll("rect")
+    .data(day)
+    .enter()
+    .each(function(d, i) {
+        // Get popularities for the current data point
+        const pops = getPopularities(d);
+        
+        // Calculate rectangle widths and heights
+        const width = Math.max(songplay_lib[d].ms_played * scaleFactor, 2) - 1;
+        const songHeight = yScale(pops.song);
+        const artistHeight = yScale(pops.artist);
+
+        var firstHeight = artistHeight
+        var secondHeight = songHeight
+        var firstColour = "darkgrey"
+        var secondColour = "lightgrey"
+
+        const maxHeight = Math.max(songHeight,artistHeight)
+
+        if(songHeight > artistHeight){
+            firstHeight = songHeight
+            secondHeight = artistHeight
+            firstColour = "lightgrey"
+            secondColour = "darkgrey"
+        }
+        
+
+        // Calculate cumulative width for positioning
+        const cumulativeWidth = day.slice(0, day.indexOf(d)).reduce((total, songplayId) => {
+            return total + (songplay_lib[songplayId].ms_played * scaleFactor);
+        }, 0);
+
+        const bounceTransition = d3.transition()
+        .duration(1000)  // Duration of each rectangle animation
+        .delay(i * 10)  // Sequential delay to create ripple effect
+        .ease(d3.easeElasticOut);  // Bounce effect
+        
+        // Draw the song popularity rectangle
+        d3.select(this)
+            .append("rect")
+            .attr("x", cumulativeWidth) // Position based on cumulative width
+            .attr("y", midHeight) // Center vertically
+            .attr("width", width) // Width of the rectangle
+            .attr("height", 0)
+            .attr("fill", firstColour) // Color for song popularity
+            .transition(bounceTransition)
+            .attr("height", firstHeight) // Height based on song popularity
+            .attr("y", midHeight - (firstHeight / 2))
+        
+        // Draw the artist popularity rectangle
+        d3.select(this)
+            .append("rect")
+            .attr("x", cumulativeWidth) // Position based on cumulative width
+            .attr("y", midHeight) // Center vertically
+            .attr("width", width) // Width of the rectangle
+            .attr("height", 0) // Height based on artist popularity
+            .attr("fill", secondColour) // Color for artist popularity
+            .transition(bounceTransition)
+            .attr("y", midHeight - (secondHeight / 2))
+            .attr("height", secondHeight)
+
+        // Draw a holder to have as the hover rectangle
+        d3.select(this)
+            .append("rect")
+            .attr("x", cumulativeWidth) // Position based on cumulative width
+            .attr("y", midHeight - (maxHeight / 2)) // Center vertically
+            .attr("width", width) // Width of the rectangle
+            .attr("height", maxHeight) // Height based on max popularity
+            .attr("fill", "lightgrey") // Color for max popularity
+            .attr("fill-opacity",0.0)
+            .on("mouseover", function(event) {
+                d3.select(this)
+                    .attr("fill-opacity", 0.5)
+
+                    const duration = convertMS(songplay_lib[d].ms_played)
+                const displayString = genDisplayString(d)
+//         // Update tooltip content
+
+         tooltip.html(`${displayString}<br>Played for: ${duration}`)
+                    .style("visibility", "visible")
+                    .style("top", (event.pageY - 10) + "px")
+                    .style("left", (event.pageX + 10) + "px");
+            })
+            .on("mousemove", function(event) {
+                tooltip.style("top", (event.pageY - 10) + "px")
+                    .style("left", (event.pageX + 10) + "px");
+            })
+            .on("mouseout", function() {
+                d3.select(this)
+                    .attr("fill-opacity", 0.0)
+                tooltip.style("visibility", "hidden");
+            });
+
+
+    });
+
+
+    const remHeight = height - waveHeight;
+
+    console.log(remHeight)
+
+    svg.append("line")
+        .attr("x1", 0)
+        .attr("y1", waveHeight) // Bottom of the top section
+        .attr("x2", width) // Full width of the SVG
+        .attr("y2", waveHeight) // Same Y coordinate
+        .attr("stroke", "lightgrey") // Pale grey color
+        .attr("stroke-width", 1); // Adjust thickness as needed
+
+    // Calculate the center coordinates of the remaining space
+    const centerX = width / 2;
+    const centerY = waveHeight + remHeight / 2;
+
+    // Draw a grey circle in the middle of the remaining space
+    svg.append("circle")
+        .attr("cx", centerX) // Center X position
+        .attr("cy", centerY) // Center Y position
+        .attr("r", Math.min(remHeight, width) * 0.35) // Radius (adjust proportionally)
+        .attr("fill", "grey"); // Fill color
+
+    // Draw a grey circle in the middle of the remaining space
+    svg.append("circle")
+        .attr("cx", centerX) // Center X position
+        .attr("cy", centerY) // Center Y position
+        .attr("r", Math.min(remHeight, width) * 0.03) // Radius (adjust proportionally)
+        .attr("fill", "#444"); // Fill color
+
+
+
+
+}
 
 
 function getPopularities(sid){
@@ -685,6 +1016,18 @@ function genDisplayString(sid){
     artistname = artist.name
 
     return songname + " by " + artistname
+}
+
+function genNewArtistDisplayString(data){
+    
+    response = data.name + "<br>"
+    response += "Discovered on: " + formatDate(data.first_play) + "<br>"
+    response += "First Song: " + data.first_song + "<br>"
+    response += "Total Artist Listening Time: " + formatThreshold(data.total_ms)
+
+//   console.log(data)
+
+    return response
 }
 
 function convertMS(ms){
@@ -769,10 +1112,16 @@ function redrawSVG() {
         hideSpinner();
     }, 0); // Short delay to allow the spinner to render
     yearAnimation = temp
-  }else{
+  }else if (currentView == "day"){
     showSpinner()
     setTimeout(function () {
         drawDay(thisDay);
+        hideSpinner();
+    }, 0); // Short delay to allow the spinner to render
+  }else{
+    showSpinner()
+    setTimeout(function () {
+        drawExperiment(thisDay);
         hideSpinner();
     }, 0); // Short delay to allow the spinner to render
   }

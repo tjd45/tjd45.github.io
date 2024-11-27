@@ -53,8 +53,46 @@ body {
     display: none;
   }
 
+  #svgExperiment{
+    display: none;
+  }
+
   #yearControls{
     display: none;
+  }
+
+  #experimentButton{
+    display: none;
+  }
+
+  #experimentalControls{
+    display: none;
+  }
+  
+  .secondline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px
+  }
+  
+  .slider-container {
+    display: flex; /* Make it a flex container */
+    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Space out the slider and label */
+    gap: 10px; /* Add spacing between slider and label */
+    width: 160px; /* Fixed width for the container */
+  }
+  
+  #thresholdSlider {
+    flex-shrink: 0; /* Prevent the slider from resizing */
+    width: 100px; /* Keep the slider width constant */
+  }
+  
+  #thresholdLabel {
+    width: 60px; /* Fixed width to accommodate the longest expected text */
+    text-align: left; /* Align text within the label */
+    white-space: nowrap; /* Prevent wrapping if the width is insufficient */
   }
   
   .controls {

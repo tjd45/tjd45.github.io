@@ -13,6 +13,7 @@
   <div class="toggle-buttons">
     <button id="dayButton" class="active">Sound of a Day</button>
     <button id="yearButton">Sound of a Year</button>
+    <button id="experimentButton">Experimental</button>
   </div>
 
   <div class="controls" id="dayControls">
@@ -23,12 +24,35 @@
   </div>
 
   <div class="controls" id="yearControls">
-    <select id="yearDropdown"></select>
-    <button id="forwardYearButton">&uarr;</button>
-    <button id="backYearButton">&darr;</button>
-    <button id="randomYearButton">Random Year</button>
-    <label for="toggleAnimationSwitch">Animation:</label>
-    <input type="checkbox" id="toggleAnimationSwitch" class="toggle-switch">
+    <div class="firstline">
+
+      <select id="yearDropdown"></select>
+      <button id="forwardYearButton">&uarr;</button>
+      <button id="backYearButton">&darr;</button>
+      <button id="randomYearButton">Random Year</button>
+      <label for="toggleAnimationSwitch">Animation:</label>
+      <input type="checkbox" id="toggleAnimationSwitch" class="toggle-switch">
+    </div>
+    <div class="secondline">
+      
+      <label for="thresholdSlider">'New' artist threshold:</label>
+      <div class="slider-container">
+        <input
+        type="range"
+        id="thresholdSlider"
+        min="0"
+        max="180000000"
+        value="0"
+        step="600000"
+        />
+        <span id="thresholdLabel">0h 0m</span>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="controls" id="experimentalControls">
+
 
   </div>
 
@@ -36,6 +60,7 @@
     <div id="svgTitle"></div>
     <svg id="svgDay"></svg>
     <svg id="svgYear"></svg>
+    <svg id="svgExperiment"></svg>
     <div class="info-button" id="infoButton">i</div>
 
   </div>
@@ -76,6 +101,12 @@
         was heavily influenced by Stefanie Posavec's <a href="https://www.stefanieposavec.com/writing-without-words" target="_blank">
           Writing Without Words</a> project and intended to mimic the meandering paths my music listening
           can take.
+
+      </p>
+      <p id="experimental-info">This screen displays some experimental approaches for visualising a single day. </br></br>
+        This page should be hidden
+        from public view so if you're seeing this I probably made a mistake the last time I pushed the code. Enjoy a little sneak peek with
+        no explanation of what you're seeing.
 
       </p>
     </div>
