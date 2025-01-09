@@ -322,7 +322,7 @@ textArea.addEventListener('input', async (event) => {
         await updateLineSentiments();
         await analyseWholeText();
         updateDisplay();
-    }, 500);
+    }, 300);
 
 
 });
