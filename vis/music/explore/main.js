@@ -823,6 +823,8 @@ function drawYear(year){
 
 function drawExperiment(day) {
 
+    console.log(day)
+
     const dayMS = calcDayMS(day)
     // Clear the existing content in the SVG (if any)
     const svg = d3.select("#svgExperiment"); // Assuming you have an SVG element in your HTML

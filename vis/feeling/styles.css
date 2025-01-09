@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #577568;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+}
+
+#visualisation {
+    /* width: 95%; */
+    /* height: 30vh; */
+    background-color: #B5D3A7;
+    margin-bottom: 20px;
+}
+
+#text-area {
+    width: 65%;
+    height: 20vh;
+    /* background-color: #EC9646; */
+    background-color: #90B294;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    resize: none;
+    outline: none;
+    overflow: hidden;
+    overflow-y:scroll;
+    scrollbar-width:none;
+    cursor: default;
+    transition: background-color 3s ease-in-out; /* Smooth transition */
+
+}
+
+.action-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 180px;
+}
+
+.button-inactive {
+    cursor: pointer;
+    background-color: #6b9081;
+}
+
+
+.button-inactive:hover {
+    background-color: #89b2a2;
+}
+
+.button-active {
+    background-color: #33463e;
+    color: white;
+    cursor: default;
+}
+#toggle-verbose{
+    display: none;
+    margin-top :0px;
+    height: 20px;
+    font-size: 0.5rem;
+    padding: 0px;
+    margin-bottom: 10px;
+    width: 90px;
+}
+.hidden{
+    display: none
+}
+
+#sentiment-display {
+    width: 65%;
+    height: 10vh;
+    background-color: #555;
+    color: white;
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    overflow: hidden;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+
+    overflow-y:scroll;
+    scrollbar-width:none;
+}
+
+#tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    pointer-events: none; /* Prevent the tooltip from capturing mouse events */
+    width: 150px;
+    transition: opacity 0.2s ease;
+
+}
