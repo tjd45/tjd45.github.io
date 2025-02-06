@@ -62,11 +62,11 @@ body {
   }
 
   #experimentButton{
-    display: none;
+    display: block;
   }
 
   #experimentalControls{
-    display: none;
+    display: block;
   }
   
   .secondline {
