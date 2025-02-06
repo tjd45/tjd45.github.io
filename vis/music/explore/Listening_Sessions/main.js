@@ -1,8 +1,8 @@
 var songplay_lib, song_lib;
 
 async function getAccessToken() {
-    const clientId = '4b1a1866577441b282224f33238f4a83'; // Replace with your client ID
-    const clientSecret = 'd38bf35e62564c0b87ae29bdf52d9d94'; // Replace with your client secret
+    const clientId = ''; // Replace with your client ID
+    const clientSecret = ''; // Replace with your client secret
     const credentials = `${clientId}:${clientSecret}`;
     const encodedCredentials = btoa(credentials); // Base64 encode the credentials
 
