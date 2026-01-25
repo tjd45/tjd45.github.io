@@ -1043,6 +1043,8 @@ function convertMS(ms){
 function calcDayMS(day){
     totalMS = 0
 
+    // console.log(day)
+
     day.forEach(sp => {
         totalMS += songplay_lib[sp].ms_played;
     });
@@ -1093,7 +1095,7 @@ async function main(){
 
     thisDay = genDay(date)
     minYear = 2011
-    maxYear = 2024
+    maxYear = 2026
     populateYearDropdown(minYear,maxYear)
 
     genSnake(true,true)
