@@ -144,6 +144,10 @@ document.getElementById('experimentButton').addEventListener('click', function (
     toggleView('experiment');
 });
 
+document.getElementById('artistButton').addEventListener('click', function () {
+    toggleView('artist');
+});
+
 function toggleView(view) {
     currentView = view
     const dayButton = document.getElementById('dayButton');
@@ -156,6 +160,10 @@ function toggleView(view) {
     const experimentButton = document.getElementById('experimentButton');
     const experimentalControls = document.getElementById('experimentalControls');
     const svgExperiment = document.getElementById('svgExperiment');
+
+    const artistButton = document.getElementById('artistButton');
+    const artistControls = document.getElementById('artistControls');
+    const svgArtist = document.getElementById('svgArtist');
      
     if (view === 'day') {
         // Show day-specific elements
@@ -169,6 +177,10 @@ function toggleView(view) {
         experimentButton.classList.remove('active');
         experimentalControls.display="none";
         svgExperiment.style.display = 'none';
+
+        artistButton.classList.remove('active');
+        artistControls.style.display = 'none';
+        svgArtist.style.display = 'none';
 
         updateTitle(date); // Reset title to current date format
 
@@ -185,6 +197,10 @@ function toggleView(view) {
         experimentButton.classList.remove('active');
         experimentalControls.display="none";
         svgExperiment.style.display = 'none';
+
+        artistButton.classList.remove('active');
+        artistControls.style.display = 'none';
+        svgArtist.style.display = 'none';
 
         if(firstTimeLoad){
             year = 2024
@@ -208,16 +224,36 @@ function toggleView(view) {
     } else if (view=='experiment'){
         // Show day-specific elements
         experimentButton.classList.add('active');
+        artistButton.classList.remove('active');
         dayButton.classList.remove('active');
         yearButton.classList.remove('active');
         experimentalControls.display="inline-block";
         dayControls.style.display = 'none';
         yearControls.style.display = 'none';
+        artistControls.style.display = 'none';
         svgDay.style.display = 'none';
         svgYear.style.display = 'none';
+        svgArtist.style.display = 'none';
         svgExperiment.style.display = 'block';
 
         drawExperiment(thisDay);
+        updateTitle(date); // Reset title to current date format
+        
+    } else if (view=='artist'){
+        artistButton.classList.add('active');
+        experimentButton.classList.remove('active');
+        dayButton.classList.remove('active');
+        yearButton.classList.remove('active');
+        artistControls.display="Inline-block";
+        experimentalControls.style.display="none";
+        dayControls.style.display = 'none';
+        yearControls.style.display = 'none';
+        svgDay.style.display = 'none';
+        svgYear.style.display = 'none';
+        svgExperiment.style.display = 'none';
+        svgArtist.style.display = 'block'
+
+        drawArtistLines();
         updateTitle(date); // Reset title to current date format
     }
 }
@@ -411,6 +447,22 @@ async function loadFiles(){
     artist_lib = await d3.json("data/artist_library.json")
 
     day_data = await d3.json("data/days_overview.json")
+
+    artist_data = await d3.json("data/artists_daily_minutes.json")
+      
+    const parseDate = d3.timeParse("%Y-%m-%d");
+    artist_data.forEach(a => {
+    a.Total_Minutes = +a.Total_Minutes;
+    a.Days.forEach(d => {
+        d.mins_listened = +d.mins_listened;
+        d.dateObj = parseDate(d.date);
+    });
+    });
+
+    artist_data_by_name = new Map(artist_data.map(a => [a.Artist, a]));
+
+    console.log(artist_data)
+
 }
 
 function genSnake(artist, plays, threshold = defaultThreshold){
@@ -984,9 +1036,156 @@ function drawExperiment(day) {
         .attr("fill", "#444"); // Fill color
 
 
-
-
 }
+
+function getArtistLineContext() {
+  const svg = d3.select("#svgArtist");
+  const width  = parseInt(svg.style("width"), 10);
+  const height = parseInt(svg.style("height"), 10) || 100;
+
+  const padLeft = 0;
+  const padBottom = 0;
+  const padRight = Math.max(80, Math.floor(width * 0.22));
+  const padTop = Math.max(20, Math.floor(height * 0.10));
+
+  const topArtist = artist_data[0];
+
+  const topDays = topArtist.Days
+    .filter(d => d.dateObj)
+    .slice()
+    .sort((a, b) => a.dateObj - b.dateObj);
+
+  const xDomain = d3.extent(topDays, d => d.dateObj);
+
+  const xScale = d3.scaleTime()
+    .domain(xDomain)
+    .range([padLeft, width - padRight]);
+
+  const yScale = d3.scaleLinear()
+    .domain([0, +topArtist.Total_Minutes || 1])
+    .range([height - padBottom, padTop]);
+
+  return { svg, width, height, padRight, topArtist, xScale, yScale };
+}
+
+function drawArtistLine(sel = 0, opts = {}) {
+  if (!artist_data || artist_data.length === 0) return;
+
+  const {
+    clear = false,        // if true: clears svg before drawing
+    showLabel = true,     // show end dot + label
+    colour = "#f4c27a",   // default pale orange
+    strokeWidth = 2.5,
+    opacity = 1.0
+  } = opts;
+
+  const { svg, xScale, yScale, topArtist } = getArtistLineContext();
+
+  if (clear) svg.selectAll("*").remove();
+
+  // Resolve "sel" to an artist object
+  let artist = null;
+
+  if (typeof sel === "number") {
+    const idx = sel;
+    artist = artist_data[idx];
+  } else if (typeof sel === "string") {
+    artist = artist_data_by_name?.get(sel) || null;
+
+    // fallback: case-insensitive search
+    if (!artist) {
+      const needle = sel.toLowerCase();
+      artist = artist_data.find(a => (a.Artist || "").toLowerCase() === needle) || null;
+    }
+  }
+
+  if (!artist) {
+    console.warn("drawArtistLine: artist not found for selector:", sel);
+    return;
+  }
+
+  // Build cumulative series for this artist
+  const days = artist.Days
+    .filter(d => d.dateObj)
+    .slice()
+    .sort((a, b) => a.dateObj - b.dateObj);
+
+  let running = 0;
+  const series = days.map(d => {
+    running += d.mins_listened;
+    return { dateObj: d.dateObj, cum: running };
+  });
+
+  // Line generator (uses shared scales)
+  const line = d3.line()
+    .x(d => xScale(d.dateObj))
+    .y(d => yScale(d.cum));
+
+  // Draw the line
+  svg.append("path")
+    .datum(series)
+    .attr("fill", "none")
+    .attr("stroke", colour)
+    .attr("stroke-width", strokeWidth)
+    .attr("opacity", opacity)
+    .attr("d", line);
+
+  if (!showLabel || series.length === 0) return;
+
+  // End point + label for THIS artist
+  const last = series[series.length - 1];
+  const endX = xScale(last.dateObj);
+  const endY = yScale(last.cum);
+
+  svg.append("circle")
+    .attr("cx", endX)
+    .attr("cy", endY)
+    .attr("r", 4.0)
+    .attr("fill", colour)
+    .attr("opacity", opacity);
+
+  const totalHoursRounded = Math.round((last.cum || 0) / 60);
+  const rank = artist.Rank;
+  const labelX = endX + 8;
+  const labelY = endY;
+
+  svg.append("text")
+    .attr("x", labelX)
+    .attr("y", labelY)
+    .attr("dominant-baseline", "middle")
+    .attr("text-anchor", "start")
+    .attr("fill", colour)
+    .attr("opacity", opacity)
+    .style("font-family", "sans-serif")
+    .style("font-size", "12px")
+    .text(artist.Artist);
+
+  svg.append("text")
+    .attr("x", labelX)
+    .attr("y", labelY + 4)
+    .attr("dominant-baseline", "hanging")
+    .attr("text-anchor", "start")
+    .attr("fill", colour)
+    .attr("opacity", 0.8 * opacity)
+    .style("font-family", "sans-serif")
+    .style("font-size", "9px")
+    .text(`#${rank} – ${totalHoursRounded} hours`);
+}
+
+
+function drawArtistLines() {
+    drawArtistLine(0, { clear: true });
+    // drawArtistLine(1, { colour: "#f4c27a", opacity: 0.7 }); // 3rd artist
+    drawArtistLine(2, { colour: "#7ad1f4", opacity: 0.9 }); // 4th artist
+    drawArtistLine("Olivia Dean", { colour: "#997af4", opacity: 0.9 });
+    drawArtistLine(16, { colour: "#f4a17a", opacity: 0.9 }); // 4th artist
+    drawArtistLine("MARINA", { colour: "#b1a0ff", opacity: 0.9 })
+    drawArtistLine("Khruangbin", { colour: "#6fc67c", opacity: 0.9 })
+    drawArtistLine("Bombay Bicycle Club", { colour: "#f88bf8", opacity: 0.9 })
+    
+    drawArtistLine("Gavin Sumrall", {colour:"#5fcc5f", opacity: 0.9})
+}
+
 
 
 function getPopularities(sid){
@@ -1122,10 +1321,16 @@ function redrawSVG() {
         drawDay(thisDay);
         hideSpinner();
     }, 0); // Short delay to allow the spinner to render
-  }else{
+  }else if (currentView == "experiment"){
     showSpinner()
     setTimeout(function () {
         drawExperiment(thisDay);
+        hideSpinner();
+    }, 0); // Short delay to allow the spinner to render
+  }else{
+    showSpinner()
+    setTimeout(function () {
+        drawArtistLines();
         hideSpinner();
     }, 0); // Short delay to allow the spinner to render
   }

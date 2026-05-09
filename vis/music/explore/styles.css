@@ -62,11 +62,19 @@ body {
   }
 
   #experimentButton{
-    display: block;
+    display: none;
   }
 
   #experimentalControls{
+    display: none;
+  }
+
+  #artistButton{
     display: block;
+  }
+
+  #svgArtist{
+    display: none;
   }
   
   .secondline {
