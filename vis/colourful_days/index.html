@@ -11,6 +11,7 @@
 	<body>
 		<header>
 			<h1>Colourful Days</h1>
+			<div class="info-button" id="infoButton">i</div>
 		</header>
 		
 		<div class="svg-container calendar-container"></div>
@@ -19,6 +20,31 @@
             <h2>Every Hour</h2>
             <div class="svg-container strips-container"></div>
         </section>
+
+		<div class="info-modal" id="infoModal">
+    <div class="modal-content">
+      <span class="close-button" id="closeButton">&times;</span>
+			
+	  <h2>Information</h2>
+			<p id="info">
+				Between the 21st of April and 7th May 2026 I attempted to take a picture every hour of the day that I was awake. This resulted in a set of 201 pictures from across these days.
+				<br><br>
+				I then processed these photos and extracted the 'average' colour from each image by extracting the rgb value for every pixel. 
+				<br><br>
+				The first visualisation shows the average colour for each day in the centre of the box for each day. Around the outside of the box is the average colour for each hour's picture where it exists. 
+				I placed midnight at the bottom centre and then going clockwise from there each hour has its own square. The rationale for this was to mimic a clock and also the motion of the sun in the sky (even though the sun would rise in the East).
+				<br><br>
+				A byproduct of this approach to visualising is that you can see roughly the hours I was awake on each day - with multiple late nights shown by images in the bottom left quadrant (midnight - 3am) in the build-up to a paper submission in the
+				early hours of 1st May before recovering some of that sleep with multiple days last image being before midnight.
+				<br><br>
+				The second visualisation shows a continuous strip of all the images' average colours, with the average day colour shown in the wider background strips.
+				<br><br>
+				Clicking on either of the headers will switch the colour scheme to a quantised version. To generate this I quantised the colours in each of the 201 images to be one of only 27 colours. Then I calculated the dominant (rather than average) colour in each image
+				and calculated the average for each day based on this. This resulted in a more vibrant image.
+			</p>
+		</div>
+	</div>
+
         
 		<script src="main.js"></script>
 	</body>

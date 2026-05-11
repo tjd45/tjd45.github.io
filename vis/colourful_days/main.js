@@ -352,6 +352,31 @@ function drawCalendar(target,days){
 d3.selectAll("h1,h2")
     .on("click", () => {toggleColourMode()})
 
+// Select the elements
+const infoButton = document.getElementById("infoButton");
+const infoModal = document.getElementById("infoModal");
+const closeButton = document.getElementById("closeButton");
+
+// Show the modal when the info button is clicked
+infoButton.addEventListener("click", () => {
+
+  infoModal.style.display = "flex";  // Use flex to center modal content
+  
+  
+});
+
+// Close the modal when the close button (X) is clicked
+closeButton.addEventListener("click", () => {
+  infoModal.style.display = "none";
+});
+
+// Close the modal when clicking outside the modal content
+window.addEventListener("click", (event) => {
+  if (event.target === infoModal) {
+    infoModal.style.display = "none";
+  }
+});
+
 function draw(){
     drawCalendar(calendarSvg,days)
     drawDayStrips(stripsSvg,days)
